@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import loadEnvironment from '../assets/load-system.png';
 
 const LoadEnvironment = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const togglePopupVisibility = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
   return (
     <div className="content-section">
 
@@ -11,12 +17,27 @@ const LoadEnvironment = () => {
         <div className="subsection-title">4.3 LOAD ENVIRONMENT</div>
         <div className="content-text">
           <p>
-            Switch Merchant Page consists of all merchants and corresponding role assigned to logged in user <i>(see Figure 4.4)</i>. It is only displayed if user logged in has many merchants assigned to him/her.</p>
+            Switch Merchant Page consists of all merchants and corresponding role assigned to logged in user <i>(see Figure 4.4)</i>. It is only displayed if user logged in has many merchants assigned to him/her.
+          For more information, click on <a href="#" onClick={togglePopupVisibility} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Field Details</a>.
+        </p>
           <br/>
           <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.4: Load Environment Page</div>
           <img src={loadEnvironment} alt="Load Environment"style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }}/>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
+        
+        {isPopupVisible && (
+          <div style={{ 
+            position: 'fixed', 
+            top: '50%', 
+            left: '50%', 
+            transform: 'translate(-50%, -50%)', 
+            backgroundColor: 'white', 
+            border: '1px solid #ccc', 
+            borderRadius: '8px', 
+            padding: '20px', 
+            zIndex: 1000,
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
+          }}>
             <table className="command-syntax-table">
               <thead>
                 <tr><th colSpan="2">Field Details</th></tr>
@@ -41,6 +62,21 @@ const LoadEnvironment = () => {
               </tbody>
             </table>
           </div>
+        )}
+
+        {isPopupVisible && (
+          <div style={{ 
+            position: 'fixed', 
+            top: 0, 
+            left: 0, 
+            width: '100%', 
+            height: '100%', 
+            backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+            zIndex: 999,
+            cursor: 'pointer'
+          }} 
+          onClick={togglePopupVisibility} />
+        )}
       </div>
 
     </div>

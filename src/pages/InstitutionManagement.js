@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import manageInstitutionPage from '../assets/manage_institution_page.png';
 import institutionForm from '../assets/institution_form.png';
 import editInstitutionPage from '../assets/edit_institution_page.png';
@@ -10,7 +10,38 @@ const imgWrapper = {
   width: '100%',
 };
 
+const popupOverlayStyle = {
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  zIndex: 999,
+  cursor: 'pointer'
+};
+
+const popupBoxStyle = {
+  position: 'fixed',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  backgroundColor: 'white',
+  border: '1px solid #ccc',
+  borderRadius: '8px',
+  padding: '20px',
+  zIndex: 1000,
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  maxHeight: '80vh',
+  overflowY: 'auto',
+  width: 'fit-content',
+  minWidth: '300px',
+};
+
 const InstitutionManagement = () => {
+  const [isManagePopupVisible, setIsManagePopupVisible] = useState(false);
+  const [isInstitutionFormPopupVisible, setIsInstitutionFormPopupVisible] = useState(false);
+
   return (
     <div className="content-section">
       <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
@@ -23,34 +54,51 @@ const InstitutionManagement = () => {
           <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.22: Manage Institution Page</div>
           <div style={imgWrapper}>
             <img src={manageInstitutionPage} alt="Manage Institution Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-           
           </div>
 
-          <table className="command-syntax-table" style={{ marginTop: '10px' }}>
-            <thead>
-              <tr>
-                <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Search</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Field query input for the List of Institution table to retrieve related information on below listing.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Username must be active and validated by the verifier of the system.</td>
-              </tr>
-            </tbody>
-          </table>
+          <p>
+            For more information, click on{' '}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+            >
+              Field Details
+            </a>.
+          </p>
+
+          {isManagePopupVisible && (
+            <>
+              <div style={popupOverlayStyle} onClick={() => setIsManagePopupVisible(false)} />
+              <div style={popupBoxStyle}>
+                <table className="command-syntax-table" style={{ marginTop: '10px' }}>
+                  <thead>
+                    <tr>
+                      <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Search</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Field query input for the List of Institution table to retrieve related information on below listing.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Username must be active and validated by the verifier of the system.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
 
           <h3>How to Create New Institution:</h3>
           <ol style={{ marginLeft: '20px' }}>
@@ -75,78 +123,52 @@ const InstitutionManagement = () => {
           <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.23: Institution Form</div>
           <div style={imgWrapper}>
             <img src={institutionForm} alt="Institution Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-            
           </div>
 
-          <table className="command-syntax-table" style={{ marginTop: '10px' }}>
-            <thead>
-              <tr>
-                <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Code</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the ID of the institution.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Numeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>9</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Name</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the name of the institution.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>50</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Description</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the description of an institution.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>128</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-            </tbody>
-          </table>
+          <p>
+            For more information, click on{' '}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); setIsInstitutionFormPopupVisible(true); }}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+            >
+              Field Details
+            </a>.
+          </p>
+
+          {isInstitutionFormPopupVisible && (
+            <>
+              <div style={popupOverlayStyle} onClick={() => setIsInstitutionFormPopupVisible(false)} />
+              <div style={popupBoxStyle}>
+                <table className="command-syntax-table" style={{ marginTop: '10px' }}>
+                  <thead>
+                    <tr>
+                      <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Field Name:</td><td><strong>Code</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the ID of the institution.</td></tr>
+                    <tr><td>Type:</td><td>Numeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>9</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Name</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the name of the institution.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>50</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Description</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the description of an institution.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>128</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
 
           <h3>How to Update Institution Details:</h3>
           <ol style={{ marginLeft: '20px' }}>
@@ -171,7 +193,6 @@ const InstitutionManagement = () => {
           <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.24: Edit Institution Page</div>
           <div style={imgWrapper}>
             <img src={editInstitutionPage} alt="Edit Institution Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-            
           </div>
 
           <h3>How to Delete Institution Individually:</h3>

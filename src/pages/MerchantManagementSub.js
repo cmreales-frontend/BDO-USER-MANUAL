@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import merchantManagementPage from '../assets/merchant_management_page.png';
 import newMerchantPage from '../assets/new_merchant_pages.png';
 import confirmationDialogBox from '../assets/confirmation_dialog_box.png';
@@ -7,6 +7,9 @@ import editMerchantPage from '../assets/edit_merchant_details.png';
 import merchantMultipleDelete from '../assets/merchant_multiple_delete.png';
 
 const MerchantManagementSub = () => {
+  const [isManagePopupVisible, setIsManagePopupVisible] = useState(false);
+  const [isNewMerchantPopupVisible, setIsNewMerchantPopupVisible] = useState(false);
+
   return (
     <div className="content-section">
       <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
@@ -18,48 +21,63 @@ const MerchantManagementSub = () => {
           <br/>
           <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '20px', textAlign: 'center' }}>Figure 4.16: Merchant Management Page</div>
           <img src={merchantManagementPage} alt="Merchant Management Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <p>
+            For more information, click on{' '}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+            >
+              Field Details
+            </a>.
+          </p>
 
-          <table className="command-syntax-table" style={{ marginTop: '10px' }}>
-            <thead>
-              <tr>
-                <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Search</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Field query input for the List of Merchant table to retrieve related information on below listing.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Username must be active and validated by the verifier of the system.</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Show Entries</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Selection of 10, 25, 50 or 100 entries for below table.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Dropdown</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Table must have list.</td>
-              </tr>
-            </tbody>
-          </table>
+          {isManagePopupVisible && (
+            <>
+              <div
+                style={{
+                  position: 'fixed',
+                  top: 0, left: 0,
+                  width: '100%', height: '100%',
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  zIndex: 999,
+                  cursor: 'pointer'
+                }}
+                onClick={() => setIsManagePopupVisible(false)}
+              />
+              <div
+                style={{
+                  position: 'fixed',
+                  top: '50%', left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  backgroundColor: 'white',
+                  border: '1px solid #ccc',
+                  borderRadius: '8px',
+                  padding: '20px',
+                  zIndex: 1000,
+                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
+                }}
+              >
+                <table className="command-syntax-table" style={{ marginTop: '10px' }}>
+                  <thead>
+                    <tr>
+                      <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Field Name:</td><td><strong>Search</strong></td></tr>
+                    <tr><td>Definition:</td><td>Field query input for the List of Merchant table to retrieve related information on below listing.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Dependency:</td><td>Username must be active and validated by the verifier of the system.</td></tr>
+                    <tr><td>Field Name:</td><td><strong>Show Entries</strong></td></tr>
+                    <tr><td>Definition:</td><td>Selection of 10, 25, 50 or 100 entries for below table.</td></tr>
+                    <tr><td>Type:</td><td>Dropdown</td></tr>
+                    <tr><td>Dependency:</td><td>Table must have list.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
 
           <p>All of the BRPS merchants are summarized in the List of Merchants. Every bill code displays the institution code, status, and all corresponding merchant numbers. Users can export these lists to Excel.</p>
 
@@ -99,362 +117,322 @@ const MerchantManagementSub = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.17: New Merchant Pages</div>
+          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.17: New Merchant Pages</div>
           <img src={newMerchantPage} alt="Figure 4.17: New Merchant Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }}/>
 
-          <table className="command-syntax-table" style={{ marginTop: '10px' }}>
-            <thead>
-              <tr>
-                <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Institution Code - Institution Name</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the institution the merchant is belong to.</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Bill Code</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the ID of the merchant.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Length:</td>
-                <td>2</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Merchant Initials</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the alias/initials of specific merchant.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Merchant Name</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the name of the merchant.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>30</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Contact Person</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the contact person of merchant.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>30</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Contact Number 1</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the primary contact number of the merchant.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Numeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>20</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Contact Number 2</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the secondary contact number of the merchant.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Numeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>20</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Address</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the address of the merchant.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>128</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Email Address</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the email address of the merchant.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric; Formatted field (xxxx@xxx.com)</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>32</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Start Time</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the access start time of the merchant.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Time</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>End Time</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the access end time of the merchant.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Time</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Settlement Time</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the time of settlement on the daily single transactions.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Time</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Sunday</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Day the merchant is available to access the application.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Boolean</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Monday</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Day the merchant is available to access the application.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Boolean</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Tuesday</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Day the merchant is available to access the application.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Boolean</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Wednesday</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Day the merchant is available to access the application.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Boolean</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Thursday</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Day the merchant is available to access the application.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Boolean</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Friday</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Day the merchant is available to access the application.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Boolean</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Saturday</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Day the merchant is available to access the application.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Boolean</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Status</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Merchant status whether it is active or inactive.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Boolean</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-            </tbody>
-          </table>
+          <p>
+            For more information, click on{' '}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); setIsNewMerchantPopupVisible(true); }}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+            >
+              Field Details
+            </a>.
+          </p>
+
+          {isNewMerchantPopupVisible && (
+            <>
+              <div
+                style={{
+                  position: 'fixed',
+                  top: 0, left: 0,
+                  width: '100%', height: '100%',
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  zIndex: 999,
+                  cursor: 'pointer'
+                }}
+                onClick={() => setIsNewMerchantPopupVisible(false)}
+              />
+              <div
+                style={{
+                  position: 'fixed',
+                  top: '50%', left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  backgroundColor: 'white',
+                  border: '1px solid #ccc',
+                  borderRadius: '8px',
+                  padding: '20px',
+                  zIndex: 1000,
+                  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                  maxHeight: '80vh',
+                  overflowY: 'auto'
+                }}
+              >
+                <table className="command-syntax-table" style={{ marginTop: '10px' }}>
+                  <thead>
+                    <tr>
+                      <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Institution Code - Institution Name</strong></td>
+                      </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the institution the merchant is belong to.</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Bill Code</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the ID of the merchant.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Length:</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Merchant Initials</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the alias/initials of specific merchant.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Merchant Name</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the name of the merchant.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>30</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Contact Person</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the contact person of merchant.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>30</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Contact Number 1</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the primary contact number of the merchant.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Numeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>20</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Contact Number 2</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the secondary contact number of the merchant.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Numeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>20</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Address</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the address of the merchant.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>128</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Email Address</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the email address of the merchant.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric; Formatted field (xxxx@xxx.com)</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>32</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Start Time</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the access start time of the merchant.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Time</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>End Time</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the access end time of the merchant.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Time</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Settlement Time</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the time of settlement on the daily single transactions.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Time</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
+
+                    {['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].map(day => (
+                      <React.Fragment key={day}>
+                        <tr>
+                          <td>Field Name:</td>
+                          <td><strong>{day}</strong></td>
+                            </tr>
+                        <tr>
+                          <td>Definition:</td>
+                          <td>Day the merchant is available to access the application.</td>
+                          </tr>
+                        <tr>
+                          <td>Type:</td>
+                          <td>Boolean</td>
+                          </tr>
+                        <tr>
+                          <td>Dependency:</td>
+                          <td>Required field</td>
+                          </tr>
+                      </React.Fragment>
+                    ))}
+
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Status</strong></td>
+                      </tr>
+                    <tr>
+                      <td>Definition:</td><td>Merchant status whether it is active or inactive.</td>
+                      </tr>
+                    <tr>
+                      <td>Type:</td><td>Boolean</td>
+                      </tr>
+                    <tr>
+                      <td>Dependency:</td><td>Required field</td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
 
           <br/>
           <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.18: Confirmation Dialog Box</div>

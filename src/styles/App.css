@@ -673,3 +673,12 @@ mark {
   border-radius: 4px;
   padding: 5px;
 }
+
+/* Add background color for the main content container */
+.content-section {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}

@@ -1,9 +1,41 @@
 import React from "react";
+import { useState } from "react";
 import auditTrailFormImage from "../assets/audit_trail_form.png";
 import auditTrailFormImage1 from "../assets/audit_trail_form1.png";
 import downloadDialogBoxImage from "../assets/download_dialog_box.png";
 
+
+const popupOverlayStyle = {
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  zIndex: 999,
+  cursor: 'pointer'
+};
+
+const popupBoxStyle = {
+  position: 'fixed',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  backgroundColor: 'white',
+  border: '1px solid #ccc',
+  borderRadius: '8px',
+  padding: '20px',
+  zIndex: 1000,
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  maxHeight: '80vh',
+  overflowY: 'auto',
+  width: 'fit-content',
+  minWidth: '300px',
+}; 
+
 const AuditTrailPage = () => {
+  const [isManagePopupVisible, setIsManagePopupVisible] = useState(false);
+
   return (
     <div className="content-section">
       <div className="section-title" style={{ fontSize: "22px" }}>4.10.1 AUDIT TRAIL</div>
@@ -16,11 +48,7 @@ const AuditTrailPage = () => {
       </p>
 
       <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.64: Audit Trail Form</div>
-      <img 
-        src={auditTrailFormImage} 
-        alt="Audit Trail Form" 
-        style={{ width: "100%", marginBottom: "20px" }} 
-      />
+      <img src={auditTrailFormImage} alt="Audit Trail Form" style={{ width: "100%", marginBottom: "20px" }} />
 
        <div className="content-text" style={{ marginLeft: '20px' }}>
         <h4>How to download Audit Trail Report:</h4>
@@ -50,12 +78,23 @@ const AuditTrailPage = () => {
       </div>
 
        <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.66: Audit Trail Form</div>
-      <img 
-        src={auditTrailFormImage1} 
-        alt="Audit Trail Form 1" 
-        style={{ width: "100%", marginBottom: "20px", border: '1px solid #ccc', padding: '5px', borderRadius: '4px' }} 
-      />
+      <img src={auditTrailFormImage1} alt="Audit Trail Form 1" style={{ width: "100%", marginBottom: "5px", border: '1px solid #ccc', padding: '5px', borderRadius: '4px' }} />
 
+       <p>
+            For more information, click on{' '}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+            >
+              Field Details
+            </a>.
+          </p>
+
+    {isManagePopupVisible && (
+      <>
+      <div style={popupOverlayStyle} onClick={() => setIsManagePopupVisible(false)} />
+      <div style={popupBoxStyle}> 
        <table className="command-syntax-table" style={{ marginTop: '10px' }}>
             <thead>
               <tr>
@@ -153,6 +192,9 @@ const AuditTrailPage = () => {
               </tr>
             </tbody>
           </table>
+       </div>
+       </>
+    )}
 
       <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.66: Download Dialog Box</div>
       <img 

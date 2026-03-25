@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import userManagementPage from '../assets/user_management_page.png';
 import newUserPage from '../assets/new_user_page.png';
 import editUserPage from '../assets/edit_user_page.png';
@@ -12,7 +12,36 @@ const imgWrapper = {
   width: '100%',
 };
 
+const popupOverlayStyle = {
+  position: 'fixed',
+  top: 0, left: 0,
+  width: '100%', height: '100%',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  zIndex: 999,
+  cursor: 'pointer'
+};
+
+const popupBoxStyle = {
+  position: 'fixed',
+  top: '50%', left: '50%',
+  transform: 'translate(-50%, -50%)',
+  backgroundColor: 'white',
+  border: '1px solid #ccc',
+  borderRadius: '8px',
+  padding: '20px',
+  zIndex: 1000,
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  maxHeight: '80vh',
+  overflowY: 'auto',
+  width: 'fit-content',
+  minWidth: '300px',
+  maxWidth: '500px',
+};
+
 const UserManagementSub = () => {
+  const [isNewUserPopupVisible, setIsNewUserPopupVisible] = useState(false);
+  const [isChangePasswordPopupVisible, setIsChangePasswordPopupVisible] = useState(false);
+
   return (
     <div className="content-section">
       <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
@@ -21,11 +50,9 @@ const UserManagementSub = () => {
         <div className="content-text">
           <p>This is where the user can create, edit, update, delete and update BRPS users. To navigate this page, go to <b>User Management&gt;&gt;Manage User.</b></p>
 
-          
           <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.34: User Management Page</div>
           <div style={imgWrapper}>
             <img src={userManagementPage} alt="User Management Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-           
           </div>
 
           <br/>
@@ -76,322 +103,126 @@ const UserManagementSub = () => {
           <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.35: New User Page</div>
           <div style={imgWrapper}>
             <img src={newUserPage} alt="New User Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          
           </div>
 
-          <table className="command-syntax-table" style={{ marginTop: '10px' }}>
-            <thead>
-              <tr>
-                <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Username</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the ID of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Minimum Length:</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>32</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Institution</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the institution the user belongs to.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Dropdown</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Status</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Status of the user whether active or inactive.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Boolean</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Email</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the email address of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric; Formatted field (xxxx@xxx.com)</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>32</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Verify Email</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the email verification. Content of this field should be equal to the content of Email field.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric; Formatted field (xxxx@xxx.com)</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>32</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Email</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>First Name</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the given name of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>32</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Middle Name</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the middle name of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>32</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Last Name</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the surname of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>32</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Birthday</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the date of birth of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Date</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Gender</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the gender of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Dropdown</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Department</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the department of the user which he/she belongs to.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>32</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Branch</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the branch of the user which he/she belongs to.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>32</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Address</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the location of the office of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>128</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Mobile Number</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the mobile number of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Numeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>11</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Telephone Number</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the contact number of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>20</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>BDO User</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the kind of user, whether it is a merchant user or LDAP user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Boolean</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>User Creator Role; Required field</td>
-              </tr>
-            </tbody>
-          </table>
+          <p>
+            For more information, click on{' '}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); setIsNewUserPopupVisible(true); }}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+            >
+              Field Details
+            </a>.
+          </p>
+
+          {isNewUserPopupVisible && (
+            <>
+              <div style={popupOverlayStyle} onClick={() => setIsNewUserPopupVisible(false)} />
+              <div style={popupBoxStyle}>
+                <table className="command-syntax-table" style={{ marginTop: '10px' }}>
+                  <thead>
+                    <tr>
+                      <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Field Name:</td><td><strong>Username</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the ID of the user.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Minimum Length:</td><td>8</td></tr>
+                    <tr><td>Maximum Length:</td><td>32</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Institution</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the institution the user belongs to.</td></tr>
+                    <tr><td>Type:</td><td>Dropdown</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Status</strong></td></tr>
+                    <tr><td>Definition:</td><td>Status of the user whether active or inactive.</td></tr>
+                    <tr><td>Type:</td><td>Boolean</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Email</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the email address of the user.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric; Formatted field (xxxx@xxx.com)</td></tr>
+                    <tr><td>Maximum Length:</td><td>32</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Verify Email</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the email verification. Content of this field should be equal to the content of Email field.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric; Formatted field (xxxx@xxx.com)</td></tr>
+                    <tr><td>Maximum Length:</td><td>32</td></tr>
+                    <tr><td>Dependency:</td><td>Email</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>First Name</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the given name of the user.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>32</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Middle Name</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the middle name of the user.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>32</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Last Name</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the surname of the user.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>32</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Birthday</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the date of birth of the user.</td></tr>
+                    <tr><td>Type:</td><td>Date</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Gender</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the gender of the user.</td></tr>
+                    <tr><td>Type:</td><td>Dropdown</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Department</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the department of the user which he/she belongs to.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>32</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Branch</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the branch of the user which he/she belongs to.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>32</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Address</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the location of the office of the user.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>128</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Mobile Number</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the mobile number of the user.</td></tr>
+                    <tr><td>Type:</td><td>Numeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>11</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Telephone Number</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the contact number of the user.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Maximum Length:</td><td>20</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>BDO User</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the kind of user, whether it is a merchant user or LDAP user.</td></tr>
+                    <tr><td>Type:</td><td>Boolean</td></tr>
+                    <tr><td>Dependency:</td><td>User Creator Role; Required field</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
 
           <h3>How to Update User:</h3>
           <ol style={{ marginLeft: '20px' }}>
@@ -416,7 +247,6 @@ const UserManagementSub = () => {
           <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.36: Edit User Page</div>
           <div style={imgWrapper}>
             <img src={editUserPage} alt="Edit User Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-           
           </div>
 
           <h3>How to Delete a User:</h3>
@@ -461,7 +291,6 @@ const UserManagementSub = () => {
           <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.37: User Multiple Delete Page</div>
           <div style={imgWrapper}>
             <img src={userMultipleDeletePage} alt="User Multiple Delete Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-         
           </div>
 
           <h3>How to Force Change User Password:</h3>
@@ -502,100 +331,61 @@ const UserManagementSub = () => {
           <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.38: User Change Password Form</div>
           <div style={imgWrapper}>
             <img src={changePasswordForm} alt="User Change Password Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-         
           </div>
 
-          <table className="command-syntax-table" style={{ marginTop: '10px' }}>
-            <thead>
-              <tr>
-                <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Username</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the username of the user that will be forced to change password.</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>New Password</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the verification of new password of the user.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Minimum Length:</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>128</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Verify Password</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the password verification. Content of this field should be equal to the content of New Password field.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Minimum Length:</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>128</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>New Password</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Random Password</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the system generated password.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric; System Generated</td>
-              </tr>
-              <tr>
-                <td>Length:</td>
-                <td>8</td>
-              </tr>
-            </tbody>
-          </table>
+          <p>
+            For more information, click on{' '}
+            <a
+              href="#"
+              onClick={(e) => { e.preventDefault(); setIsChangePasswordPopupVisible(true); }}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+            >
+              Field Details
+            </a>.
+          </p>
 
-    
+          {isChangePasswordPopupVisible && (
+            <>
+              <div style={popupOverlayStyle} onClick={() => setIsChangePasswordPopupVisible(false)} />
+              <div style={popupBoxStyle}>
+                <table className="command-syntax-table" style={{ marginTop: '10px' }}>
+                  <thead>
+                    <tr>
+                      <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Field Name:</td><td><strong>Username</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the username of the user that will be forced to change password.</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>New Password</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the verification of new password of the user.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Minimum Length:</td><td>8</td></tr>
+                    <tr><td>Maximum Length:</td><td>128</td></tr>
+                    <tr><td>Dependency:</td><td>Required field</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Verify Password</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the password verification. Content of this field should be equal to the content of New Password field.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
+                    <tr><td>Minimum Length:</td><td>8</td></tr>
+                    <tr><td>Maximum Length:</td><td>128</td></tr>
+                    <tr><td>Dependency:</td><td>New Password</td></tr>
+
+                    <tr><td>Field Name:</td><td><strong>Random Password</strong></td></tr>
+                    <tr><td>Definition:</td><td>Refers to the system generated password.</td></tr>
+                    <tr><td>Type:</td><td>Alphanumeric; System Generated</td></tr>
+                    <tr><td>Length:</td><td>8</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )}
+
           <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.39: Force Change Password Receipt</div>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
             <img src={forceChangePasswordReceipt} alt="Force Change Password Receipt" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '70%' }} />
-            
           </div>
 
         </div>
