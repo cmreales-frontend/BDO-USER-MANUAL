@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
+
 const Navigation = ({ mobileOpen, onMobileClose }) => {
 
   const navItems = [
@@ -99,7 +100,6 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
             { path: "/send-settlements", label: "4.10.4 Send Settlements" },
             { path: "/generate-settlement", label: "4.10.5 Generate Settlement" },
             { path: "/billing-file-reports", label: "4.10.6 Billing File Reports" },
-            { path: "/billing-file-processing", label: "4.10.7 Billing File Processing" }
           ]
         },
         {
