@@ -11,18 +11,17 @@ const LoadEnvironment = () => {
   return (
     <div className="content-section">
 
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
-
       <div className="subsection">
-        <div className="subsection-title">4.3 LOAD ENVIRONMENT</div>
+        <div className="subsection-title">Load Environment</div>
         <div className="content-text">
           <p>
-            Switch Merchant Page consists of all merchants and corresponding role assigned to logged in user <i>(see Figure 4.4)</i>. It is only displayed if user logged in has many merchants assigned to him/her.
+          Switch Merchant Page consists of all merchants and corresponding role assigned to logged in user <i>(see Figure 4.4)</i>. It is only displayed if user logged in has many merchants assigned to him/her.
           For more information, click on <a href="#" onClick={togglePopupVisibility} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Field Details</a>.
         </p>
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.4: Load Environment Page</div>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={loadEnvironment} alt="Load Environment"style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }}/>
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Load Environment Page</div>
         </div>
         
         {isPopupVisible && (
@@ -77,8 +76,8 @@ const LoadEnvironment = () => {
           }} 
           onClick={togglePopupVisibility} />
         )}
+        </div>
       </div>
-
     </div>
   );
 };

@@ -4,12 +4,6 @@ import newCardTypePage from '../assets/card_type_page.png';
 import editCardTypePage from '../assets/edit_card_type_page.png';
 import multipleCardTypeDelete from '../assets/multiple_card_type_delete.png';
 
-const imgWrapper = {
-  position: 'relative',
-  display: 'inline-block',
-  width: '100%',
-};
-
 const popupOverlayStyle = {
   position: 'fixed',
   top: 0, left: 0,
@@ -41,15 +35,14 @@ const CardTypeManagement = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
       <div className="subsection">
-        <div className="subsection-title">4.5.4 CARD TYPE MANAGEMENT</div>
+        <div className="subsection-title">Card Type Management</div>
         <div className="content-text">
           <p>This is where the user can create, edit, update, and delete card type. To navigate this page, go to <b>Merchant Management&gt;&gt;Manage Card Types.</b></p>
 
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.30: Manage Card Type Page</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={manageCardTypePage} alt="Manage Card Type Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Manage Card Type Page</div>
           </div>
 
           <h3>How to Create Card Type:</h3>
@@ -74,29 +67,29 @@ const CardTypeManagement = () => {
             <i><b>Note</b>: In minimum and maximum BINs, number of leading zeroes indicates the card number length. See examples below:</i>
           </p>
           <p style={{ marginLeft: '20px', fontStyle: 'italic' }}>
-            000003 – 14 digits<br/>
-            00003 – 15 digits<br/>
-            0003 – 16 digits<br/>
-            003 – 17 digits<br/>
-            03 – 18 digits<br/>
-            3 – 19 digits
+            000003 - 14 digits<br/>
+            00003 - 15 digits<br/>
+            0003 - 16 digits<br/>
+            003 - 17 digits<br/>
+            03 - 18 digits<br/>
+            3 - 19 digits
           </p>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.31: Card Type Page</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={newCardTypePage} alt="Card Type Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Card Type Page</div>
           </div>
+          
 
           <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsNewCardTypePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
+            <button
+              type="button"
+              onClick={() => { setIsNewCardTypePopupVisible(true); }}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>
               Field Details
-            </a>.
+            </button>.
           </p>
 
           {isNewCardTypePopupVisible && (
@@ -110,35 +103,110 @@ const CardTypeManagement = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td>Field Name:</td><td><strong>Code</strong></td></tr>
-                    <tr><td>Definition:</td><td>Refers to the identifier of card type (first letter of card type).</td></tr>
-                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
-                    <tr><td>Maximum Length:</td><td>1</td></tr>
-                    <tr><td>Dependency:</td><td>Required field</td></tr>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Code</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the identifier of card type (first letter of card type).</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
 
-                    <tr><td>Field Name:</td><td><strong>Card Type</strong></td></tr>
-                    <tr><td>Definition:</td><td>Refers to the name of card type.</td></tr>
-                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
-                    <tr><td>Maximum Length:</td><td>32</td></tr>
-                    <tr><td>Dependency:</td><td>Required field</td></tr>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Card Type</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the name of card type.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>32</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
 
-                    <tr><td>Field Name:</td><td><strong>Description</strong></td></tr>
-                    <tr><td>Definition:</td><td>Refers to the description of the card type.</td></tr>
-                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
-                    <tr><td>Maximum Length:</td><td>32</td></tr>
-                    <tr><td>Dependency:</td><td>Required field</td></tr>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Description</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the description of the card type.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>32</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
 
-                    <tr><td>Field Name:</td><td><strong>Minimum BIN</strong></td></tr>
-                    <tr><td>Definition:</td><td>Refers to the minimum BIN range of each card type.</td></tr>
-                    <tr><td>Type:</td><td>Numeric</td></tr>
-                    <tr><td>Maximum Length:</td><td>9</td></tr>
-                    <tr><td>Dependency:</td><td>Required field</td></tr>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Minimum BIN</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the minimum BIN range of each card type.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Numeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>9</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
 
-                    <tr><td>Field Name:</td><td><strong>Maximum BIN</strong></td></tr>
-                    <tr><td>Definition:</td><td>Refers to the maximum BIN range of each card type.</td></tr>
-                    <tr><td>Type:</td><td>Numeric</td></tr>
-                    <tr><td>Maximum Length:</td><td>9</td></tr>
-                    <tr><td>Dependency:</td><td>Required field</td></tr>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Maximum BIN</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the maximum BIN range of each card type.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Numeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>9</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -167,18 +235,18 @@ const CardTypeManagement = () => {
             <i><b>Note</b>: In minimum and maximum <u>BINs</u>, number of leading zeroes indicates the card number length. See examples below:</i>
           </p>
           <p style={{ marginLeft: '20px', fontStyle: 'italic' }}>
-            000003 – 14 digits<br/>
-            00003 – 15 digits<br/>
-            0003 – 16 digits<br/>
-            003 – 17 digits<br/>
-            03 – 18 digits<br/>
-            3 – 19 digits
+            000003 - 14 digits<br/>
+            00003 - 15 digits<br/>
+            0003 - 16 digits<br/>
+            003 - 17 digits<br/>
+            03 - 18 digits<br/>
+            3 - 19 digits
           </p>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.32: Edit Card Type Page</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={editCardTypePage} alt="Edit Card Type Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Edit Card Type Page</div>
           </div>
 
           <h3>How to Delete Card Type:</h3>
@@ -220,11 +288,10 @@ const CardTypeManagement = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.33: Multiple Card Type Delete</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={multipleCardTypeDelete} alt="Multiple Card Type Delete" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Multiple Card Type Delete</div>
           </div>
-
         </div>
       </div>
     </div>

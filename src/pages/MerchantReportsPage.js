@@ -35,35 +35,33 @@ const MerchantReportsPage = () => {
 
   return (
     <section className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4.10.2 Merchant Reports</div>
+      <div className="subsection-title">Merchant Reports</div>
 
-      <p className="content-text" style={{ marginTop: '16px' }}>
+      <p className="content-text" style={{ marginTop: '5px' }}>
         <em>Merchant Reports</em> handles the downloading of the merchant billing zipped reports. All role types can
         have the privilege in accessing this module.
       </p>
-      <p className="content-text" style={{ marginTop: '16px' }}>
+      <p className="content-text" style={{ marginTop: '5px' }}>
         Merchant Report is the return file of the processed billing file. This report consists of details of the
         completed billing file, the approved and rejected transaction summary, the proof list, and the detailed proof
         list.
       </p>
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4.67: Reports Page as System Administrator
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={reportsPageImage} alt="Reports Page as System Administrator" className="merchant-reports-image" />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Report Page as System Administrator</div>
       </div>
       
       <br/>
       <p>
         For more information, click on{' '}
-        <a
-          href="#"
-          onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-          style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-        >
+        <button
+          type="button"
+          onClick={() => setIsManagePopupVisible(true)}
+          style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0 }}>
           Field Details
-        </a>.
+        </button>.
       </p>
 
       {isManagePopupVisible && (
@@ -103,11 +101,10 @@ const MerchantReportsPage = () => {
         </>
       )}
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4.68: Reports Page as User/User Administrator
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <br/>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={reportsPageAsUserImage} alt="Reports Page as User/User Administrator" className="merchant-reports-image" />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Reports Page as User/User Administrator</div>
       </div>
 
       <div style={{ marginTop: '24px' }}>
@@ -154,21 +151,19 @@ const MerchantReportsPage = () => {
           </li>
         </ol>
 
-        <p className="content-text" style={{ marginTop: '20px' }}>
+        <p className="content-text" style={{ marginTop: '10px' }}>
           <em><strong>Note:</strong> All reports and other files will be shown within the retention period of 6 months. Download dialog box may differ from different browsers.</em>
         </p>
 
-        <p className="content-text" style={{ marginTop: '12px' }}>
+        <p className="content-text" style={{ marginTop: '5px' }}>
           <em>Merchant Password convention: MID-username</em><br />
           <em>for BDOUser: User account password</em>
         </p>
       </div>
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4.69: Download Dialog Box
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={downloadDialogImage} alt="Download Dialog Box" className="merchant-reports-image" style={{ width: '50%' }} />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Download Dialog Box</div>
       </div>
 
     </section>

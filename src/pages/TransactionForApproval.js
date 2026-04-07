@@ -20,9 +20,9 @@ const TransactionForApproval = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
+     
       <div className="subsection">
-        <div className="subsection-title">4.4.2 MY TRANSACTION FOR MY APPROVAL</div>
+        <div className="subsection-title">My Transactions for Approval</div>
         <div className="content-text">
           <p>This list contains transactions that need verifier's approval. A transaction is automatically removed from the list once the transaction is already approved.</p>
 
@@ -35,12 +35,21 @@ const TransactionForApproval = () => {
             <li>Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Close</button> or <span style={{ fontWeight: 'bold', color: '#FF0000' }}>X</span> button to close the window.</li>
           </ol>
 
-          <br />
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px' }}>Figure 4.8: Transaction for My Approval Table</div>
+          <br/>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={transactionForApproval} alt="Transaction for Approval" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Transaction for My Approval Table</div>
+          </div>
 
           <p>
-            For more information, click on <a href="#" onClick={togglePopupVisibility1} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Field Details</a>.
+            For more information, click on 
+            <button
+              type="button"
+              onClick={togglePopupVisibility1}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 2, font: 'inherit' }}>
+              Field Details
+            </button>.
+
           </p>
           {isPopupVisible1 && (
             <div style={{ 
@@ -55,6 +64,7 @@ const TransactionForApproval = () => {
               zIndex: 1000,
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
             }}>
+
               <table className="command-syntax-table" style={{ marginTop: '10px' }}>
                 <thead>
                   <tr>
@@ -98,9 +108,9 @@ const TransactionForApproval = () => {
           )}
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', marginTop: '5px' }}>Figure 4.9: Pending Approval Details</div>
-          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={pendingApprovalDetails} alt="Pending Approval Details" style={{ maxWidth: '60%', height: 'auto' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Pending Approval Details</div>
           </div>
 
           <h3>How to Approve the transaction in Transactions for My Approval:</h3>
@@ -110,6 +120,7 @@ const TransactionForApproval = () => {
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Approve</button>{' '}
               button and wait for the confirmation box (see <i>Figure 4.9</i>).
             </li>
+
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
@@ -117,6 +128,7 @@ const TransactionForApproval = () => {
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               button if you want to approve the transaction (see <i>Figure 4.10</i>).
             </li>
+
             <li>
               A transaction receipt is displayed signifying that the transaction is already posted in BRPS (see <i>Figure 4.11</i>). Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Close</button>{' '}
@@ -125,15 +137,15 @@ const TransactionForApproval = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px' }}>Figure 4.10: Approval Confirmation Dialog Box</div>
-          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '5px' }}>
             <img src={approvalProcess} alt="Approval Process" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '50%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Approval Confirmation Dialog Box</div>
           </div>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px' }}>Figure 4.11: Approval Confirmation Receipt</div>
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={approvalConfirmationReceipt} alt="Approval Confirmation" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '70%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Approval Confirmation Receipt</div>
           </div>
 
           <h3>How to Decline transaction in Transactions for My Approval:</h3>
@@ -156,13 +168,20 @@ const TransactionForApproval = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '5px' }}>Figure 4.12: Decline Confirmation Dialog Box</div>
-          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={declineProcess} alt="Decline Process" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '50%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Decline Confirmation Dialog Box</div>
           </div>
 
           <p>
-            For more information, click on <a href="#" onClick={togglePopupVisibility2} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Reason</a>.
+            For more information, click on  
+            <button
+              type="button"
+              onClick={togglePopupVisibility2}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 2, font: 'inherit' }}
+            >
+              Reason
+            </button>.
           </p>
           {isPopupVisible2 && (
             <div style={{ 
@@ -221,9 +240,9 @@ const TransactionForApproval = () => {
           )}
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '1px' }}>Figure 4.13: Reject Confirmation Receipt</div>
-          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={rejectConfirmationReceipt} alt="Reject Confirmation Receipt" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '60%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Reject Confirmation Receipt</div>
           </div>
 
         </div>

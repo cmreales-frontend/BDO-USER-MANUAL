@@ -7,12 +7,6 @@ import revokeConfirmationDialogBox from '../assets/revoke_confirmation_dialog_bo
 import certificateDownloadDialogBox from '../assets/certificate_download_dialog_box.png';
 
 
-const imgWrapper = {
-  position: 'relative',
-  display: 'inline-block',
-  width: '100%',
-};
-
 const popupOverlayStyle = {
   position: 'fixed',
   top: 0,
@@ -46,18 +40,17 @@ const CertificateManagement = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
       <div className="subsection">
-        <div className="subsection-title">4.8 CERTIFICATE MANAGEMENT</div>
+        <div className="subsection-title">Certificate Management</div>
         <div className="content-text">
           <p>
             <i>Certificate Management</i> handles the creation of certificates for merchant workstations. It also handles the revoking and listing of all merchant certificates. Only users with the System Administrator role type can have the privilege to access this module.
           </p>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.53: Certificate Management Page</div>
-          <div style={imgWrapper}>
+            <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={certificateManagementPage} alt="Certificate Management Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Certificate Management Page</div>
           </div>
 
           <h3>How to View Client Certificate:</h3>
@@ -68,9 +61,9 @@ const CertificateManagement = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.54: View Certificate Management Page</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={viewCertificatePage} alt="View Certificate Management Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+              <div style={{ fontSize: '14px', fontWeight: 'bold' }}>View Certificate Management Page</div>
           </div>
 
           <h3>How to Create New Certificate:</h3>
@@ -93,21 +86,20 @@ const CertificateManagement = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.55: Certificate Page</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={newCertificatePage} alt="Certificate Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>View Certificate Management Page</div>
           </div>
 
 
           <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
+            <button
+              type="button"
+              onClick={() => setIsManagePopupVisible(true)}
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'blue', textDecoration: 'underline', font: 'inherit' }}>
               Field Details
-            </a>.
+            </button>.
           </p>
 
        {isManagePopupVisible && (
@@ -335,10 +327,10 @@ const CertificateManagement = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.56: Revoke Confirmation Dialog Box</div>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
-            <img src={revokeConfirmationDialogBox} alt="Revoke Confirmation Dialog Box" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '50%' }} />
-            
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+             <img src={revokeConfirmationDialogBox} alt="Revoke Confirmation Dialog Box" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '50%' }} />
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Revoke Confirmation Dialog Box</div>
+
           </div>
 
           <h3>How to Download .cert.pem and .p12 Certificate:</h3>
@@ -356,10 +348,10 @@ const CertificateManagement = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.57: Certificate Download Dialog Box</div>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={certificateDownloadDialogBox} alt="Certificate Download Dialog Box" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '50%' }} />
-          </div>
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Certificate Download Dialog Box</div>
+        </div>
 
         </div>
       </div>

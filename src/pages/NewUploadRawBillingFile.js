@@ -4,25 +4,19 @@ import newUploadRawBillingFilePage1 from "../assets/new_upload_raw_billing_file_
 import newUploadRawBillingFilePage2 from "../assets/new_upload_raw_billing_file_summary_pop_up1.png";
 
 const NewUploadRawBillingFile = () => {
-const imgWrapper = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "20px 0",
-};
+
   return (
     <section className="content-section">
-      <div className="section-title" style={{ fontSize: "22px" }}>
-        4.12.1 NEW UPLOAD – RAW BILLING FILE
-      </div>
-      <p className="content-text" style={{ marginTop: "10px" }}>
-        <i>New Upload – Raw Billing File</i> handles the uploading of raw billing files whether it is for immediate or scheduled posting. Only users with User role type can have the privilege in accessing this module.
+      <div className="subsection-title">New Upload - Raw Billing File</div>
+
+      <p className="content-text" style={{ marginTop: "5px" }}>
+        <i>New Upload - Raw Billing File</i> handles the uploading of raw billing files whether it is for immediate or scheduled posting. Only users with User role type can have the privilege in accessing this module.
       </p>
 
        
-       <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4: New Upload – Raw Billing File</div>
-          <div style={imgWrapper}>
+        <div style={{ textAlign: 'center', marginBottom: '10px' }}>  
             <img src={newUploadRawBillingFilePage} alt="User Profile Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+        <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Profile Page</div>
       </div>
 
       <h3>How to Upload Raw Billing File:</h3>
@@ -37,19 +31,17 @@ const imgWrapper = {
               A transaction receipt is displayed signifying that the transaction is available for uploading (see <i>Figure 4.81</i>).
             </li>
           </ol>
+          <br/>
 
-        <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4: New Upload – Raw Billing File Summary Pop-up
-        </div>
-        <div style={imgWrapper}>
-        <img src={newUploadRawBillingFilePage1} alt="New Upload – Raw Billing File Summary Pop-up" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '50%' }} />
+        <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+        <img src={newUploadRawBillingFilePage1} alt="New Upload - Raw Billing File Summary Pop-up" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '50%' }} />
+        <div style={{ fontSize: '14px', fontWeight: 'bold' }}>New Upload - Raw Billing File Summary Pop-up</div>
         </div>
 
-        <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '5px', textAlign: 'center' }}>
-        Figure 4: New Upload – Raw Billing File Summary Pop-up
-        </div>
-        <div style={imgWrapper}>
-        <img src={newUploadRawBillingFilePage2} alt="New Upload – Raw Billing File Summary Pop-up" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '70%' }} />
+        <br/>
+        <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+        <img src={newUploadRawBillingFilePage2} alt="New Upload - Raw Billing File Summary Pop-up" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '70%' }} />
+        <div style={{ fontSize: '14px', fontWeight: 'bold' }}>New Upload - Raw Billing File Summary Pop-up</div>
         </div>
 
         <h3>How to Upload Billing File Partially:</h3>

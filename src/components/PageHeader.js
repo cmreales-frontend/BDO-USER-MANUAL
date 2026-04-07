@@ -58,23 +58,18 @@ const PageHeader = () => {
       <div className="page-header-inner">
         <h1 className="page-title">User Manual</h1>
         <div className="search-box" ref={wrapperRef}>
-          <i className="fas fa-search search-icon"></i>
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Search manual..."
-            value={searchTerm}
-            onChange={handleChange}
-            onKeyDown={handleKeyDown}
-          />
+          <i className="fas fa-search search-icon">
+          </i>
+          
+          <input type="text" className="search-input" placeholder="Search manual..." value={searchTerm} onChange={handleChange} onKeyDown={handleKeyDown}/>
+
           {showDropdown && results.length > 0 && (
             <ul className="search-dropdown">
               {results.map(doc => (
                 <li
                   key={doc.path}
                   className="search-dropdown-item"
-                  onClick={() => handleSelect(doc.path)}
-                >
+                  onClick={() => handleSelect(doc.path)}>
                   {doc.title}
                 </li>
               ))}

@@ -11,10 +11,8 @@ const SystemScreen = () => {
   return (
     <div className="content-section">
 
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
-
       <div className="subsection">
-        <div className="subsection-title">4.1 SYSTEM SCREEN</div>
+        <div className="subsection-title">System Screen</div>
         <div className="content-text">
           <p>The BRPS <strong>System Screen</strong> consists of the following items <i>(see Figure 4.1)</i>:</p>
     
@@ -34,10 +32,13 @@ const SystemScreen = () => {
           <p><strong>7. Transaction for my Approval Table</strong> - this table contains the user's lists of transactions for his review and approval.</p>
           <p><strong>8. Approved Transactions</strong> - this table contains the list of approved transactions.</p>
           <p><strong>9. Rejected Transactions</strong> - this table contains the list of rejected transactions.</p>
-          <br />
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px' }}>Figure 4.1: System Screen</div>
+          <br/>
+          
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={systemScreen} alt="System Screen" style={imageStyle} width="100%" height="100%" />
+        <div style={{ fontSize: '14px', fontWeight: 'bold' }}>System Screen</div>
         </div>
+      </div>
       </div>
 
     </div>

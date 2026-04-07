@@ -36,9 +36,8 @@ const UserTransactionHistory = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
       <div className="subsection">
-        <div className="subsection-title">4.9.3 USER TRANSACTION</div>
+        <div className="subsection-title">User Transaction History</div>
         <div className="content-text">
           <p>
             <i>User Transaction History</i> manages the history of transactions of specific user.
@@ -57,11 +56,14 @@ const UserTransactionHistory = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', marginTop: '20px', textAlign: 'center' }}>Figure 4.62: User Transaction History Page View as System Administrator</div>
-          <img src={userTransactionHistoryPageView} alt="Figure 4.62: User Transaction History Page View as System Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '20px' }}/>
+        <div style={{ textAlign: 'center', marginBottom: '5px' }}>
+          <img src={userTransactionHistoryPageView} alt="Figure 4.62: User Transaction History Page View as System Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
+        <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Transaction History Page View as System Administrator</div>
+        </div>  
 
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', marginTop: '20px', textAlign: 'center' }}>Figure 4.63: User Transaction History Page View as User/User Administrator</div>
+        <div style={{ textAlign: 'center', marginBottom: '5px' }}>
           <img src={userTransactionHistoryPageViewAsUser} alt="Figure 4.63: User Transaction History Page View as User/User Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
+        <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Transaction History Page View as User/User Administrator</div>
         </div>
   
       <p>
@@ -172,6 +174,7 @@ const UserTransactionHistory = () => {
        </>
     )}
       </div>
+    </div>
     </div>
   );
 };

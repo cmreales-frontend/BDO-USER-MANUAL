@@ -5,22 +5,19 @@ import futureDatedPostTransactionsMultipleDeleteImage from "../assets/future_dat
 const ScheduledTransaction = () => {
   return (
     <section className="content-section">
-      <div className="section-title" style={{ fontSize: "22px" }}>
-        4.13.2 SCHEDULED TRANSACTION (POST SINGLE)
-      </div>
+       <div className="subsection">
+        <div className="subsection-title">Scheduled Transactions</div>
       <p>
         This page contains the list of scheduled single transactions. This page allows the user to cancel scheduled transactions before the start date of processing.
       </p>
+      <br/>
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4: Future Dated Post Transactions
-      </div>
-
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={futureDatedPostTransactionsImage} alt="Future Dated Post Transactions Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+       <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Future Dated Post Transactions</div>
       </div>
 
-      <h3>How to View the list of scheduled transactions:</h3>
+      <h4>How to View the list of scheduled transactions:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
           Go to <u><b>Post Single Transaction &gt;&gt; Scheduled Transaction</b></u> page. This redirects you to Post Single Scheduled Transactions page (see <i>Figure 4.93</i>).
@@ -33,15 +30,13 @@ const ScheduledTransaction = () => {
         </li>
       </ol>
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4: Future Dated Post Transactions
-      </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={futureDatedPostTransactionsImage} alt="Future Dated Post Transactions Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Future Dated Post Transactions</div>
       </div>
 
-      <h3>How to Update the Scheduled Post Single Transaction:</h3>
+      <h4>How to Update the Scheduled Post Single Transaction:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
           Go to <u><b>Post Transaction &gt;&gt; Post Single Scheduled Transaction</b></u>. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button of the selected transaction. This will show the details of the selected transaction (see <i>Figure 4.95</i>).
@@ -52,14 +47,12 @@ const ScheduledTransaction = () => {
       </ol>
 
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4: Future Dated Post Transactions
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={futureDatedPostTransactionsImage} alt="Future Dated Post Transactions Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Future Dated Post Transactions</div>
       </div>
 
-      <h3>How to Delete Future Dated Single Transaction Individually:</h3>
+      <h4>How to Delete Future Dated Single Transaction Individually:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
           In <u><b>Post Single Scheduled Transactions</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button (see <i>Figure 4.95</i>). This redirects to Transaction Details Form with the details of the selected transaction.
@@ -72,7 +65,7 @@ const ScheduledTransaction = () => {
         </li>
       </ol>
 
-      <h3>How to Delete Multiple Future Dated Transactions:</h3>
+      <h4>How to Delete Multiple Future Dated Transactions:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
           In <u><b>Post Single Scheduled Transactions</b></u> page, select transaction on the list by clicking rows (see <i>Figure 4.95</i>).
@@ -85,14 +78,11 @@ const ScheduledTransaction = () => {
         </li>
       </ol>
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4: Future Dated Transactions Multiple Delete
-      </div>
-
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={futureDatedPostTransactionsMultipleDeleteImage} alt="Future Dated Transactions Multiple Delete" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Future Dated Transactions Multiple Delete</div>
       </div>
-
+    </div>
     </section>
   );
 };

@@ -3,34 +3,22 @@ import sendSettlementPage from "../assets/send_settlement_page.png";
 import sendSettlementPage1 from "../assets/send_settlement_page1.png";
 
 const SendSettlementsPage = () => {
-  const imgWrapper = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "20px 0",
-  };
 
   return (
     <section className="content-section">
-      <div className="section-title" style={{ fontSize: "22px" }}>
-        4.10.4 SEND SETTLEMENTS
-      </div>
+      <div className="subsection-title">Send Settlements</div>
 
-      <p className="content-text" style={{ marginTop: "16px" }}>
+      <p className="content-text" style={{ marginTop: "10px" }}>
         This is where the Extracted Unsettled file is uploaded for manual settlement.
       </p>
-
-    
-      <div className="section-title" style={{ fontSize: "16px", marginTop: "10px", marginBottom: "5px", textAlign: "center" }}>
-        Figure 4.72: Send Settlement Page
-      </div>
-      <div style={imgWrapper}>
+     
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={sendSettlementPage} alt="Send Settlement Page" style={{ border: "1px solid #ccc", padding: "5px", borderRadius: "4px", width: "100%" }}/>
+
+       <img src={sendSettlementPage1} alt="Send Settlement Page" style={{ border: "1px solid #ccc", padding: "5px", borderRadius: "4px", width: "100%" }}/>
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Send Settlement Page</div>
       </div>
 
-       <img
-          src={sendSettlementPage1} alt="Send Settlement Page" style={{ border: "1px solid #ccc", padding: "5px", borderRadius: "4px", width: "100%" }}/>
-      
       <div style={{ marginTop: "20px" }}>
         <h4>How to Upload File for Manual Settlement:</h4>
         <ol style={{ paddingLeft: "40px" }}>

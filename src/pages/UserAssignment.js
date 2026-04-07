@@ -5,11 +5,6 @@ import assignUserToMerchantForm from '../assets/assign_user_to_merchant_form.png
 import userMerchantAssignmentDetails from '../assets/user_merchant_assignment_details_page.png';
 import userAssignmentPageMultiple from '../assets/user_assignment_page_1.png';
 
-const imgWrapper = {
-  position: 'relative',
-  display: 'inline-block',
-  width: '100%',
-};
 
 const popupOverlayStyle = {
   position: 'fixed',
@@ -44,16 +39,16 @@ const UserAssignment = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
+    
       <div className="subsection">
-        <div className="subsection-title">4.6.3 USER-MERCHANT ASSIGNMENT</div>
+        <div className="subsection-title">User-Merchant Assignment</div>
         <div className="content-text">
           <p>This is where the user can create, edit, update, and delete system users. To navigate this page, go to <b>User Management&gt;&gt;User Assignment.</b></p>
 
-       
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.45: User Assignment Page</div>
-          <div style={imgWrapper}>
+
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={userAssignmentPage} alt="User Assignment Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Assignment Page</div>
           </div>
 
           <h3>How to Assign User to Merchant:</h3>
@@ -76,20 +71,19 @@ const UserAssignment = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.46: Assign User to Merchant Form</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={assignUserToMerchantForm} alt="Assign User to Merchant Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Assign User to Merchant Form</div>
           </div>
 
            <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
+            <button
+              type="button"
+              onClick={() => setIsManagePopupVisible(true)}
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'blue', textDecoration: 'underline', font: 'inherit' }}>
               Field Details
-            </a>.
+            </button>.
           </p>
 
           {isManagePopupVisible && (
@@ -193,10 +187,9 @@ const UserAssignment = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.47: User-Merchant Assignment Details Page</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={userMerchantAssignmentDetails} alt="User-Merchant Assignment Details Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-            
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User-Merchant Assignment Details Page</div>  
           </div>
 
           <h3>How to Delete a User Assignment:</h3>
@@ -232,21 +225,22 @@ const UserAssignment = () => {
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
+            
             <li>
               A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
             </li>
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.48: User Assignment Page</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={userAssignmentPageMultiple} alt="User Assignment Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-           
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Assignment Page</div> 
           </div>
 
         </div>
       </div>
     </div>
+    
   );
 };
 

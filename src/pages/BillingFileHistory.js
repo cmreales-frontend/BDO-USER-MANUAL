@@ -3,12 +3,6 @@ import { useState } from 'react';
 import billingFileHistoryAdmin from '../assets/billing_file_history_page_view.png';
 import billingFileHistoryUser from '../assets/billing_file_history_page_view_as_user_administrator.png';
 
-const imgWrapper = {
-  position: 'relative',
-  display: 'inline-block',
-  width: '100%',
-};
-
 const popupOverlayStyle = {
   position: 'fixed',
   top: 0,
@@ -42,9 +36,8 @@ const BillingFileHistory = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
       <div className="subsection">
-        <div className="subsection-title">4.9.1 BILLING FILE</div>
+        <div className="subsection-title">Billing File History</div>
         <div className="content-text">
           <p>
             <i>Billing File History</i> manages the history of overview details of all billing files uploaded per merchant. To navigate to this page <b>History</b>&gt;&gt;<b>Billing File</b>.
@@ -63,26 +56,25 @@ const BillingFileHistory = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.58: Billing File History Page View as System Administrator</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={billingFileHistoryAdmin} alt="Billing File History Page View as System Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Billing File History Page View as System Administrator</div>
           </div>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.59: Billing File History Page View as User Administrator/User</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={billingFileHistoryUser} alt="Billing File History Page View as User Administrator/User" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Billing File History Page View as User Administrator/User</div>
           </div>
 
         <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
+            <button
+              type="button"
+              onClick={() => setIsManagePopupVisible(true)}
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>
               Field Details
-            </a>.
+            </button>.
           </p>
 
        {isManagePopupVisible && (

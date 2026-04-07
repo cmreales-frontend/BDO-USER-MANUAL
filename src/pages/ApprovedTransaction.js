@@ -10,16 +10,17 @@ const ApprovedTransaction = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
       <div className="subsection">
-        <div className="subsection-title">4.4.3 APPROVED TRANSACTIONS</div>
+        <div className="subsection-title">Approved Transactions</div>
         <div className="content-text">
           <p>
-            This list contains approved transactions. Only valid approved transactions are listed on this table. All role types can view this table. For more information, click on <a href="#" onClick={togglePopupVisibility} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Field Details</a>.
+            This list contains approved transactions. Only valid approved transactions are listed on this table. All role types can view this table. For more information, click on <button type="button" onClick={togglePopupVisibility} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>Field Details</button>.
           </p>
 
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '20px', textAlign: 'center' }}>Figure 4.14: Approved Transactions Table</div>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={approvedTransactionsTable} alt="Approved Transactions Table" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Approved Transactions Table</div>
+          </div>
 
           {isPopupVisible && (
             <div style={{ 

@@ -3,11 +3,6 @@ import { useState } from 'react';
 import transactionHistoryAdmin from '../assets/transaction_history_page_view_as_system_ad.png';
 import transactionHistoryUser from '../assets/transaction_history_page_view_as_user.png';
 
-const imgWrapper = {
-  position: 'relative',
-  display: 'inline-block',
-  width: '100%',
-};
 
 const popupOverlayStyle = {
   position: 'fixed',
@@ -42,9 +37,8 @@ const TransactionHistory = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
       <div className="subsection">
-        <div className="subsection-title">4.9.2 TRANSACTION</div>
+        <div className="subsection-title">Transaction History</div>
         <div className="content-text">
           <p>
             <i>Transaction History</i> manages the history of each transaction in a billing file and single transaction entries.
@@ -63,29 +57,26 @@ const TransactionHistory = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.60: Transaction History Page View as System Administrator</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={transactionHistoryAdmin} alt="Transaction History Page View as System Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-           
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Transaction History Page View as System Administrator</div> 
           </div>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.61: Transaction History Page View as User/User Administrator</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={transactionHistoryUser} alt="Transaction History Page View as User/User Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Transaction History Page View as User/User Administrator</div>
           </div>
 
         
         <p>
-            For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
-              Field Details
-            </a>.
-          </p>
+          For more information, click on{' '}
+          <button
+            onClick={() => setIsManagePopupVisible(true)}
+            style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 2, font: 'inherit' }}>
+            Field Details
+          </button>.
+        </p>
 
        {isManagePopupVisible && (
         <>

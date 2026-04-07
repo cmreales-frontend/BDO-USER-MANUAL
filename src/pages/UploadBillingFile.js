@@ -8,22 +8,19 @@ import receiptForDeleteBillingFile from "../assets/receipt_for_delete_billing_fi
 const UploadBillingFile = () => {
   return (
     <section className="content-section">
-      <div className="section-title" style={{ fontSize: "22px" }}>
-        4.12.2 UPLOAD BILLING FILE
-      </div>
-      <p className="content-text" style={{ marginTop: "10px" }}>
+      <div className="subsection-title">Upload Billing File</div>
+
+      <p className="content-text" style={{ marginTop: "5px" }}>
         <i>Upload Billing File</i> handles the uploading of billing files whether it is for immediate or scheduled posting. Only users with User role type can have the privilege in accessing this module.
       </p>
      
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '5px', textAlign: 'center' }}>
-        Figure 4: Manage Billing File Page
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={newUploadRawBillingFilePage} alt="Manage Billing File Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Manage Billing File Page</div>
       </div>
 
-      <h3>How to Submit Raw Billing File for Approval:</h3>
+      <h4>How to Submit Raw Billing File for Approval:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
           Go to <u><b>Upload Billing Files</b></u>. This redirects to Upload Billing Files page (see <i>Figure 4.82</i>).
@@ -46,33 +43,24 @@ const UploadBillingFile = () => {
       </p>
 
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4: Manage Upload Billing File
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={manageUploadBillingFile} alt="Manage Upload Billing File" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Manage Upload Billing File</div>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
-        <img src={manageUploadBillingFile} alt="Manage Upload Billing File" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-      </div>
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4: Manage Upload Billing File Summary and Confirmation Dialog Box
-      </div>
-       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={manageUploadBillingFileSummaryAndConfirmationDialogBox} alt="Manage Upload Billing File Summary and Confirmation Dialog Box" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '50%' }} />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Manage Upload Billing File Summary and Confirmation Dialog Box</div>
       </div>
+  
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4: Manage Upload Billing File Receipt
-      </div>
-
-       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={manageUploadBillingFileReceipt} alt="Manage Upload Billing File Receipt" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '70%' }} />
+       <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Manage Upload Billing File Receipt</div>
       </div>
 
-      <h3>How to Delete a Preprocessed File/s:</h3>
+      <h4>How to Delete a Preprocessed File/s:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
           Select one or more from the <b>Preprocessed</b> table in <u><b>Manage Billing File</b></u> page.
@@ -85,14 +73,13 @@ const UploadBillingFile = () => {
         </li>
       </ol>
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '5px', textAlign: 'center' }}>
-        Figure 4: Receipt for Delete Billing File
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+    
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={receiptForDeleteBillingFile} alt="Receipt for Delete Billing File" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '70%' }} />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Receipt for Delete Billing File</div>
       </div>
 
-      <h3>How to Download Rejected Files:</h3>
+      <h4>How to Download Rejected Files:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
           Select the Reject file from the <u><b>Error Files</b></u> table in <u><b>Manage Billing File</b></u> page (see <i>Figure 4.82</i>).
@@ -105,7 +92,7 @@ const UploadBillingFile = () => {
         </li>
       </ol>
 
-      <h3>How to Download Error Files:</h3>
+      <h4>How to Download Error Files:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
           Select the Error file from the <u><b>Error Files</b></u> table in <u><b>Manage Billing File</b></u> page (see <i>Figure 4.82</i>).

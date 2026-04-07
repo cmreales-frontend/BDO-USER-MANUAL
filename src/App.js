@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import PageHeader from './components/PageHeader';
-
-// NEW PAGE
 import AuditTrailPage from './pages/AuditTrailPage';
 import MerchantReportsPage from './pages/MerchantReportsPage';
 import SettlementsPage from './pages/SettlementsPage';
@@ -20,19 +18,9 @@ import ScheduledBillingFiles from './pages/ScheduledBillingFiles';
 import PostTransaction from './pages/PostTransaction';
 import PostSingleTransaction from './pages/PostSingleTransaction';
 import ScheduledTransaction from './pages/ScheduledTransaction';
-import Report from './pages/Report';
-
-// EXISTING PAGES
 import Introduction from './pages/Introduction';
-import UserRoleTypes from './pages/UserRoleTypes';
-import SystemAdministrator from './pages/SystemAdministrator';
-import UserAdministrator from './pages/UserAdministrator';
-import User from './pages/User';
-import UserFunctionTypes from './pages/UserFunctionTypes';
-import Maker from './pages/Maker';
-import Verifier from './pages/Verifier';
-import MakerVerifier from './pages/MakerVerifier';
-import Functionalities from './pages/Functionalities';
+import UserManagementFunc from './pages/UserManagementFunc';
+import UserManagementSub from './pages/UserManagementSub';
 import SystemScreen from './pages/SystemScreen';
 import Login from './pages/Login';
 import LoadEnvironment from './pages/LoadEnvironment';
@@ -46,8 +34,6 @@ import MerchantManagementSub from './pages/MerchantManagementSub';
 import InstitutionManagement from './pages/InstitutionManagement';
 import MerchantSupportedCard from './pages/MerchantSupportedCard';
 import CardTypeManagement from './pages/CardTypeManagement';
-import UserManagementFunc from './pages/UserManagementFunc';
-import UserManagementSub from './pages/UserManagementSub';
 import RolesManagement from './pages/RolesManagement';
 import UserAssignment from './pages/UserAssignment';
 import FieldMap from './pages/FieldMap';
@@ -57,10 +43,7 @@ import BillingFileHistory from './pages/BillingFileHistory';
 import TransactionHistory from './pages/TransactionHistory';
 import UserTransactionHistory from './pages/UserTransactionHistory';
 import ErrorMessages from './pages/ErrorMessages';
-import GeneralInformation from './pages/GeneralInformation';
-import AudienceDescription from './pages/AudienceDescription';
-import StylisticConvention from './pages/StylisticConvention';
-import CommandSyntaxConvention from './pages/CommandSyntaxConvention';
+import UserTypes from './pages/UserTypes';
 
 import './styles/App.css';
 import logo from './assets/bdo-logo-removebg-preview.png';
@@ -107,28 +90,13 @@ function App() {
             {/* Introduction Navigation and the submenus */}
             <Routes>
               <Route path="/" element={<Introduction />} />
-              <Route path="/general-information" element={<GeneralInformation />} />
-              <Route path="/audience-description" element={<AudienceDescription />} />
-              <Route path="/stylistic-convention" element={<StylisticConvention />} />
-              <Route path="/command-syntax-convention" element={<CommandSyntaxConvention />} />
 
 
             {/* User Role Types Navigation and the submenus */}
-              <Route path="/user-role-types" element={<UserRoleTypes />} />
-              <Route path="/system-administrator" element={<SystemAdministrator />} />
-              <Route path="/user-administrator" element={<UserAdministrator />} />
-              <Route path="/user" element={<User />} />
-
-
-            {/* User Function Types Navigation and the submenus */}
-              <Route path="/user-function-types" element={<UserFunctionTypes />} />
-              <Route path="/maker" element={<Maker />} />
-              <Route path="/verifier" element={<Verifier />} />
-              <Route path="/maker-verifier" element={<MakerVerifier />} />
+              <Route path="/user-role-types" element={<UserTypes />} />
 
 
             {/* Functionalities Navigation and the submenus */}
-              <Route path="/functionalities" element={<Functionalities />} />
               <Route path="/system-screen" element={<SystemScreen />} />
               <Route path="/login" element={<Login />} />
               <Route path="/load-environment" element={<LoadEnvironment />} />
@@ -168,7 +136,6 @@ function App() {
               <Route path="/user-transaction-history" element={<UserTransactionHistory />} />
 
             {/* Reports Navigation and the submenus */}
-              <Route path="/report" element={<Report />} />
               <Route path="/merchant-reports" element={<MerchantReportsPage />} />
               <Route path="/audit-trail" element={<AuditTrailPage />} />
               <Route path="/settlements" element={<SettlementsPage />} />

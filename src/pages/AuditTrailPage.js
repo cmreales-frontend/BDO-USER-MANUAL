@@ -38,7 +38,7 @@ const AuditTrailPage = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: "22px" }}>4.10.1 AUDIT TRAIL</div>
+      <div className="subsection-title">Audit Trail</div>
 
       <p className="content-text">
         Audit Trail Report is timestamps of records of user's activities. The audit trail report shows the module accessed by the user, the description, old value, new value for updated records, and remarks of each of the activities.
@@ -47,10 +47,12 @@ const AuditTrailPage = () => {
         This is where the systems administrator user can download the audit trail report. To navigate this page, go to <strong>Reports &gt;&gt; Audit Trails</strong>.
       </p>
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.64: Audit Trail Form</div>
-      <img src={auditTrailFormImage} alt="Audit Trail Form" style={{ width: "100%", marginBottom: "20px" }} />
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+        <img src={auditTrailFormImage} alt="Audit Trail Form" style={{ width: "100%", border: '1px solid #000', padding: '10px', borderRadius: '4px' }} />
+        <div style={{ fontSize: '14px', fontWeight: 'bold', marginTop: '5px' }}>Audit Trail Form</div>
+      </div>
 
-       <div className="content-text" style={{ marginLeft: '20px' }}>
+      <div className="content-text" style={{ marginLeft: '20px' }}>
         <h4>How to download Audit Trail Report:</h4>
         <ol style={{ marginLeft: '20px' }}>
           <li>
@@ -77,18 +79,19 @@ const AuditTrailPage = () => {
         <p><strong>Note:</strong> Only users with System Administrator privileges can access the audit trail.</p>
       </div>
 
-       <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.66: Audit Trail Form</div>
-      <img src={auditTrailFormImage1} alt="Audit Trail Form 1" style={{ width: "100%", marginBottom: "5px", border: '1px solid #ccc', padding: '5px', borderRadius: '4px' }} />
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+        <img src={auditTrailFormImage1} alt="Audit Trail Form 1" style={{ width: "100%", border: '1px solid #000', padding: '10px', borderRadius: '4px' }} />
+        <div style={{ fontSize: '14px', fontWeight: 'bold', marginTop: '5px' }}>Audit Trail Form</div>
+      </div>
 
        <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
+            <button
+              type="button"
+              onClick={() => setIsManagePopupVisible(true)}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0 }}>
               Field Details
-            </a>.
+            </button>.
           </p>
 
     {isManagePopupVisible && (
@@ -195,14 +198,12 @@ const AuditTrailPage = () => {
        </div>
        </>
     )}
+    <br/>
 
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.66: Download Dialog Box</div>
-      <img 
-        src={downloadDialogBoxImage} 
-        alt="Download Dialog Box" 
-        style={{ width: "50%", marginBottom: "20px", border: '1px solid #ccc', padding: '5px', borderRadius: '4px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} 
-      />    
-
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+      <img src={downloadDialogBoxImage} alt="Download Dialog Box" style={{ width: "50%", marginBottom: "5px", border: '1px solid #ccc', padding: '5px', borderRadius: '4px', display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />    
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Download Dialog Box</div>
+    </div>
     </div>
   );
 };

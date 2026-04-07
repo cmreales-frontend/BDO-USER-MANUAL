@@ -5,8 +5,8 @@
 }
 
 :root {
-  --bdo-blue: #003d7a;
-  --bdo-dark-blue: #002952;
+  --bdo-blue: #0d6efd;
+  --bdo-dark-blue: #01419e;
   --bdo-orange: #f39c12;
   --gutter-width: 260px;
   --white: #ffffff;
@@ -59,81 +59,79 @@ body {
   width: calc(var(--gutter-width) - 30px);
   background-color: var(--bdo-dark-blue);
   margin-top: 6px;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  
   overflow: visible;
   padding: 0;
   transition: transform 0.3s ease;
-
   position: relative;
   z-index: 200;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .nav-header {
-  background-color: transparent;
+  background-color: var(--bdo-dark-blue);
   color: var(--white);
-  padding: 12px 20px;
+  padding: 8px 20px;
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  border-bottom: 2px solid rgba(255,255,255,0.15);
+  display: inline-block;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+  box-sizing: border-box;
+  clip-path: polygon(0% 0%, calc(100% - 16px) 0%, 100% 16px, 100% 100%, 0% 100%);
 }
 
 .nav-menu {
   list-style: none;
   padding: 0;
   margin: 0;
-  /* overflow must also be visible here so flyouts escape */
   overflow: visible;
 }
 
 .nav-item {
   position: relative;          
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
-  padding: 15px 20px;
+  padding: 8px 16px;
   color: var(--white);
   text-decoration: none;
-  gap: 12px;
-  font-size: 14px;
+  gap: 8px;
+  font-size: 13.5px;
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
   border-left: 3px solid transparent;
+  background-color: transparent;
   transition: background 0.2s ease, padding-left 0.2s ease, border-color 0.2s ease;
 }
 
 /* hover state */
 .nav-link:hover,
 .nav-link.active-parent {
-  background-color: var(--bdo-blue);
-  padding-left: 25px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 16px;
 }
 
 .nav-item.hovered > .nav-link.top-level {
-  background-color: var(--bdo-blue);
-  padding-left: 25px;
-  border-left-color: var(--bdo-orange);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left-color: transparent;
 }
 
 .nav-link.active {
-  background-color: var(--bdo-blue);
-  padding-left: 25px;
+  background-color: rgba(255, 255, 255, 0.15);
   border-left-color: var(--bdo-orange);
-}
-
-.nav-icon {
-  font-size: 18px;
-  width: 20px;
-  text-align: center;
-  flex-shrink: 0;
-  opacity: 0.85;
 }
 
 .nav-label-text {
@@ -141,7 +139,6 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 
 .nav-arrow {
   margin-left: auto;
@@ -207,7 +204,7 @@ body {
 
 /* Links inside flyout */
 .submenu.flyout .nav-link {
-  padding: 11px 18px;
+  padding: 7px 18px;
   font-size: 13.5px;
   font-weight: 400;
   color: #d0e4f7;
@@ -249,11 +246,11 @@ body {
 
 .page-header {
   position: relative;
-  background-color: var(--bdo-blue);
+  background-color: var(--bdo-dark-blue);
   color: var(--white);
   padding: 18px 28px;
   margin-bottom: 24px;
-  border-radius: 4px;
+  border-radius: 4px 4px 0 0;
   overflow:visible
 }
 
@@ -345,14 +342,14 @@ body {
 }
 
 .subsection {
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 }
 
 .subsection-title {
   font-size: 16px;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -425,7 +422,7 @@ mark {
 
   .navigation {
     transform: translateX(-100%);
-    overflow: hidden; /* re-clip on mobile — flyouts stack vertically */
+    overflow: hidden; 
   }
 
   .navigation.mobile-active {

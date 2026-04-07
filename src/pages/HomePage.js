@@ -5,10 +5,8 @@ const HomePage = () => {
   return (
     <div className="content-section">
 
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
-
       <div className="subsection">
-        <div className="subsection-title">4.4 HOME PAGE</div>
+        <div className="subsection-title">Home Page</div>
         <div className="content-text">
           <p>
             The <strong>Home Page</strong> is the main page loaded by the system upon successful login and
@@ -16,11 +14,12 @@ const HomePage = () => {
             Rejected Transactions<i> (see Figure 4.5).</i>
           </p>
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.5: Home Page (System Admin User Homepage)</div>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={homePage} alt="Figure 4.5: Home Page (System Admin User Homepage)" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }}/>
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Home Page (System Admin User Homepage)</div>
         </div>
       </div>
-
+      </div>
     </div>
   );
 };

@@ -33,11 +33,9 @@ const PostSingleTransaction = () => {
 
   return (
     <section className="content-section">
-      <div className="section-title" style={{ fontSize: "22px" }}>
-        4.13.1 POST SINGLE TRANSACTION
-      </div>
+      <div className="subsection-title">Post Single Transaction</div>
 
-      <h3>How to Post a Single Transaction:</h3>
+      <h4>How to Post a Single Transaction:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
           Go to <u><b>Post Transaction &gt;&gt; Post Single Transaction</b></u>. This redirects to Post Transaction Details page (see <i>Figure 4.93</i>).
@@ -52,22 +50,17 @@ const PostSingleTransaction = () => {
       <p style={{ fontStyle: 'italic', marginTop: '10px' }}>
         <b>Note:</b> When uploading single transaction for immediate posting, start date should be the current date and frequency count is 0. However, when uploading single transaction for scheduled/recurring posting, start date should be greater than the current date and frequency count should be greater than 0.
       </p>
-      <div className="section-title" style={{ fontSize: '16px', marginTop: '20px', marginBottom: '10px', textAlign: 'center' }}>
-        Figure 4: Transaction Details Form
-      </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px 0' }}>
+     
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={transactionDetailsFormImage} alt="Transaction Details Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Transaction Details Form</div>
       </div>
 
       <p>
         For more information, click on{' '}
-        <a
-          href="#"
-          onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-          style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-        >
+        <button type="button"onClick={() => setIsManagePopupVisible(true)} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>
           Field Details
-        </a>.
+        </button>.
       </p>
 
       {isManagePopupVisible && (

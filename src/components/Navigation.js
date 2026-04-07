@@ -2,135 +2,103 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
-
 const Navigation = ({ mobileOpen, onMobileClose }) => {
 
   const navItems = [
     {
       path: "/",
-      label: "INTRODUCTION",
-      icon: "fas fa-book-open",
-      submenu: [
-        { path: "/general-information",       label: "1.1 General Information" },
-        { path: "/audience-description",      label: "1.2 Audience Description" },
-        {
-          label: "1.3 Convention",
-          submenu: [
-            { path: "/stylistic-convention",       label: "1.3.1 Stylistic Convention" },
-            { path: "/command-syntax-convention",  label: "1.3.2 Command Syntax Convention" }
-          ]
-        }
-      ]
+      label: "Introduction",
     },
     {
       path: "/user-role-types",
-      icon: "fas fa-users",
-      label: "USER ROLE TYPES",
-      submenu: [
-        { path: "/system-administrator", label: "2.1 System Administrator" },
-        { path: "/user-administrator",   label: "2.2 User Administrator" },
-        { path: "/user",                 label: "2.3 User" }
-      ]
-    },
-    {
-      path: "/user-function-types",
-      icon: "fas fa-cogs",
-      label: "USER FUNCTION TYPES",
-      submenu: [
-        { path: "/maker",          label: "3.1 Maker" },
-        { path: "/verifier",       label: "3.2 Verifier" },
-        { path: "/maker-verifier", label: "3.3 Maker/Verifier" }
-      ]
+      label: "User Types",
     },
     {
       path: "/functionalities",
-      icon: "fas fa-wrench",
-      label: "FUNCTIONALITIES",
+      label: "Functionalities",
       submenu: [
-        { path: "/system-screen",           label: "4.1 System Screen" },
-        { path: "/login",                   label: "4.2 Login" },
-        { path: "/load-environment",        label: "4.3 Load Environment" },
+        { path: "/system-screen",           label: "System Screen" },
+        { path: "/login",                   label: "Login" },
+        { path: "/load-environment",        label: "Load Environment" },
         {
           path: "/home-page",
-          label: "4.4 Home Page",
+          label: "Home Page",
           submenu: [
-            { path: "/my-transaction-submitted",  label: "4.4.1 My Transaction Submitted for Approval" },
-            { path: "/transaction-for-approval",  label: "4.4.2 My Transaction for my Approval" },
-            { path: "/approved-transaction",      label: "4.4.3 Approved Transaction" },
-            { path: "/rejected-transaction",      label: "4.4.4 Rejected Transaction" }
+            { path: "/my-transaction-submitted",  label: "My Transaction Submitted for Approval" },
+            { path: "/transaction-for-approval",  label: "My Transaction for my Approval" },
+            { path: "/approved-transaction",      label: "Approved Transaction" },
+            { path: "/rejected-transaction",      label: "Rejected Transaction" }
           ]
         },
         {
           path: "/merchant-management",
-          label: "4.5 Merchant Management",
+          label: "Merchant Management",
           submenu: [
-            { path: "/merchant-management-sub",   label: "4.5.1 Merchant Management" },
-            { path: "/institution-management",    label: "4.5.2 Institution Management" },
-            { path: "/merchant-supported-card",   label: "4.5.3 Merchant Supported Card Management" },
-            { path: "/card-type-management",      label: "4.5.4 Card Type Management" }
+            { path: "/merchant-management-sub",   label: "Merchant Management" },
+            { path: "/institution-management",    label: "Institution Management" },
+            { path: "/merchant-supported-card",   label: "Merchant Supported Card Management" },
+            { path: "/card-type-management",      label: "Card Type Management" }
           ]
         },
         {
           path: "/user-management-func",
-          label: "4.6 User Management",
+          label: "User Management",
           submenu: [
-            { path: "/user-management-sub",  label: "4.6.1 User Management" },
-            { path: "/roles-management",     label: "4.6.2 Roles and Privileges" },
-            { path: "/user-assignment",      label: "4.6.3 User-Merchant Assignment" }
+            { path: "/user-management-sub",  label: "User Management" },
+            { path: "/roles-management",     label: "Roles and Privileges" },
+            { path: "/user-assignment",      label: "User-Merchant Assignment" }
           ]
         },
-        { path: "/field-map",               label: "4.7 Field Map" },
-        { path: "/certificate-management",  label: "4.8 Certificate Management" },
+        { path: "/field-map",               label: "Field Map" },
+        { path: "/certificate-management",  label: "Certificate Management" },
         {
           path: "/history",
-          label: "4.9 History",
+          label: "History",
           submenu: [
-            { path: "/billing-file-history",      label: "4.9.1 Billing File" },
-            { path: "/transaction-history",       label: "4.9.2 Transaction" },
-            { path: "/user-transaction-history",  label: "4.9.3 User Transaction History" }
+            { path: "/billing-file-history",      label: "Billing File" },
+            { path: "/transaction-history",       label: "Transaction" },
+            { path: "/user-transaction-history",  label: "User Transaction History" }
           ]
         },
         {
           path: "/report",
-          label: "4.10 Reports",
+          label: "Reports",
           submenu: [
-            { path: "/audit-trail", label: "4.10.1 Audit Trail" },
-            { path: "/merchant-reports", label: "4.10.2 Merchant Reports" },
-            { path: "/settlements", label: "4.10.3 Settlements" },
-            { path: "/send-settlements", label: "4.10.4 Send Settlements" },
-            { path: "/generate-settlement", label: "4.10.5 Generate Settlement" },
-            { path: "/billing-file-reports", label: "4.10.6 Billing File Reports" },
+            { path: "/audit-trail",           label: "Audit Trail" },
+            { path: "/merchant-reports",      label: "Merchant Reports" },
+            { path: "/settlements",           label: "Settlements" },
+            { path: "/send-settlements",      label: "Send Settlements" },
+            { path: "/generate-settlement",   label: "Generate Settlement" },
+            { path: "/billing-file-reports",  label: "Billing File Reports" },
           ]
         },
         {
           path: "/profile",
-          label: "4.11 Profile",
+          label: "Profile",
         },
         {
           path: "/billing-file-processing",
-          label: "4.12 Billing File Processing",
+          label: "Billing File Processing",
           submenu: [
-            { path: "/new-upload-raw-billing-file", label: "4.12.1 New Upload - Raw Billing File" },
-            { path: "/upload-billing-file", label: "4.12.2 Upload Billing File" },
-            { path: "/progress-status", label: "4.12.3 Progress Status" },
-            { path: "/scheduled-billing-files", label: "4.12.4 Scheduled Billing Files" }
+            { path: "/new-upload-raw-billing-file", label: "New Upload - Raw Billing File" },
+            { path: "/upload-billing-file",         label: "Upload Billing File" },
+            { path: "/progress-status",             label: "Progress Status" },
+            { path: "/scheduled-billing-files",     label: "Scheduled Billing Files" }
           ]
         },
         {
           path: "/post-transaction",
-          label: "4.13 Post Transaction",
+          label: "Post Transaction",
           submenu: [
-            { path: "/post-single-transaction", label: "4.13.1 Post Single Transaction" },
-            { path: "/scheduled-transaction", label: "4.13.2 Scheduled Transaction (Post Single)" }
+            { path: "/post-single-transaction", label: "Post Single Transaction" },
+            { path: "/scheduled-transaction",   label: "Scheduled Transaction (Post Single)" }
           ]
         },
-
       ]
     },
     {
       path: "/error-messages",
-      icon: "fas fa-circle-info",
-      label: "ERROR MESSAGES"
+      label: "Error Messages"
     },
   ];
 
@@ -138,7 +106,6 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
     if (window.innerWidth <= 768) onMobileClose();
   };
 
-  // ── Recursive MenuItem with viewport-aware fixed flyout ──────────────────
   const MenuItem = ({ item, depth = 0 }) => {
     const [open, setOpen]           = useState(false);
     const [flyoutPos, setFlyoutPos] = useState({ top: 0, left: 0 });
@@ -155,13 +122,11 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
       let left = trigger.right + 2;
       let top  = trigger.top;
 
-      // Flip left if would overflow right edge
       const estimatedWidth = 270;
       if (left + estimatedWidth > vw) {
         left = Math.max(8, trigger.left - estimatedWidth - 2);
       }
 
-      // Push up if would overflow bottom
       const itemCount       = item.submenu ? item.submenu.length : 1;
       const estimatedHeight = Math.min(itemCount * 46 + 8, vh * 0.85);
       if (top + estimatedHeight > vh) {
@@ -192,7 +157,6 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
       };
     }, [open, calcPosition]);
 
-    // Portal to <body> so no ancestor can clip it
     const flyoutPortal = (open && item.submenu)
       ? ReactDOM.createPortal(
           <ul
@@ -233,7 +197,6 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
             }
             onClick={handleNavClick}
           >
-            {item.icon && <span className="nav-icon"><i className={item.icon}></i></span>}
             <span className="nav-label-text">{item.label}</span>
             {item.submenu && (
               <span className={`nav-arrow ${open ? 'rotated' : ''}`}>&#9654;</span>
@@ -241,7 +204,6 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
           </NavLink>
         ) : (
           <div className={`nav-link ${isTopLevel ? 'top-level' : ''} ${open ? 'active-parent' : ''}`}>
-            {item.icon && <span className="nav-icon"><i className={item.icon}></i></span>}
             <span className="nav-label-text">{item.label}</span>
             {item.submenu && (
               <span className={`nav-arrow ${open ? 'rotated' : ''}`}>&#9654;</span>

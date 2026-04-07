@@ -10,9 +10,8 @@ const MyTransactionSubmitted = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
       <div className="subsection">
-        <div className="subsection-title">4.4.1 MY TRANSACTION SUBMITTED FOR APPROVAL</div>
+        <div className="subsection-title">My Transaction Submitted for Approval</div>
         <div className="content-text">
           <h3>How to view my transactions for my approval:</h3>
 
@@ -24,9 +23,9 @@ const MyTransactionSubmitted = () => {
               Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Close</button> or <span style={{ fontWeight: 'bold', color: '#FF0000' }}>X</span> button to close the window.
 
               <br/><br />
-              <div className="section-title" style={{ fontSize: '16px', marginBottom: '5px' }}>4.6: My Transaction for Approval Table</div>
               <div style={{ textAlign: 'center', marginTop: '10px' }}>
                 <img src={myTransactionForApprovalTable} alt="My Transaction for Approval Table" style={{ maxWidth: '100%', height: 'auto' }} />
+              <div style={{ fontSize: '14px', fontWeight: 'bold' }}>My Transaction for Approval Table</div>
               </div>
 
               <div style={{ marginTop: '10px' }}>

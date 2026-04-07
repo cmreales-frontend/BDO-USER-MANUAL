@@ -5,12 +5,6 @@ import customFieldMapForm from '../assets/custom_field_map_form.png';
 import editCustomFieldMapForm from '../assets/custom_field_map_form1.png';
 import fieldMapMultipleDelete from '../assets/custom_field_map_form2.png';
 
-const imgWrapper = {
-  position: 'relative',
-  display: 'inline-block',
-  width: '100%',
-};
-
 const popupOverlayStyle = {
   position: 'fixed',
   top: 0,
@@ -44,19 +38,17 @@ const FieldMap = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
       <div className="subsection">
-        <div className="subsection-title">4.7 FIELD MAP</div>
+        <div className="subsection-title">Field Map</div>
         <div className="content-text">
           <p>
             <i>Field Map</i> handles the creation of custom field maps. This custom field map is used in the generation of a configuration file for merchants who are not complying to the default format of billing files or the old billing file format. Only users with the System Administrator role type can access this page.
           </p>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.49: Field Map Page</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={fieldMapPage} alt="Field Map Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Field Map Page</div>
           </div>
 
           <h3>How to Create New Custom Field Map:</h3>
@@ -82,21 +74,20 @@ const FieldMap = () => {
           <p><i><b>Note:</b> Field Map approval is not supported. Kindly make sure that all changes are correct before submitting.</i></p>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.50: Custom Field Map Form</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={customFieldMapForm} alt="Custom Field Map Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} /> 
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Custom Field Map Form</div>
           </div>
 
 
            <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
+            <button
+              type="button"
+              onClick={() => setIsManagePopupVisible(true)}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>
               Field Details
-            </a>.
+            </button>.
           </p>
 
           {isManagePopupVisible && (
@@ -200,10 +191,9 @@ const FieldMap = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.51: Custom Field Map Form</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={editCustomFieldMapForm} alt="Edit Custom Field Map Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-            
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Custom Field Map Form</div>  
           </div>
 
           <h3>How to Delete a Field Map:</h3>
@@ -245,10 +235,9 @@ const FieldMap = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.52: Custom Field Map Form</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={fieldMapMultipleDelete} alt="Custom Field Map Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-            
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Custom Field Map Form</div>  
           </div>
 
         </div>

@@ -4,11 +4,6 @@ import institutionForm from '../assets/institution_form.png';
 import editInstitutionPage from '../assets/edit_institution_page.png';
 import institutionMultipleDelete from '../assets/institution_multiple_delete.png';
 
-const imgWrapper = {
-  position: 'relative',
-  display: 'inline-block',
-  width: '100%',
-};
 
 const popupOverlayStyle = {
   position: 'fixed',
@@ -44,27 +39,25 @@ const InstitutionManagement = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
       <div className="subsection">
-        <div className="subsection-title">4.5.2 INSTITUTION MANAGEMENT</div>
+        <div className="subsection-title">Institution Management</div>
         <div className="content-text">
           <p>This is where the user can create, edit, update, and delete institution. To navigate this page, go to <b>Merchant Management &gt;&gt; Manage Institution.</b></p>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.22: Manage Institution Page</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={manageInstitutionPage} alt="Manage Institution Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Manage Institution Page</div>
           </div>
 
           <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
+            <button
+              type="button"
+              onClick={() => setIsManagePopupVisible(true)}
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'blue', textDecoration: 'underline', font: 'inherit' }}>
               Field Details
-            </a>.
+            </button>.
           </p>
 
           {isManagePopupVisible && (
@@ -120,20 +113,19 @@ const InstitutionManagement = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.23: Institution Form</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={institutionForm} alt="Institution Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Institution Form</div>
           </div>
 
           <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsInstitutionFormPopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
+            <button
+              type="button"
+              onClick={() => setIsInstitutionFormPopupVisible(true)}
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'blue', textDecoration: 'underline', font: 'inherit' }}>
               Field Details
-            </a>.
+            </button>.
           </p>
 
           {isInstitutionFormPopupVisible && (
@@ -147,23 +139,68 @@ const InstitutionManagement = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td>Field Name:</td><td><strong>Code</strong></td></tr>
-                    <tr><td>Definition:</td><td>Refers to the ID of the institution.</td></tr>
-                    <tr><td>Type:</td><td>Numeric</td></tr>
-                    <tr><td>Maximum Length:</td><td>9</td></tr>
-                    <tr><td>Dependency:</td><td>Required field</td></tr>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Code</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the ID of the institution.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Numeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>9</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
 
-                    <tr><td>Field Name:</td><td><strong>Name</strong></td></tr>
-                    <tr><td>Definition:</td><td>Refers to the name of the institution.</td></tr>
-                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
-                    <tr><td>Maximum Length:</td><td>50</td></tr>
-                    <tr><td>Dependency:</td><td>Required field</td></tr>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Name</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the name of the institution.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>50</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
 
-                    <tr><td>Field Name:</td><td><strong>Description</strong></td></tr>
-                    <tr><td>Definition:</td><td>Refers to the description of an institution.</td></tr>
-                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
-                    <tr><td>Maximum Length:</td><td>128</td></tr>
-                    <tr><td>Dependency:</td><td>Required field</td></tr>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Description</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Refers to the description of an institution.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Maximum Length:</td>
+                      <td>128</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -190,9 +227,9 @@ const InstitutionManagement = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.24: Edit Institution Page</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={editInstitutionPage} alt="Edit Institution Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+            <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Edit Institution Page</div>
           </div>
 
           <h3>How to Delete Institution Individually:</h3>
@@ -236,9 +273,9 @@ const InstitutionManagement = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.25: Institution Multiple Delete</div>
-          <div style={imgWrapper}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={institutionMultipleDelete} alt="Institution Multiple Delete" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Institution Multiple Delete</div>
           </div>
 
         </div>

@@ -10,19 +10,21 @@ const RejectedTransaction = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
+    
       <div className="subsection">
-        <div className="subsection-title">4.4.4 REJECTED TRANSACTIONS</div>
+        <div className="subsection-title">Rejected Transactions</div>
         <div className="content-text">
           <p>This list contains rejected transactions. Only valid rejected transactions are listed on this table. All role type can view this table.</p>
 
-  
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '18px', marginBottom: '10px', textAlign: 'center' }}>Rejected Transactions Table</div>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={rejectedTransactionsTable} alt="Rejected Transactions Table" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Rejected Transactions Table</div>
+          </div>
 
           <p>
-            For more information, click on <a href="#" onClick={togglePopupVisibility} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Field Details</a>.
+            For more information, click on <button type="button" onClick={togglePopupVisibility} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>Field Details</button>.
           </p>
+          
           {isPopupVisible && (
             <div style={{ 
               position: 'fixed', 
@@ -36,6 +38,7 @@ const RejectedTransaction = () => {
               zIndex: 1000,
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
             }}>
+              
               <table className="command-syntax-table" style={{ marginTop: '10px' }}>
                 <thead>
                   <tr>
@@ -81,6 +84,7 @@ const RejectedTransaction = () => {
         </div>
       </div>
     </div>
+
   );
 };
 

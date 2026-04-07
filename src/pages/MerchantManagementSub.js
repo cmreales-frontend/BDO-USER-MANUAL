@@ -12,24 +12,24 @@ const MerchantManagementSub = () => {
 
   return (
     <div className="content-section">
-      <div className="section-title" style={{ fontSize: '22px' }}>4. FUNCTIONALITIES</div>
       <div className="subsection">
-        <div className="subsection-title">4.5.1 MERCHANT MANAGEMENT</div>
+        <div className="subsection-title">Merchant Management</div>
         <div className="content-text">
           <p>This is where the user can create, edit, update, delete and download merchants list. To navigate this page, go to <b>Merchant Management &gt;&gt; Manage Merchants.</b></p>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginTop: '10px', marginBottom: '20px', textAlign: 'center' }}>Figure 4.16: Merchant Management Page</div>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={merchantManagementPage} alt="Merchant Management Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Merchant Management Page</div>
+          </div>
           <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+            <button
+              onClick={() => setIsManagePopupVisible(true)}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}
             >
               Field Details
-            </a>.
+            </button>.
           </p>
 
           {isManagePopupVisible && (
@@ -65,14 +65,38 @@ const MerchantManagementSub = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr><td>Field Name:</td><td><strong>Search</strong></td></tr>
-                    <tr><td>Definition:</td><td>Field query input for the List of Merchant table to retrieve related information on below listing.</td></tr>
-                    <tr><td>Type:</td><td>Alphanumeric</td></tr>
-                    <tr><td>Dependency:</td><td>Username must be active and validated by the verifier of the system.</td></tr>
-                    <tr><td>Field Name:</td><td><strong>Show Entries</strong></td></tr>
-                    <tr><td>Definition:</td><td>Selection of 10, 25, 50 or 100 entries for below table.</td></tr>
-                    <tr><td>Type:</td><td>Dropdown</td></tr>
-                    <tr><td>Dependency:</td><td>Table must have list.</td></tr>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Search</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Field query input for the List of Merchant table to retrieve related information on below listing.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Alphanumeric</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Username must be active and validated by the verifier of the system.</td>
+                    </tr>
+                    <tr>
+                      <td>Field Name:</td>
+                      <td><strong>Show Entries</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Definition:</td>
+                      <td>Selection of 10, 25, 50 or 100 entries for below table.</td>
+                    </tr>
+                    <tr>
+                      <td>Type:</td>
+                      <td>Dropdown</td>
+                    </tr>
+                    <tr>
+                      <td>Dependency:</td>
+                      <td>Table must have list.</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -117,18 +141,19 @@ const MerchantManagementSub = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.17: New Merchant Pages</div>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={newMerchantPage} alt="Figure 4.17: New Merchant Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }}/>
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>New Merchant Pages</div>
+          </div>
 
           <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsNewMerchantPopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+            <button
+              onClick={() => setIsNewMerchantPopupVisible(true)}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}
             >
               Field Details
-            </a>.
+            </button>.
           </p>
 
           {isNewMerchantPopupVisible && (
@@ -420,13 +445,16 @@ const MerchantManagementSub = () => {
                       <td><strong>Status</strong></td>
                       </tr>
                     <tr>
-                      <td>Definition:</td><td>Merchant status whether it is active or inactive.</td>
+                      <td>Definition:</td>
+                      <td>Merchant status whether it is active or inactive.</td>
                       </tr>
                     <tr>
-                      <td>Type:</td><td>Boolean</td>
+                      <td>Type:</td>
+                      <td>Boolean</td>
                       </tr>
                     <tr>
-                      <td>Dependency:</td><td>Required field</td>
+                      <td>Dependency:</td>
+                      <td>Required field</td>
                       </tr>
                   </tbody>
                 </table>
@@ -435,15 +463,16 @@ const MerchantManagementSub = () => {
           )}
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.18: Confirmation Dialog Box</div>
-          <div style={{ textAlign: 'center' }}>
+    
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={confirmationDialogBox} alt="Confirmation Dialog Box" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '60%' }} />
+           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Confirmation Dialog Box</div>
           </div>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.19: Confirmation Receipt</div>
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={confirmationReceipt} alt="Confirmation Receipt" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '60%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Confirmation Receipt</div>
           </div>
 
           <h3>How to Update Merchant:</h3>
@@ -466,8 +495,10 @@ const MerchantManagementSub = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.20: Edit Merchant Details</div>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={editMerchantPage} alt="Edit Merchant Details" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Edit Merchant Details</div>
+          </div>
 
           <h3>How to Delete Merchant in Edit Merchant Page:</h3>
           <ol style={{ marginLeft: '20px' }}>
@@ -508,9 +539,10 @@ const MerchantManagementSub = () => {
           </ol>
 
           <br/>
-          <div className="section-title" style={{ fontSize: '16px', marginBottom: '10px', textAlign: 'center' }}>Figure 4.21: Merchant Multiple Delete</div>
+          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={merchantMultipleDelete} alt="Merchant Multiple Delete" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-
+          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Merchant Multiple Delete</div>
+          </div>
         </div>
       </div>
     </div>
