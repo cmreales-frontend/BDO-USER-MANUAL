@@ -44,7 +44,7 @@ const NewUploadRawBillingFile = () => {
         <div style={{ fontSize: '14px', fontWeight: 'bold' }}>New Upload - Raw Billing File Summary Pop-up</div>
         </div>
 
-        <h3>How to Upload Billing File Partially:</h3>
+        <h4>How to Upload Billing File Partially:</h4>
           <ol style={{ marginLeft: '20px' }}>
             <li>
               Go to <u><b>Billing File Processing &gt;&gt; Scheduled Billing Files</b></u> page. Click 

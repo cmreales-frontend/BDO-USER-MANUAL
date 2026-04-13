@@ -10,8 +10,12 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
       label: "Introduction",
     },
     {
-      path: "/user-role-types",
+      path: "/user-types",
       label: "User Types",
+      submenu: [
+        { path: "/user-role-types", label: "User Role Types" },
+        { path: "/user-function-types", label: "User Function Types" },
+      ]
     },
     {
       path: "/functionalities",

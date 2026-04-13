@@ -11,8 +11,12 @@ const PageHeader = () => {
   const wrapperRef = useRef(null);
 
   const fuse = new Fuse(Docs, {
-    keys: ['title', 'content'],
-    threshold: 0.4,
+    keys: [
+      { name: 'title', weight: 2 },
+      { name: 'content', weight: 1 } 
+    ],
+    threshold: 0.3,
+    includeScore: true,
   });
 
   // Close dropdown when clicking outside

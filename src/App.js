@@ -43,7 +43,8 @@ import BillingFileHistory from './pages/BillingFileHistory';
 import TransactionHistory from './pages/TransactionHistory';
 import UserTransactionHistory from './pages/UserTransactionHistory';
 import ErrorMessages from './pages/ErrorMessages';
-import UserTypes from './pages/UserTypes';
+import UserRoleTypes from './pages/UserRoleTypes';
+import UserFunctionTypes from './pages/UserFunctionTypes';
 
 import './styles/App.css';
 import logo from './assets/bdo-logo-removebg-preview.png';
@@ -93,8 +94,8 @@ function App() {
 
 
             {/* User Role Types Navigation and the submenus */}
-              <Route path="/user-role-types" element={<UserTypes />} />
-
+              <Route path="/user-role-types" element={<UserRoleTypes />} />
+              <Route path="/user-function-types" element={<UserFunctionTypes />} />
 
             {/* Functionalities Navigation and the submenus */}
               <Route path="/system-screen" element={<SystemScreen />} />

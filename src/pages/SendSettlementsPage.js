@@ -11,12 +11,51 @@ const SendSettlementsPage = () => {
       <p className="content-text" style={{ marginTop: "10px" }}>
         This is where the Extracted Unsettled file is uploaded for manual settlement.
       </p>
-     
-      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-        <img src={sendSettlementPage} alt="Send Settlement Page" style={{ border: "1px solid #ccc", padding: "5px", borderRadius: "4px", width: "100%" }}/>
 
-       <img src={sendSettlementPage1} alt="Send Settlement Page" style={{ border: "1px solid #ccc", padding: "5px", borderRadius: "4px", width: "100%" }}/>
-      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Send Settlement Page</div>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+        <div style={{
+          border: "1px solid #ccc",
+          borderRadius: "4px",
+          padding: "10px",
+          marginBottom: "10px",
+          display: "inline-block",
+          width: "100%",
+          boxSizing: "border-box",
+          backgroundColor: "#fff"
+        }}>
+          <img
+            src={sendSettlementPage}
+            alt="Send Settlement Page"
+            style={{
+              width: "125%",
+              height: "auto",
+              display: "block"
+            }}
+          />
+        </div>
+
+        <div style={{
+          border: "1px solid #ccc",
+          borderRadius: "4px",
+          padding: "10px",
+          marginBottom: "10px",
+          display: "inline-block",
+          width: "100%",
+          boxSizing: "border-box",
+          backgroundColor: "#fff"
+        }}>
+          <img
+            src={sendSettlementPage1}
+            alt="Send Settlement Page 2"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block"
+            }}
+          />
+        </div>
+
+        <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Send Settlement Page</div>
       </div>
 
       <div style={{ marginTop: "20px" }}>
