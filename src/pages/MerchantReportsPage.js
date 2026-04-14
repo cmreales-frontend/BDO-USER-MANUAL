@@ -49,7 +49,7 @@ const MerchantReportsPage = () => {
 
 
       <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-        <img src={reportsPageImage} alt="Reports Page as System Administrator" className="merchant-reports-image" />
+        <img src={reportsPageImage} alt="Reports Page as System Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
       <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Report Page as System Administrator</div>
       </div>
       
@@ -103,8 +103,8 @@ const MerchantReportsPage = () => {
 
       <br/>
       <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-        <img src={reportsPageAsUserImage} alt="Reports Page as User/User Administrator" className="merchant-reports-image" />
-      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Reports Page as User/User Administrator</div>
+        <img src={reportsPageAsUserImage} alt="Reports Page as User/User Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+        <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Reports Page as User/User Administrator</div>
       </div>
 
       <div style={{ marginTop: '24px' }}>
@@ -163,7 +163,7 @@ const MerchantReportsPage = () => {
 
       <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={downloadDialogImage} alt="Download Dialog Box" className="merchant-reports-image" style={{ width: '50%' }} />
-      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Download Dialog Box</div>
+        <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Download Dialog Box</div>
       </div>
 
     </section>
