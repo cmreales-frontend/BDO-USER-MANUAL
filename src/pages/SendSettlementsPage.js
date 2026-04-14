@@ -55,8 +55,8 @@ const SendSettlementsPage = () => {
           />
         </div>
 
-        <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Send Settlement Page</div>
-      </div>
+      <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Send Settlement Page</div>
+        </div>
 
       <div style={{ marginTop: "20px" }}>
         <h4>How to Upload File for Manual Settlement:</h4>
