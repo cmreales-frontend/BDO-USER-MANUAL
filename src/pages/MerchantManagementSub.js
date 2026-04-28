@@ -110,7 +110,7 @@ const MerchantManagementSub = () => {
             <li>
               In <u><b>Manage Merchant</b></u> page, click the{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Export to Excel</button>{' '}
-              button (see <i>Figure 4.16</i>).
+              button.
             </li>
             <li>
               Then, a download dialog box is displayed. Click{' '}
@@ -124,7 +124,7 @@ const MerchantManagementSub = () => {
           <h3>How to Create New Merchant:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <b>Merchant Management &gt;&gt; Manage Merchant &gt;&gt; New Merchant</b>. This redirects to <b>New Merchant</b> page <i>(see Figure 4.17).</i>
+              Go to <b>Merchant Management &gt;&gt; Manage Merchant &gt;&gt; New Merchant</b>. This redirects to <b>New Merchant</b> page.
             </li>
             <li>
               Supply the fields and click{' '}
@@ -136,13 +136,13 @@ const MerchantManagementSub = () => {
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval <i>(see Figure 4.19).</i>
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
           <br/>
           <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-          <img src={newMerchantPage} alt="Figure 4.17: New Merchant Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }}/>
+          <img src={newMerchantPage}  style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }}/>
           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>New Merchant Pages</div>
           </div>
 
@@ -478,19 +478,19 @@ const MerchantManagementSub = () => {
           <h3>How to Update Merchant:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select a list from the table in <u><b>Manage Merchant</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Merchant</b></u> page with details of the selected merchant (see <i>Figure 4.20</i>).
+              Select a list from the table in <u><b>Manage Merchant</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Merchant</b></u> page with details of the selected merchant.
             </li>
             <li>
               Update the field/s and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
@@ -503,38 +503,38 @@ const MerchantManagementSub = () => {
           <h3>How to Delete Merchant in Edit Merchant Page:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select a list from the table in <u><b>Manage Merchant</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Merchant</b></u> form with details of the selected merchant (see <i>Figure 4.20</i>).
+              Select a list from the table in <u><b>Manage Merchant</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Merchant</b></u> form with details of the selected merchant.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
           <h3>How to Delete Multiple Merchants:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Manage Merchant</b></u>. Select merchants on the list by clicking rows (see <i>Figure 4.21</i>).
+              In <u><b>Manage Merchant</b></u>. Select merchants on the list by clicking rows.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transactions. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transactions. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transactions is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transactions is for approval.
             </li>
           </ol>
 

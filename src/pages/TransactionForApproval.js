@@ -29,8 +29,8 @@ const TransactionForApproval = () => {
           <h3>How to View the Transactions for My Approval:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Click the <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button (see <i>Figure 4.8</i>).
-              A new window will pop up and will show the details of the transaction depending on its type (see <i>Figure 4.9</i>).
+              Click the <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button.
+              A new window will pop up and will show the details of the transaction depending on its type.
             </li>
             <li>Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Close</button> or <span style={{ fontWeight: 'bold', color: '#FF0000' }}>X</span> button to close the window.</li>
           </ol>
@@ -118,7 +118,7 @@ const TransactionForApproval = () => {
             <li>
               On pending approval detail's view, click the{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Approve</button>{' '}
-              button and wait for the confirmation box (see <i>Figure 4.9</i>).
+              button and wait for the confirmation box.
             </li>
 
             <li>
@@ -126,11 +126,11 @@ const TransactionForApproval = () => {
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if you don't want to approve the transaction and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              button if you want to approve the transaction (see <i>Figure 4.10</i>).
+              button if you want to approve the transaction.
             </li>
 
             <li>
-              A transaction receipt is displayed signifying that the transaction is already posted in BRPS (see <i>Figure 4.11</i>). Click{' '}
+              A transaction receipt is displayed signifying that the transaction is already posted in BRPS. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Close</button>{' '}
               or <span style={{ fontWeight: 'bold', color: '#FF0000' }}>X</span> button to close the window.
             </li>
@@ -153,7 +153,7 @@ const TransactionForApproval = () => {
             <li>
               On pending approval detail's view, click the{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Decline</button>{' '}
-              button and wait for the confirmation box (see <i>Figure 4.12</i>).
+              button and wait for the confirmation box.
             </li>
             <li>
               Provide the reason of declining the transaction. This is optional. Click the{' '}
@@ -161,7 +161,7 @@ const TransactionForApproval = () => {
               button to continue the transaction.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction has been declined (see <i>Figure 4.13</i>). Click{' '}
+              A transaction receipt is displayed signifying that the transaction has been declined. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Close</button>{' '}
               or <span style={{ fontWeight: 'bold', color: '#FF0000' }}>X</span> button to close the window.
             </li>

@@ -22,13 +22,13 @@ const NewUploadRawBillingFile = () => {
       <h3>How to Upload Raw Billing File:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In Billing File Processing sub menu, click the <u><b>New Upload - Raw Billing File</b></u>. This redirects to New Upload - Raw Billing File page (see <i>Figure 4.79</i>).
+              In Billing File Processing sub menu, click the <u><b>New Upload - Raw Billing File</b></u>. This redirects to New Upload - Raw Billing File page.
             </li>
             <li>
-              Click the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Select File</button> to select the file to upload and click the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button> button to submit the transaction. A confirmation dialog box is displayed that summarizes the raw billing file (see <i>Figure 4.80</i>). Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
+              Click the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Select File</button> to select the file to upload and click the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button> button to submit the transaction. A confirmation dialog box is displayed that summarizes the raw billing file. Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is available for uploading (see <i>Figure 4.81</i>).
+              A transaction receipt is displayed signifying that the transaction is available for uploading.
             </li>
           </ol>
           <br/>
@@ -49,16 +49,16 @@ const NewUploadRawBillingFile = () => {
             <li>
               Go to <u><b>Billing File Processing &gt;&gt; Scheduled Billing Files</b></u> page. Click 
               <i className="fas fa-download"></i> 
-              button, this redirects you to Manage Scheduled Billing File (see <i>Figure 4.79</i>).
+              button, this redirects you to Manage Scheduled Billing File.
             </li>
             <li>
               Toggle <button style={{ backgroundColor: '#d9d7ce', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Append</button> button if the partial file is for append or toggle <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Overwrite</button> if the partial file is to overwrite.
             </li>
             <li>
-              Click the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Select File</button> to select the file to upload and click the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Upload</button> button to submit the transaction. A confirmation dialog box is displayed that summarizes the raw billing file (see <i>Figure 4.80</i>). Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
+              Click the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Select File</button> to select the file to upload and click the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Upload</button> button to submit the transaction. A confirmation dialog box is displayed that summarizes the raw billing file. Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is available for uploading at the Scheduled Billing File (see <i>Figure 4.81</i>).
+              A transaction receipt is displayed signifying that the transaction is available for uploading at the Scheduled Billing File.
             </li>
           </ol>
           <p style={{ fontStyle: 'italic', marginTop: '10px' }}>

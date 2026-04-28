@@ -34,16 +34,16 @@ const Login = () => {
     <div className="content-section">
       <div className="subsection-title">Login</div>
       <p>
-        To access BRPS application, enter web address in web browser. After entering the web address, BRPS web login page is displayed (see Figure 4.2). BRPS login page consists of login box.
+        To access BRPS application, enter web address in web browser. After entering the web address, BRPS web login page is displayed. BRPS login page consists of login box.
       </p>
       <br/>
 
       <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-        <img src={loginPage} alt="Figure 4.2: Login Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '40%' }} />
+        <img src={loginPage} style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '40%' }} />
       <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Download Dialog Box</div>
       </div>
       <p>
-        Access to the BRPS system is allowed only to its authorized users. To avoid an unauthorized user to utilize it, one must first successfully login to the system. This can be done by completely filling-out the fields on the login box with valid information <i>(see Figure 4.3)</i>.
+        Access to the BRPS system is allowed only to its authorized users. To avoid an unauthorized user to utilize it, one must first successfully login to the system. This can be done by completely filling-out the fields on the login box with valid information.
       </p>
 
        <p><strong>How to login:</strong></p>
@@ -52,8 +52,8 @@ const Login = () => {
         <li>Input the user's <strong>Password</strong> in the password field.</li>
         <li>Click on the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>LOGIN</button> button to validate the entries.
           <ol type="a" style={{ marginLeft: '20px' }}>
-            <li>If the information provided are valid and the user has a single assigned merchant, it will go directly to the home page <i>(see Figure 4.1)</i>.</li>
-            <li>If the information provided are valid and the user has multiple assigned merchants, a <u><strong>Load Environment</strong></u> page will show <i>(see Figure 4.4)</i>.</li>
+            <li>If the information provided are valid and the user has a single assigned merchant, it will go directly to the home page.</li>
+            <li>If the information provided are valid and the user has multiple assigned merchants, a <u><strong>Load Environment</strong></u> page will show.</li>
           </ol>
         </li>
       </ol>

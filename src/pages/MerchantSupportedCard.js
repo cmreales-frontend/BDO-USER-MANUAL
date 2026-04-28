@@ -81,19 +81,19 @@ const MerchantSupportedCard = () => {
           <h3>How to Assign New Card Type on a Merchant:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u>&gt;&gt;<u><b>New Supported Card</b></u>. This redirects to <u><b>New Supported Card</b></u> page (see <i>Figure 4.27</i>).
+              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u>&gt;&gt;<u><b>New Supported Card</b></u>. This redirects to <u><b>New Supported Card</b></u> page.
             </li>
             <li>
               Supply the fields, mark the checkbox in the <u><b>Available Card Type</b></u> and click &#x276F; to select it. Also, if the selected card should have TID, toggle on the <u><b>Credential on the File Indicator</b></u> and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Create</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
@@ -243,19 +243,19 @@ const MerchantSupportedCard = () => {
           <h3>How to Unlink Card Type to a Merchant Number:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button (see <i>Figure 4.26</i>). This redirects to <u><b>Edit Supported Card</b></u> page with the details (see <i>Figure 4.28</i>).
+              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Supported Card</b></u> page with the details.
             </li>
             <li>
               Mark the checkbox in the <u><b>Selected Card Types</b></u> and click the &#x276E; deselect it. Click the{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
@@ -268,19 +268,19 @@ const MerchantSupportedCard = () => {
           <h3>How to Delete Merchant Supported Card:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u> page, select on the list of supported cards and click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Merchant</b></u> page with the details of the selected supported card (see <i>Figure 4.28</i>).
+              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u> page, select on the list of supported cards and click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Merchant</b></u> page with the details of the selected supported card.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. After clicking button, a confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. After clicking button, a confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
           <p><i><b>Note</b>: When the supported card record is deleted, all card types linked to that Merchant ID or Terminal ID will be deleted.</i></p>
@@ -288,19 +288,19 @@ const MerchantSupportedCard = () => {
           <h3>How to Delete Multiple Supported Cards:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Manage Supported Card</b></u> page, select supported card on the list by clicking rows (see <i>Figure 4.29</i>).
+              In <u><b>Manage Supported Card</b></u> page, select supported card on the list by clicking rows.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. After clicking the button, a confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. After clicking the button, a confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 

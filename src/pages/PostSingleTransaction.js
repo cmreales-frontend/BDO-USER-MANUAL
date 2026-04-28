@@ -38,13 +38,13 @@ const PostSingleTransaction = () => {
       <h4>How to Post a Single Transaction:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
-          Go to <u><b>Post Transaction &gt;&gt; Post Single Transaction</b></u>. This redirects to Post Transaction Details page (see <i>Figure 4.93</i>).
+          Go to <u><b>Post Transaction &gt;&gt; Post Single Transaction</b></u>. This redirects to Post Transaction Details page.
         </li>
         <li>
-          Supply the fields and click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button> button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>).
+          Supply the fields and click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button> button to submit the transaction. A confirmation dialog box is displayed.
         </li>
         <li>
-          A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+          A transaction receipt is displayed signifying that the transaction is for approval.
         </li>
       </ol>
       <p style={{ fontStyle: 'italic', marginTop: '10px' }}>

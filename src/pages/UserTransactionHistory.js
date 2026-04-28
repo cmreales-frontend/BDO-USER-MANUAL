@@ -46,10 +46,10 @@ const UserTransactionHistory = () => {
           <h3>How to View User Transaction History (Journal):</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>History</b></u>&gt;&gt;<u><b>User Transaction</b></u>. This redirects to User Transaction History Page (see <i>Figure 4.62</i> and <i>4.63</i>).
+              Go to <u><b>History</b></u>&gt;&gt;<u><b>User Transaction</b></u>. This redirects to User Transaction History Page.
             </li>
             <li>
-              Supply fields. If role type is System Administrator, there's a need to provide the username manually (see <i>Figure 4.62</i>). If the role type is User, there is no username field (see <i>Figure 4.63</i>). After providing the information, click{' '}
+              Supply fields. If role type is System Administrator, there's a need to provide the username manually. If the role type is User, there is no username field. After providing the information, click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
               button to submit search parameters and wait for the result to show in the user transaction history table.
             </li>
@@ -57,12 +57,12 @@ const UserTransactionHistory = () => {
 
           <br/>
         <div style={{ textAlign: 'center', marginBottom: '5px' }}>
-          <img src={userTransactionHistoryPageView} alt="Figure 4.62: User Transaction History Page View as System Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
+          <img src={userTransactionHistoryPageView} style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
         <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Transaction History Page View as System Administrator</div>
         </div>  
 
         <div style={{ textAlign: 'center', marginBottom: '5px' }}>
-          <img src={userTransactionHistoryPageViewAsUser} alt="Figure 4.63: User Transaction History Page View as User/User Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
+          <img src={userTransactionHistoryPageViewAsUser} style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
         <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Transaction History Page View as User/User Administrator</div>
         </div>
   

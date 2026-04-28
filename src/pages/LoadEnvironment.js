@@ -15,7 +15,7 @@ const LoadEnvironment = () => {
         <div className="subsection-title">Load Environment</div>
         <div className="content-text">
           <p>
-          Switch Merchant Page consists of all merchants and corresponding role assigned to logged in user <i>(see Figure 4.4)</i>. It is only displayed if user logged in has many merchants assigned to him/her.
+          Switch Merchant Page consists of all merchants and corresponding role assigned to logged in user. It is only displayed if user logged in has many merchants assigned to him/her.
           For more information, click on <a href="#" onClick={togglePopupVisibility} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}>Field Details</a>.
         </p>
           <br/>

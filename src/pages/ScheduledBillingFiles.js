@@ -26,20 +26,20 @@ const ScheduledBillingFiles = () => {
       <h4>How to Submit Partial Billing File for Approval:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
-          Go to <u><b>Billing File Processing &gt;&gt; Scheduled Billing Files</b></u>. This redirects to Scheduled Billing Files page (see <i>Figure 4.88</i>).
+          Go to <u><b>Billing File Processing &gt;&gt; Scheduled Billing Files</b></u>. This redirects to Scheduled Billing Files page.
         </li>
         <li>
           From the <u><b>Future Dated Billing files</b></u> table below, click the 
           <i className="fas fa-download" style={{ fontSize: '16px', color: '#000', margin: '0 8px' }}></i> 
-          button to check the available raw partial billing file uploaded (see <i>Figure 4.89</i>).
+          button to check the available raw partial billing file uploaded.
         </li>
         <li>
           Click the 
           <i className="fas fa-download" style={{ fontSize: '16px', color: '#000', margin: '0 8px' }}></i> 
-          button beside the partial billing file. A confirmation dialog box is displayed that summarizes the raw billing file (see <i>Figure 4.84</i>). Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
+          button beside the partial billing file. A confirmation dialog box is displayed that summarizes the raw billing file. Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
         </li>
         <li>
-           A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.85</i>).
+           A transaction receipt is displayed signifying that the transaction is for approval.
          </li>
          
         <i><p><strong>Note:</strong> When uploading billing file for immediate posting, start date should be the current date and frequency count is 0. However, when uploading billing file for scheduled/recurring posting, start date should be greater than the current date and frequency count should be greater 0. All approved scheduled billing file will be shown first on the Future Dated Billing File table under the Scheduled Billing Files.</p></i>
@@ -56,13 +56,13 @@ const ScheduledBillingFiles = () => {
         <li>
           Go to <u><b>Billing File Processing &gt;&gt; Scheduled Billing Files</b></u> page. Click 
           <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000', margin: '0 8px' }}></i>
-          button to select the scheduled billing file to update. This redirects you to Scheduled Billing File page (see <i>Figure 4.90</i>).
+          button to select the scheduled billing file to update. This redirects you to Scheduled Billing File page.
         </li>
         <li>
-          Update the field/s and click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button> button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
+          Update the field/s and click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button> button to submit the transaction. A confirmation dialog box is displayed. Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
         </li>
         <li>
-          A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+          A transaction receipt is displayed signifying that the transaction is for approval.
         </li>
       </ol>
 
@@ -82,26 +82,26 @@ const ScheduledBillingFiles = () => {
         <li>
           Go to <u><b>Billing File Processing &gt;&gt; Scheduled Billing Files</b></u> page. Click 
           <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000', margin: '0 8px' }}></i> 
-          button to select the scheduled billing file to delete. This redirects you to Future Dated Billing File page (see <i>Figure 4.90</i>).
+          button to select the scheduled billing file to delete. This redirects you to Future Dated Billing File page.
         </li>
         <li>
-          Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button. After clicking the <b>Delete</b> button, a confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
+          Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button. After clicking the <b>Delete</b> button, a confirmation dialog box is displayed. Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
         </li>
         <li>
-          A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+          A transaction receipt is displayed signifying that the transaction is for approval.
         </li>
       </ol>
 
       <h4>How to Delete Multiple Billing Files:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
-          Go to <u><b>Billing File Processing &gt;&gt; Scheduled Billing Files</b></u> page. Select from the list by clicking a row scheduled billing file (see <i>Figure 4.91</i>).
+          Go to <u><b>Billing File Processing &gt;&gt; Scheduled Billing Files</b></u> page. Select from the list by clicking a row scheduled billing file.
         </li>
         <li>
-          Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button. After clicking the button, a confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
+          Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button. After clicking the button, a confirmation dialog box is displayed. Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
         </li>
         <li>
-          A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+          A transaction receipt is displayed signifying that the transaction is for approval.
         </li>
       </ol>
 

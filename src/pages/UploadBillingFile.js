@@ -23,18 +23,18 @@ const UploadBillingFile = () => {
       <h4>How to Submit Raw Billing File for Approval:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
-          Go to <u><b>Upload Billing Files</b></u>. This redirects to Upload Billing Files page (see <i>Figure 4.82</i>).
+          Go to <u><b>Upload Billing Files</b></u>. This redirects to Upload Billing Files page.
         </li>
         <li>
           From the <u><b>Preprocessed Files</b></u> table, select and view the file to be submitted. Click the 
           <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000', margin: '0 8px' }}></i> 
-          of the selected file to submit, this will redirect to the <u><b>Manage Billing File Upload</b></u> page (see <i>Figure 4.83</i>).
+          of the selected file to submit, this will redirect to the <u><b>Manage Billing File Upload</b></u> page.
         </li>
         <li>
-          Click the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button> button to submit the transaction. A confirmation dialog box is displayed that summarizes the raw billing file (see <i>Figure 4.84</i>). Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
+          Click the <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button> button to submit the transaction. A confirmation dialog box is displayed that summarizes the raw billing file. Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
         </li>
         <li>
-          A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.85</i>).
+          A transaction receipt is displayed signifying that the transaction is for approval.
         </li>
       </ol>
 
@@ -69,7 +69,7 @@ const UploadBillingFile = () => {
           Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button to submit the transaction.
         </li>
         <li>
-          A transaction receipt is displayed that the transaction is posted (see <i>Figure 4.86</i>).
+          A transaction receipt is displayed that the transaction is posted.
         </li>
       </ol>
 
@@ -82,7 +82,7 @@ const UploadBillingFile = () => {
       <h4>How to Download Rejected Files:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
-          Select the Reject file from the <u><b>Error Files</b></u> table in <u><b>Manage Billing File</b></u> page (see <i>Figure 4.82</i>).
+          Select the Reject file from the <u><b>Error Files</b></u> table in <u><b>Manage Billing File</b></u> page.
         </li>
         <li>
           Click <i className="fas fa-download" style={{ fontSize: '16px', color: '#000' }}></i> button to download the rejected file.
@@ -95,7 +95,7 @@ const UploadBillingFile = () => {
       <h4>How to Download Error Files:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
-          Select the Error file from the <u><b>Error Files</b></u> table in <u><b>Manage Billing File</b></u> page (see <i>Figure 4.82</i>).
+          Select the Error file from the <u><b>Error Files</b></u> table in <u><b>Manage Billing File</b></u> page.
         </li>
         <li>
           Click <i className="fas fa-download" style={{ fontSize: '16px', color: '#000' }}></i> button to download the rejected file.

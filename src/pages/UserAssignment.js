@@ -54,19 +54,19 @@ const UserAssignment = () => {
           <h3>How to Assign User to Merchant:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>User Management</b></u>&gt;&gt;<u><b>User Assignment</b></u>&gt;&gt;<u><b>Assign User to Merchant</b></u> page. This redirects to User-Merchant Assignment Page (see <i>Figure 4.46</i>).
+              Go to <u><b>User Management</b></u>&gt;&gt;<u><b>User Assignment</b></u>&gt;&gt;<u><b>Assign User to Merchant</b></u> page. This redirects to User-Merchant Assignment Page.
             </li>
             <li>
               Supply the fields and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
@@ -170,19 +170,19 @@ const UserAssignment = () => {
           <h3>How to Update User Assignment:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select a list from the table in <u><b>User Assignment</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button (see <i>Figure 4.45</i>). This redirects to User-Merchant Assignment page with the details of the selected role (see <i>Figure 4.47</i>).
+              Select a list from the table in <u><b>User Assignment</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to User-Merchant Assignment page with the details of the selected role.
             </li>
             <li>
               Update the field/s and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
@@ -195,31 +195,31 @@ const UserAssignment = () => {
           <h3>How to Delete a User Assignment:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Merchant Assignment</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button (see <i>Figure 4.45</i>). This redirects to User-Merchant Assignment page with the details (see <i>Figure 4.47</i>).
+              In <u><b>Merchant Assignment</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to User-Merchant Assignment page with the details.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
           <h3>How to Multiple Delete a User Assignment:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Merchant Assignment</b></u> page, select a user-merchant assignment on the list by clicking a row (see <i>Figure 4.48</i>).
+              In <u><b>Merchant Assignment</b></u> page, select a user-merchant assignment on the list by clicking a row.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
@@ -227,7 +227,7 @@ const UserAssignment = () => {
             </li>
             
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 

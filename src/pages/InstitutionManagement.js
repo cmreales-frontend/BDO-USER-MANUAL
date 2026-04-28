@@ -96,19 +96,19 @@ const InstitutionManagement = () => {
           <h3>How to Create New Institution:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Institution</b></u>&gt;&gt;<u><b>New Institution</b></u>. This redirects to <u><b>New Institution</b></u> page (see <i>Figure 4.23</i>).
+              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Institution</b></u>&gt;&gt;<u><b>New Institution</b></u>. This redirects to <u><b>New Institution</b></u> page.
             </li>
             <li>
               Supply the fields and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
@@ -210,19 +210,19 @@ const InstitutionManagement = () => {
           <h3>How to Update Institution Details:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select a list from the table in <u><b>Manage Institution</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Institution</b></u> form with details of the selected merchant (see <i>Figure 4.24</i>).
+              Select a list from the table in <u><b>Manage Institution</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Institution</b></u> form with details of the selected merchant.
             </li>
             <li>
               Update the field/s and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
@@ -235,40 +235,40 @@ const InstitutionManagement = () => {
           <h3>How to Delete Institution Individually:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select a list from the table in <u><b>Manage Institution</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Institution</b></u> form with details of the selected merchant (see <i>Figure 4.24</i>).
+              Select a list from the table in <u><b>Manage Institution</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Institution</b></u> form with details of the selected merchant.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
               button to submit the transaction. After clicking{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button, a confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button, a confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
           <h3>How to Delete Multiple Institutions:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Manage Institution</b></u> page, select institutions on the list by clicking rows (see <i>Figure 4.25</i>).
+              In <u><b>Manage Institution</b></u> page, select institutions on the list by clicking rows.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. After clicking the button, a confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. After clicking the button, a confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 

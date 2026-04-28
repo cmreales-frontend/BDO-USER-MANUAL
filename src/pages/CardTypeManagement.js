@@ -48,19 +48,19 @@ const CardTypeManagement = () => {
           <h3>How to Create Card Type:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Card Types</b></u>&gt;&gt;<u><b>New Card Type</b></u>. This redirects to <u><b>New Card Type</b></u> page (see <i>Figure 4.31</i>).
+              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Card Types</b></u>&gt;&gt;<u><b>New Card Type</b></u>. This redirects to <u><b>New Card Type</b></u> page.
             </li>
             <li>
               Supply the fields and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit the transaction. After clicking the button, a confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. After clicking the button, a confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that transaction id for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that transaction id for approval.
             </li>
           </ol>
           <p>
@@ -216,19 +216,19 @@ const CardTypeManagement = () => {
           <h3>How to Update Card Type:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select a list from the table in <u><b>Manage Card Type</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Card Type</b></u> page with the details of the selected card type (see <i>Figure 4.32</i>).
+              Select a list from the table in <u><b>Manage Card Type</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Card Type</b></u> page with the details of the selected card type.
             </li>
             <li>
               Update the field/s and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
           <p>
@@ -252,38 +252,38 @@ const CardTypeManagement = () => {
           <h3>How to Delete Card Type:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Manage Card Type</b></u> page, select on the list of card types and click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Card Type</b></u> page with the details of the selected card type (see <i>Figure 4.32</i>).
+              In <u><b>Manage Card Type</b></u> page, select on the list of card types and click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Card Type</b></u> page with the details of the selected card type.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
           <h3>How to Delete Multiple Card Type:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Manage Card Type</b></u> page, select a card type on the list by clicking a row (see <i>Figure 4.33</i>).
+              In <u><b>Manage Card Type</b></u> page, select a card type on the list by clicking a row.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
