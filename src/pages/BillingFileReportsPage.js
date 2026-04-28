@@ -168,7 +168,11 @@ const BillingFileReportsPage = () => {
                 cursor: "pointer",
                 fontSize: "14px",
               }}>Export to Excel</button>{' '}
+<<<<<<< HEAD
               button.
+=======
+              button <i>.</i>
+>>>>>>> 1b23c6f4142b65f263891da4ba243ddcfd60b200
             </li>
             <li style={{ marginBottom: "1px" }}>
               Then, a download dialog box is displayed. Click{' '}

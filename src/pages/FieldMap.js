@@ -174,7 +174,7 @@ const FieldMap = () => {
           <h3>How to Update Field Map:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select a list from the table in <u><b>Field Map</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Field Map</b></u> page with the details of the selected Institution - Bill code.
+              Select a list from the table in <u><b>Field Map</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button (see <i>Figure 4.49</i>). This redirects to <u><b>Edit Field Map</b></u> page with the details of the selected Institution – Bill code (see <i>Figure 4.50</i>).
             </li>
             <li>
               Update the field/s and click{' '}

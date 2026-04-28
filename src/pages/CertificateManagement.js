@@ -341,9 +341,9 @@ const CertificateManagement = () => {
               button on the lower part of the form.
             </li>
             <li>
-              After clicking the button, a download dialog box is displayed. Click 
-              <button style={{ backgroundColor: '#dddcd7', border: '1px solid #ccc', padding: '2px 12px', borderRadius: '4px', margin: '0 3px' }}>OK</button> 
-              to open/save or <button style={{ backgroundColor: '#dddcd7', border: '1px solid #ccc', padding: '2px 12px', borderRadius: '4px', margin: '0 2px' }}>Cancel</button> if otherwise.
+              After clicking the button, a download dialog box is displayed (see <i>Figure 4.57</i>). Click 
+              <button style={{ backgroundColor: '#dddcd7', border: '1px solid #ccc', padding: '2px 12px', borderRadius: '4px', margin: '0 8px' }}>OK</button> 
+              to open/save or <button style={{ backgroundColor: '#dddcd7', border: '1px solid #ccc', padding: '2px 12px', borderRadius: '4px', margin: '0 8px' }}>Cancel</button> if otherwise.
             </li>
           </ol>
 

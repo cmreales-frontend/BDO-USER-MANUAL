@@ -142,7 +142,7 @@ const MerchantManagementSub = () => {
 
           <br/>
           <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-          <img src={newMerchantPage} alt="Figure 4.17: New Merchant Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }}/>
+          <img src={newMerchantPage}  style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }}/>
           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>New Merchant Pages</div>
           </div>
 

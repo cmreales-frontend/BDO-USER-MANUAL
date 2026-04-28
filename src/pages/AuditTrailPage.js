@@ -4,7 +4,6 @@ import auditTrailFormImage from "../assets/audit_trail_form.png";
 import auditTrailFormImage1 from "../assets/audit_trail_form1.png";
 import downloadDialogBoxImage from "../assets/download_dialog_box.png";
 
-
 const popupOverlayStyle = {
   position: 'fixed',
   top: 0,

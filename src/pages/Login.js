@@ -37,7 +37,7 @@ const Login = () => {
         To access BRPS application, enter web address in web browser. After entering the web address, BRPS web login page is displayed. BRPS login page consists of login box.
       </p>
 
-      <div style={{ textAlign: 'center', marginBottom: '5px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
         <img src={loginPage} alt="Figure 4.2: Login Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '40%' }} />
       <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Download Dialog Box</div>
       </div>

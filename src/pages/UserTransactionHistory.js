@@ -57,12 +57,12 @@ const UserTransactionHistory = () => {
 
           <br/>
         <div style={{ textAlign: 'center', marginBottom: '5px' }}>
-          <img src={userTransactionHistoryPageView} alt="Figure 4.62: User Transaction History Page View as System Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
+          <img src={userTransactionHistoryPageView} style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
         <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Transaction History Page View as System Administrator</div>
         </div>  
 
         <div style={{ textAlign: 'center', marginBottom: '5px' }}>
-          <img src={userTransactionHistoryPageViewAsUser} alt="Figure 4.63: User Transaction History Page View as User/User Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
+          <img src={userTransactionHistoryPageViewAsUser} style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
         <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Transaction History Page View as User/User Administrator</div>
         </div>
   

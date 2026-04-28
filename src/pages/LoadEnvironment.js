@@ -14,10 +14,10 @@ const LoadEnvironment = () => {
       <div className="subsection">
         <div className="subsection-title">Load Environment</div>
         <div className="content-text">
-          <p>
-          Switch Merchant Page consists of all merchants and corresponding role assigned to logged in user. It is only displayed if user logged in has many merchants assigned to him/her.
-          For more information, click on <button type="button" onClick={togglePopupVisibility} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'blue', textDecoration: 'underline', font: 'inherit' }} aria-label="Show Field Details">Field Details</button>.
-        </p>
+<p>
+  Switch Merchant Page consists of all merchants and corresponding role assigned to logged in user. It is only displayed if user logged in has many merchants assigned to him/her.
+  For more information, click on <button type="button" onClick={togglePopupVisibility} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'blue', textDecoration: 'underline', font: 'inherit' }} aria-label="Show Field Details">Field Details</button>.
+</p>
           <br/>
           <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={loadEnvironment} alt="Load Environment"style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }}/>

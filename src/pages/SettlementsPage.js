@@ -24,8 +24,8 @@ const SettlementsPage = () => {
             <ol style={{ paddingLeft: '40px' }}>
               <li style={{ marginBottom: '1px' }}>
                 In <strong>Reports &gt;&gt; Settlement Report</strong> page, click  
-                <i className=" fas fa-download " style={{ margin: '0 6px' }}></i> 
-                button on the lower part of the form.
+                <i className=" fas fa-download "></i> 
+                button on the lower part of the form (see <strong>Figure 4.70</strong>).
               </li>
               
               <li style={{ marginBottom: '1px' }}>

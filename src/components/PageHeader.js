@@ -70,11 +70,7 @@ const PageHeader = () => {
           {showDropdown && results.length > 0 && (
             <ul className="search-dropdown">
               {results.map(doc => (
-                <li
-                  key={doc.path}
-                  className="search-dropdown-item"
-                  onClick={() => handleSelect(doc.path)}>
-                  {doc.title}
+                <li key={doc.path} className="search-dropdown-item" onClick={() => handleSelect(doc.path)}> {doc.title}
                 </li>
               ))}
             </ul>
