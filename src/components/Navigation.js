@@ -10,7 +10,6 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
       label: "Introduction",
     },
     {
-      path: "/user-types",
       label: "User Types",
       submenu: [
         { path: "/user-role-types", label: "User Role Types" },
@@ -18,7 +17,6 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
       ]
     },
     {
-      path: "/functionalities",
       label: "Functionalities",
       submenu: [
         { path: "/system-screen",           label: "System Screen" },
@@ -49,7 +47,7 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
           label: "User Management",
           submenu: [
             { path: "/user-management-sub",  label: "User Management" },
-            { path: "/roles-management",     label: "Roles and Privileges" },
+            { path: "/roles-and-privileges",     label: "Roles and Privileges" },
             { path: "/user-assignment",      label: "User-Merchant Assignment" }
           ]
         },
@@ -65,7 +63,6 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
           ]
         },
         {
-          path: "/report",
           label: "Reports",
           submenu: [
             { path: "/audit-trail",           label: "Audit Trail" },
@@ -104,7 +101,11 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
       path: "/error-messages",
       label: "Error Messages"
     },
-  ];
+    {
+      path: "/revision-history-table",
+      label: "Revision History Table"
+  },
+];
 
   const handleNavClick = () => {
     if (window.innerWidth <= 768) onMobileClose();

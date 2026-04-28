@@ -56,7 +56,7 @@ const AuditTrailPage = () => {
         <h4>How to download Audit Trail Report:</h4>
         <ol style={{ marginLeft: '20px' }}>
           <li>
-            Go to <strong>Reports &gt;&gt; Audit Trails</strong>. This redirects to the Audit Trail page (see <i>Figure 4.65</i>).
+            Go to <strong>Reports &gt;&gt; Audit Trails</strong>. This redirects to the Audit Trail page.
           </li>
           <li>
             Supply fields and then, click{' '}
@@ -69,7 +69,7 @@ const AuditTrailPage = () => {
             button.
           </li>
           <li>
-            A download dialog box will show (see <i>Figure 4.66</i>). Click{' '}
+            A download dialog box will show. Click{' '}
             <button style={{ backgroundColor: '#c6c5be', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>OK</button>{' '}
             to open/save or{' '}
             <button style={{ backgroundColor: '#c6c5be', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Cancel</button>{' '}

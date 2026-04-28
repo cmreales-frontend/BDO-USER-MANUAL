@@ -57,7 +57,7 @@ const UserManagementSub = () => {
             <li>
               In <u><b>Manage User</b></u> page, click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Export to Excel</button>{' '}
-              button (see <i>Figure 4.34</i>).
+              button.
             </li>
             <li>
               Then, a download dialog box is displayed. Click{' '}
@@ -71,19 +71,19 @@ const UserManagementSub = () => {
           <h3>How to Create New User:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>User Management</b></u>&gt;&gt;<u><b>Manage User</b></u>&gt;&gt;<u><b>New User</b></u>. This redirects to New User page (see <i>Figure 4.35</i>).
+              Go to <u><b>User Management</b></u>&gt;&gt;<u><b>Manage User</b></u>&gt;&gt;<u><b>New User</b></u>. This redirects to New User page.
             </li>
             <li>
               Supply the fields and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
           <p>
@@ -449,20 +449,20 @@ const UserManagementSub = () => {
           <h3>How to Update User:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select a list from the table in <u><b>Manage User</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit User</b></u> page with the details of the selected user (see <i>Figure 4.36</i>).
+              Select a list from the table in <u><b>Manage User</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit User</b></u> page with the details of the selected user.
             </li>
 
             <li>
               Update the field/s and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
@@ -475,38 +475,38 @@ const UserManagementSub = () => {
           <h3>How to Delete a User:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select a list from the table in <u><b>Manage User</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit User</b></u> page with the details of the selected user (see <i>Figure 4.36</i>).
+              Select a list from the table in <u><b>Manage User</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit User</b></u> page with the details of the selected user.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
           <h3>How to Delete Multiple Users:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Manage User</b></u> page, select a user on the list by clicking a row (see <i>Figure 4.37</i>).
+              In <u><b>Manage User</b></u> page, select a user on the list by clicking a row.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+              A transaction receipt is displayed signifying that the transaction is for approval.
             </li>
           </ol>
 
@@ -519,7 +519,7 @@ const UserManagementSub = () => {
           <h3>How to Force Change User Password:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Manage User</b></u> page, click <i className="fas fa-key" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to Change Password Form (see <i>Figure 4.38</i>).
+              In <u><b>Manage User</b></u> page, click <i className="fas fa-key" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to Change Password Form.
             </li>
             <li>
               Supply the fields or click{' '}
@@ -529,14 +529,14 @@ const UserManagementSub = () => {
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
               if otherwise.
             </li>
             <li>
-              A transaction receipt is displayed signifying that the transaction is posted to user's email address (see <i>Figure 4.39</i>).
+              A transaction receipt is displayed signifying that the transaction is posted to user's email address.
             </li>
           </ol>
           <p>

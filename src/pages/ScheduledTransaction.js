@@ -20,13 +20,13 @@ const ScheduledTransaction = () => {
       <h4>How to View the list of scheduled transactions:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
-          Go to <u><b>Post Single Transaction &gt;&gt; Scheduled Transaction</b></u> page. This redirects you to Post Single Scheduled Transactions page (see <i>Figure 4.93</i>).
+          Go to <u><b>Post Single Transaction &gt;&gt; Scheduled Transaction</b></u> page. This redirects you to Post Single Scheduled Transactions page.
         </li>
         <li>
           The table shows all the scheduled post single transactions.
         </li>
         <li>
-          Click the <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button to see the details of each transaction (see <i>Figure 4.94</i>).
+          Click the <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button to see the details of each transaction.
         </li>
       </ol>
 
@@ -39,10 +39,10 @@ const ScheduledTransaction = () => {
       <h4>How to Update the Scheduled Post Single Transaction:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
-          Go to <u><b>Post Transaction &gt;&gt; Post Single Scheduled Transaction</b></u>. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button of the selected transaction. This will show the details of the selected transaction (see <i>Figure 4.95</i>).
+          Go to <u><b>Post Transaction &gt;&gt; Post Single Scheduled Transaction</b></u>. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button of the selected transaction. This will show the details of the selected transaction.
         </li>
         <li>
-          Update the field/s and click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button> button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise. A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+          Update the field/s and click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button> button to submit the transaction. A confirmation dialog box is displayed. Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise. A transaction receipt is displayed signifying that the transaction is for approval.
         </li>
       </ol>
 
@@ -55,26 +55,26 @@ const ScheduledTransaction = () => {
       <h4>How to Delete Future Dated Single Transaction Individually:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
-          In <u><b>Post Single Scheduled Transactions</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button (see <i>Figure 4.95</i>). This redirects to Transaction Details Form with the details of the selected transaction.
+          In <u><b>Post Single Scheduled Transactions</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to Transaction Details Form with the details of the selected transaction.
         </li>
         <li>
-          Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button. After clicking <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button, a confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
+          Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button. After clicking <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button, a confirmation dialog box is displayed. Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
         </li>
         <li>
-            A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+            A transaction receipt is displayed signifying that the transaction is for approval.
         </li>
       </ol>
 
       <h4>How to Delete Multiple Future Dated Transactions:</h4>
       <ol style={{ marginLeft: '20px' }}>
         <li>
-          In <u><b>Post Single Scheduled Transactions</b></u> page, select transaction on the list by clicking rows (see <i>Figure 4.95</i>).
+          In <u><b>Post Single Scheduled Transactions</b></u> page, select transaction on the list by clicking rows.
         </li>
         <li>
-          Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button. After clicking the button, a confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
+          Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button> button. After clicking the button, a confirmation dialog box is displayed. Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button> to continue and <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button> if otherwise.
         </li>
         <li>
-          A transaction receipt is displayed signifying that the transaction is for approval (see <i>Figure 4.19</i>).
+          A transaction receipt is displayed signifying that the transaction is for approval.
         </li>
       </ol>
 

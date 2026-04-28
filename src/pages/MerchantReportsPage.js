@@ -48,7 +48,7 @@ const MerchantReportsPage = () => {
       </p>
 
 
-      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '5px' }}>
         <img src={reportsPageImage} alt="Reports Page as System Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
       <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Report Page as System Administrator</div>
       </div>
@@ -56,10 +56,7 @@ const MerchantReportsPage = () => {
       <br/>
       <p>
         For more information, click on{' '}
-        <button
-          type="button"
-          onClick={() => setIsManagePopupVisible(true)}
-          style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0 }}>
+        <button type="button" onClick={() => setIsManagePopupVisible(true)} style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0 }}>
           Field Details
         </button>.
       </p>
@@ -102,7 +99,7 @@ const MerchantReportsPage = () => {
       )}
 
       <br/>
-      <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+      <div style={{ textAlign: 'center', marginBottom: '5px' }}>
         <img src={reportsPageAsUserImage} alt="Reports Page as User/User Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
         <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Reports Page as User/User Administrator</div>
       </div>
@@ -113,7 +110,7 @@ const MerchantReportsPage = () => {
         </p>
         <ol className="content-text" style={{ paddingLeft: '24px', lineHeight: '1.8' }}>
           <li>
-            In <strong><u>Reports&gt;&gt;Merchant Reports</u></strong> menu. This will redirect to the Merchant Reports (<em>see Figure 4.67</em>).
+            In <strong><u>Reports&gt;&gt;Merchant Reports</u></strong> menu. This will redirect to the Merchant Reports.
           </li>
           <li>
             Then, in reports page, input desired <strong>Bill code</strong>, click{' '}
@@ -124,7 +121,7 @@ const MerchantReportsPage = () => {
             Then, available reports are displayed. At the reports list, click <strong>&#11015;</strong> button.
           </li>
           <li>
-            After clicking the button, a download dialog box is displayed (<em>see Figure 4.69</em>). Click{' '}
+            After clicking the button, a download dialog box is displayed. Click{' '}
             <button style={{ backgroundColor: '#c5c3c3', border: '1px solid #999', padding: '2px 10px', fontSize: '12px', borderRadius: '3px', cursor: 'default' }}>OK</button>{' '}
             to open/save or{' '}
             <button style={{ backgroundColor: '#c5c3c3', border: '1px solid #999', padding: '2px 10px', fontSize: '12px', borderRadius: '3px', cursor: 'default' }}>Cancel</button>{' '}
@@ -137,13 +134,13 @@ const MerchantReportsPage = () => {
         </p>
         <ol className="content-text" style={{ paddingLeft: '24px', lineHeight: '1.8' }}>
           <li>
-            In <strong><u>Reports&gt;&gt;Merchant Reports</u></strong> menu. This will redirect to the Merchant Reports (<em>see Figure 4.68</em>).
+            In <strong><u>Reports&gt;&gt;Merchant Reports</u></strong> menu. This will redirect to the Merchant Reports.
           </li>
           <li>
             Then, available reports are displayed in reports page. At the reports list, click <strong>&#11015;</strong> button.
           </li>
           <li>
-            After clicking the button, a download dialog box is displayed (<em>see Figure 4.69</em>). Click{' '}
+            After clicking the button, a download dialog box is displayed. Click{' '}
             <button style={{ backgroundColor: '#c5c3c3', border: '1px solid #999', padding: '2px 10px', fontSize: '12px', borderRadius: '3px', cursor: 'default' }}>OK</button>{' '}
             to open/save or{' '}
             <button style={{ backgroundColor: '#c5c3c3', border: '1px solid #999', padding: '2px 10px', fontSize: '12px', borderRadius: '3px', cursor: 'default' }}>Cancel</button>{' '}

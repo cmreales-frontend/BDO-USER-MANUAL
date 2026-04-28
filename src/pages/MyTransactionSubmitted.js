@@ -17,7 +17,7 @@ const MyTransactionSubmitted = () => {
 
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Click the <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. A new window will pop up and will show the details of the transaction depending on its type (see <i>Figure 4.7</i>).
+              Click the <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. A new window will pop up and will show the details of the transaction depending on its type.
             </li>
             <li>
               Click <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Close</button> or <span style={{ fontWeight: 'bold', color: '#FF0000' }}>X</span> button to close the window.

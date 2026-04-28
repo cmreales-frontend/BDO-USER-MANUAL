@@ -56,7 +56,7 @@ const Profile = () => {
           <h4>How to Change User Password:</h4>
           <ol style={{ paddingLeft: "40px" }}>
             <li style={{ marginBottom: "1px" }}>
-              Go to <strong>User Profile &gt;&gt; Change Password</strong> page. This redirects you to Change Password page (see <strong>Figure 4.76</strong>).
+              Go to <strong>User Profile &gt;&gt; Change Password</strong> page. This redirects you to Change Password page.
             </li>
 
             <li style={{ marginBottom: "1px" }}>
@@ -68,7 +68,7 @@ const Profile = () => {
             <li style={{ marginBottom: "1px" }}>
               Click{' '}
               <button style={{ backgroundColor: "#ffc107", color: "#000", border: "1px solid #ccc", padding: "5px 10px", borderRadius: "4px", cursor: "pointer", fontSize: "14px" }}>Update</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <strong>Figure 4.77</strong>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: "#ffc107", color: "#000", border: "1px solid #ccc", padding: "5px 10px", borderRadius: "4px", cursor: "pointer", fontSize: "14px" }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: "#ffc107", color: "#000", border: "1px solid #ffc107", padding: "5px 10px", borderRadius: "4px", cursor: "pointer", fontSize: "14px" }}>No</button>{' '}
@@ -76,7 +76,7 @@ const Profile = () => {
             </li>
             
             <li style={{ marginBottom: "1px" }}>
-              A transaction receipt is displayed instructing the user to log out and log in again (see <strong>Figure 4.78</strong>).
+              A transaction receipt is displayed instructing the user to log out and log in again.
             </li>
           </ol>
 

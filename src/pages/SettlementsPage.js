@@ -24,12 +24,12 @@ const SettlementsPage = () => {
             <ol style={{ paddingLeft: '40px' }}>
               <li style={{ marginBottom: '1px' }}>
                 In <strong>Reports &gt;&gt; Settlement Report</strong> page, click  
-                <i className=" fas fa-download "></i> 
-                button on the lower part of the form (see <strong>Figure 4.70</strong>).
+                <i className=" fas fa-download " style={{ margin: '0 6px' }}></i> 
+                button on the lower part of the form.
               </li>
               
               <li style={{ marginBottom: '1px' }}>
-                After clicking the button, a download dialog box is displayed (see <strong>Figure 4.71</strong>). Click 
+                After clicking the button, a download dialog box is displayed. Click 
                 <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}> OK </button> 
                 to open/save or <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Cancel</button> if otherwise. See Appendix D for generated Extracted Unsettled Report sample.
               </li>

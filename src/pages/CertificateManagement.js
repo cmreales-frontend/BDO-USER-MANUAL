@@ -56,7 +56,7 @@ const CertificateManagement = () => {
           <h3>How to View Client Certificate:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Certificate Management</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirect to certificate form with the details of the selected certificate (see <i>Figure 4.54</i>).
+              In <u><b>Certificate Management</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirect to certificate form with the details of the selected certificate.
             </li>
           </ol>
 
@@ -69,12 +69,12 @@ const CertificateManagement = () => {
           <h3>How to Create New Certificate:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>New Certificate</b></u> page. This redirects to Certificate page (see <i>Figure 4.55</i>).
+              Go to <u><b>New Certificate</b></u> page. This redirects to Certificate page.
             </li>
             <li>
               Supply the fields and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
@@ -315,7 +315,7 @@ const CertificateManagement = () => {
             <li>
               In <u><b>Certificate</b></u> page, click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Revoke</button>{' '}
-              button (see <i>Figure 4.54</i>). A confirmation dialog box is displayed (see <i>Figure 4.56</i>). Click{' '}
+              button. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
@@ -338,12 +338,12 @@ const CertificateManagement = () => {
             <li>
               In <u><b>Edit Certificate</b></u> page, click 
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 12px', borderRadius: '4px', margin: '0 8px' }}>Download</button> 
-              button on the lower part of the form (see <i>Figure 4.54</i>).
+              button on the lower part of the form.
             </li>
             <li>
-              After clicking the button, a download dialog box is displayed (see <i>Figure 4.57</i>). Click 
-              <button style={{ backgroundColor: '#dddcd7', border: '1px solid #ccc', padding: '2px 12px', borderRadius: '4px', margin: '0 8px' }}>OK</button> 
-              to open/save or <button style={{ backgroundColor: '#dddcd7', border: '1px solid #ccc', padding: '2px 12px', borderRadius: '4px', margin: '0 8px' }}>Cancel</button> if otherwise.
+              After clicking the button, a download dialog box is displayed. Click 
+              <button style={{ backgroundColor: '#dddcd7', border: '1px solid #ccc', padding: '2px 12px', borderRadius: '4px', margin: '0 3px' }}>OK</button> 
+              to open/save or <button style={{ backgroundColor: '#dddcd7', border: '1px solid #ccc', padding: '2px 12px', borderRadius: '4px', margin: '0 2px' }}>Cancel</button> if otherwise.
             </li>
           </ol>
 

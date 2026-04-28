@@ -23,14 +23,7 @@ const SendSettlementsPage = () => {
           boxSizing: "border-box",
           backgroundColor: "#fff"
         }}>
-          <img
-            src={sendSettlementPage}
-            alt="Send Settlement Page"
-            style={{
-              width: "125%",
-              height: "auto",
-              display: "block"
-            }}
+          <img src={sendSettlementPage} alt="Send Settlement Page" style={{ width: "100%", height: "auto", display: "block" }}
           />
         </div>
 
@@ -44,14 +37,7 @@ const SendSettlementsPage = () => {
           boxSizing: "border-box",
           backgroundColor: "#fff"
         }}>
-          <img
-            src={sendSettlementPage1}
-            alt="Send Settlement Page 2"
-            style={{
-              width: "100%",
-              height: "auto",
-              display: "block"
-            }}
+          <img src={sendSettlementPage1} alt="Send Settlement Page 2" style={{ width: "100%", height: "auto", display: "block" }}
           />
         </div>
 
@@ -73,7 +59,7 @@ const SendSettlementsPage = () => {
             }}>Select file</button> button to select the extracted unsettled file for manual resettlement.
           </li>
           <li style={{ marginBottom: "1px" }}>
-            A transaction receipt is displayed signifying that the transaction is already posted <i>(see Figure 4.19).</i>
+            A transaction receipt is displayed signifying that the transaction is already posted.
           </li>
         </ol>
       </div>

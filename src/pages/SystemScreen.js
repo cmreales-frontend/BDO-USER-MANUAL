@@ -14,7 +14,7 @@ const SystemScreen = () => {
       <div className="subsection">
         <div className="subsection-title">System Screen</div>
         <div className="content-text">
-          <p>The BRPS <strong>System Screen</strong> consists of the following items <i>(see Figure 4.1)</i>:</p>
+          <p>The BRPS <strong>System Screen</strong> consists of the following items</p>
     
           <p><strong>1. Main Menu Navigation</strong> - these buttons are role type specific and letting the user change from functions to functions. These will change according to the user role type.</p>
           <p><strong>2. Menu Navigation Bar</strong> - this also contains menus and submenus.</p>

@@ -79,6 +79,9 @@ const Docs = [
 
   // Error Messages
   { title: "Error Messages", content: "List of system error messages and their descriptions and resolutions in BRPS.", path: "/error-messages" },
+
+  // Revision History Table
+  { title: "Revision History Table", content: "", path: "/revision-history-table" },
 ];
 
 export default Docs;

@@ -54,7 +54,7 @@ const FieldMap = () => {
           <h3>How to Create New Custom Field Map:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>Field Map</b></u>&gt;&gt;<u><b>New Custom Field Map</b></u>. This redirects to Custom Field Map page (see <i>Figure 4.50</i>).
+              Go to <u><b>Field Map</b></u>&gt;&gt;<u><b>New Custom Field Map</b></u>. This redirects to Custom Field Map page.
             </li>
             <li>Select institution and bill code.</li>
             <li>Drag each row to arrange the sequence depending on custom field of the merchant.</li>
@@ -63,7 +63,7 @@ const FieldMap = () => {
             <li>
               Click the{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
@@ -174,12 +174,12 @@ const FieldMap = () => {
           <h3>How to Update Field Map:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select a list from the table in <u><b>Field Map</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button (see <i>Figure 4.49</i>). This redirects to <u><b>Edit Field Map</b></u> page with the details of the selected Institution – Bill code (see <i>Figure 4.50</i>).
+              Select a list from the table in <u><b>Field Map</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Field Map</b></u> page with the details of the selected Institution - Bill code.
             </li>
             <li>
               Update the field/s and click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
@@ -199,12 +199,12 @@ const FieldMap = () => {
           <h3>How to Delete a Field Map:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              In <u><b>Field Map</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button (see <i>Figure 4.49</i>). This redirects to User-Merchant Assignment page with the details (see <i>Figure 4.51</i>).
+              In <u><b>Field Map</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to User-Merchant Assignment page with the details.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
@@ -218,12 +218,12 @@ const FieldMap = () => {
           <h3>How to Multiple Delete a Field Map:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Select from the list by clicking a row (see <i>Figure 4.52</i>).
+              Select from the list by clicking a row.
             </li>
             <li>
               Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed (see <i>Figure 4.18</i>). Click{' '}
+              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
               to continue and{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}

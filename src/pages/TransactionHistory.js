@@ -47,10 +47,10 @@ const TransactionHistory = () => {
           <h3>How to View Transaction History:</h3>
           <ol style={{ marginLeft: '20px' }}>
             <li>
-              Go to <u><b>History</b></u>&gt;&gt;<u><b>Transaction</b></u>. This redirect to Transaction History Page (see <i>Figure 4.60</i> and <i>4.61</i>).
+              Go to <u><b>History</b></u>&gt;&gt;<u><b>Transaction</b></u>. This redirect to Transaction History Page.
             </li>
             <li>
-              Supply fields. If the role type is System Administrator, there's a need to provide the merchant number manually (see <i>Figure 4.60</i>). If the role type is User, the merchant number is automatically provided (see <i>Figure 4.61</i>). After providing the information, click the{' '}
+              Supply fields. If the role type is System Administrator, there's a need to provide the merchant number manually. If the role type is User, the merchant number is automatically provided. After providing the information, click the{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
               button to submit search parameters and wait for the result to show in the billing file history table.
             </li>

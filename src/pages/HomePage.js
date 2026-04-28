@@ -11,7 +11,7 @@ const HomePage = () => {
           <p>
             The <strong>Home Page</strong> is the main page loaded by the system upon successful login and
             loading of merchant environment. It contains approval queue list and a table for Approved and
-            Rejected Transactions<i> (see Figure 4.5).</i>
+            Rejected Transactions.
           </p>
           <br/>
           <div style={{ textAlign: 'center', marginBottom: '10px' }}>

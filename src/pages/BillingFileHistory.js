@@ -49,7 +49,7 @@ const BillingFileHistory = () => {
               Go to <u><b>History</b></u>&gt;&gt;<u><b>Billing File</b></u>. This redirect to Billing File History Page.
             </li>
             <li>
-              Supply fields. If role type is System Administrator, there's a need to provide the bill code (see <i>Figure 4.58</i>). If the role type is User, the Bill Code is automatically provided (see <i>Figure 4.59</i>). After providing the information, click{' '}
+              Supply fields. If role type is System Administrator, there's a need to provide the bill code. If the role type is User, the Bill Code is automatically provided. After providing the information, click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
               button to submit search parameters and wait for the result to show in the billing file history table.
             </li>

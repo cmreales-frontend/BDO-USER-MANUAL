@@ -34,7 +34,7 @@ import MerchantManagementSub from './pages/MerchantManagementSub';
 import InstitutionManagement from './pages/InstitutionManagement';
 import MerchantSupportedCard from './pages/MerchantSupportedCard';
 import CardTypeManagement from './pages/CardTypeManagement';
-import RolesManagement from './pages/RolesManagement';
+import RolesAndPrivileges from './pages/RolesAndPrivileges';
 import UserAssignment from './pages/UserAssignment';
 import FieldMap from './pages/FieldMap';
 import CertificateManagement from './pages/CertificateManagement';
@@ -45,6 +45,7 @@ import UserTransactionHistory from './pages/UserTransactionHistory';
 import ErrorMessages from './pages/ErrorMessages';
 import UserRoleTypes from './pages/UserRoleTypes';
 import UserFunctionTypes from './pages/UserFunctionTypes';
+import RevisionHistoryTable from './pages/RevisionHistoryTable';
 
 import './styles/App.css';
 import logo from './assets/bdo-logo-removebg-preview.png';
@@ -77,13 +78,15 @@ function App() {
           <aside className="left-gutter">
             <div className="logo-wrap">
               <img src={logo} alt="BDO Logo" className="logo" />
-            </div>
+         </div>
 
-            <Navigation
-              mobileOpen={mobileOpen}
-              onMobileClose={closeMobileNav}
-            />
-          </aside>
+  <Navigation mobileOpen={mobileOpen} onMobileClose={closeMobileNav} />
+
+        <div className="nav-footer">
+        <p>BRPS User Manual 2.1.0</p>
+        <p>for BRPS version 3.1.34</p>
+      </div>
+  </aside>
 
           <main className="content-area">
             <PageHeader />
@@ -121,7 +124,7 @@ function App() {
             {/* User Management Submenu*/}
               <Route path="/user-management-func" element={<UserManagementFunc />} />
               <Route path="/user-management-sub" element={<UserManagementSub />} />
-              <Route path="/roles-management" element={<RolesManagement />} />
+              <Route path="/roles-and-privileges" element={<RolesAndPrivileges />} />
               <Route path="/user-assignment" element={<UserAssignment />} />
 
             {/* Field Map Submenu*/}
@@ -164,6 +167,9 @@ function App() {
               <Route path="/error-messages" element={<ErrorMessages />} />
 
              
+            {/* Revision History Table */}
+              <Route path="/revision-history-table" element={<RevisionHistoryTable />} />
+
             </Routes>
 
           </main>
