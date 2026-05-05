@@ -30,9 +30,45 @@ const popupBoxStyle = {
   maxWidth: '500px',
 };
 
+const accordionContainerStyle = {
+  border: '1px solid #ddd',
+  borderRadius: '8px',
+  overflow: 'hidden',
+  marginTop: '16px',
+};
+
+const accordionHeaderStyle = (isOpen) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '14px 18px',
+  cursor: 'pointer',
+  userSelect: 'none',
+  backgroundColor: isOpen ? '#f5f5f5' : '#ffffff',
+  borderBottom: '1px solid #ddd',
+});
+
+const accordionBodyStyle = {
+  backgroundColor: '#f9f9f9',
+  padding: '14px 18px 18px 18px',
+  borderBottom: '1px solid #ddd',
+};
+
+const chevronStyle = (isOpen) => ({
+  fontSize: '13px',
+  color: '#888',
+  display: 'inline-block',
+  transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+  transition: 'transform 0.2s',
+});
+
 const MerchantSupportedCard = () => {
   const [isManagePopupVisible, setIsManagePopupVisible] = useState(false);
   const [isNewCardPopupVisible, setIsNewCardPopupVisible] = useState(false);
+  const [isAssignOpen, setIsAssignOpen] = useState(false);
+  const [isUnlinkOpen, setIsUnlinkOpen] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const [isDeleteMultipleOpen, setIsDeleteMultipleOpen] = useState(false);
 
   return (
     <div className="content-section">
@@ -43,18 +79,17 @@ const MerchantSupportedCard = () => {
 
           <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={manageSupportedCardPage} alt="Manage Supported Card Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Manage Supported Card Page</div>
+            <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Manage Supported Card Page</div>
           </div>
 
           <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
+            <button
+              type="button"
+              onClick={() => setIsManagePopupVisible(true)}
+              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>
               Field Details
-            </a>.
+            </button>.
           </p>
 
           {isManagePopupVisible && (
@@ -63,9 +98,7 @@ const MerchantSupportedCard = () => {
               <div style={popupBoxStyle}>
                 <table className="command-syntax-table" style={{ marginTop: '10px' }}>
                   <thead>
-                    <tr>
-                      <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-                    </tr>
+                    <tr><th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th></tr>
                   </thead>
                   <tbody>
                     <tr><td>Field Name:</td><td><strong>Search</strong></td></tr>
@@ -78,240 +111,241 @@ const MerchantSupportedCard = () => {
             </>
           )}
 
-          <h3>How to Assign New Card Type on a Merchant:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u>&gt;&gt;<u><b>New Supported Card</b></u>. This redirects to <u><b>New Supported Card</b></u> page.
-            </li>
-            <li>
-              Supply the fields, mark the checkbox in the <u><b>Available Card Type</b></u> and click &#x276F; to select it. Also, if the selected card should have TID, toggle on the <u><b>Credential on the File Indicator</b></u> and click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Create</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that the transaction is for approval.
-            </li>
-          </ol>
+          <div style={accordionContainerStyle}>
 
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={newSupportedCardForm} alt="Merchant Supported Card Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Merchant Supported Card Form</div>
-          </div>
-
-          <p>
-            For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsNewCardPopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
-              Field Details
-            </a>.
-          </p>
-
-          {isNewCardPopupVisible && (
-            <>
-              <div style={popupOverlayStyle} onClick={() => setIsNewCardPopupVisible(false)} />
-              <div style={popupBoxStyle}>
-                <table className="command-syntax-table" style={{ marginTop: '10px' }}>
-                  <thead>
-                    <tr>
-                      <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Bill Code - Merchant Name</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the merchant.</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Dropdown</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Required field</td>
-                    </tr>
-
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Merchant No</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the merchant number supported by specified merchant.</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Numeric</td>
-                    </tr>
-                    <tr>
-                      <td>Required Length:</td>
-                      <td>11</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Required field</td>
-                    </tr>
-
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Terminal ID</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the terminal ID for each merchant number supported by a merchant.</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Numeric</td>
-                    </tr>
-                    <tr>
-                      <td>Required Length:</td>
-                      <td>8</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Required field</td>
-                    </tr>
-
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Credential on File Indicator</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the indicator character for selected card type.</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Dropdown</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Conditional. If Card types include Visa</td>
-                    </tr>
-
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Available Card Types</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the type of the cards.</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Multi-pick list</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Required field</td>
-                    </tr>
-
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Credential on File Indicator</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the indicator which identifies if a card type should have a TID or <i>Not</i>. This is only applicable for Visa.</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Dropdown</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Conditional. If Card types include Visa</td>
-                    </tr>
-                  </tbody>
-                </table>
+            <div>
+              <div style={accordionHeaderStyle(isAssignOpen)} onClick={() => setIsAssignOpen(!isAssignOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Assign New Card Type on a Merchant:</span>
+                <span style={chevronStyle(isAssignOpen)}>&#8964;</span>
               </div>
-            </>
-          )}
+              {isAssignOpen && (
+                <div style={accordionBodyStyle}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u>&gt;&gt;<u><b>New Supported Card</b></u>. This redirects to <u><b>New Supported Card</b></u> page.
+                    </li>
+                    <li>
+                      Supply the fields, mark the checkbox in the <u><b>Available Card Type</b></u> and click &#x276F; to select it. Also, if the selected card should have TID, toggle on the <u><b>Credential on the File Indicator</b></u> and click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Create</button>{' '}
+                      button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is for approval.</li>
+                  </ol>
 
-          <h3>How to Unlink Card Type to a Merchant Number:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Supported Card</b></u> page with the details.
-            </li>
-            <li>
-              Mark the checkbox in the <u><b>Selected Card Types</b></u> and click the &#x276E; deselect it. Click the{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that the transaction is for approval.
-            </li>
-          </ol>
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={newSupportedCardForm} alt="Merchant Supported Card Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Merchant Supported Card Form</div>
+                  </div>
 
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={editSupportedCardDetails} alt="Edit Supported Card Details" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Edit Supported Card Details</div>
+                  <p>
+                    For more information, click on{' '}
+                    <button
+                      onClick={() => setIsNewCardPopupVisible(true)}
+                      style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>
+                      Field Details
+                    </button>.
+                  </p>
+
+                  {isNewCardPopupVisible && (
+                    <>
+                      <div style={popupOverlayStyle} onClick={() => setIsNewCardPopupVisible(false)} />
+                      <div style={popupBoxStyle}>
+                        <table className="command-syntax-table" style={{ marginTop: '10px' }}>
+                          <thead>
+                            <tr><th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th></tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Bill Code - Merchant Name</strong></td>
+                              </tr>
+                            <tr>
+                              <td>Definition:</td><td>Refers to the merchant.</td>
+                              </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Dropdown</td>
+                              </tr>
+                            <tr>
+                              <td>Dependency:</td><td>Required field</td>
+                              </tr>
+                            <tr>
+                              <td>Field Name:</td><td><strong>Merchant No</strong></td>
+                              </tr>
+                            <tr>
+                              <td>Definition:</td><td>Refers to the merchant number supported by specified merchant.</td>
+                              </tr>
+                            <tr>
+                              <td>Type:</td><td>Numeric</td>
+                              </tr>
+                            <tr>
+                              <td>Required Length:</td><td>11</td>
+                              </tr>
+                            <tr>
+                              <td>Dependency:</td><td>Required field</td>
+                              </tr>
+                            <tr>
+                              <td>Field Name:</td><td><strong>Terminal ID</strong></td>
+                              </tr>
+                            <tr>
+                              <td>Definition:</td><td>Refers to the terminal ID for each merchant number supported by a merchant.</td>
+                              </tr>
+                            <tr>
+                              <td>Type:</td><td>Numeric</td>
+                              </tr>
+                            <tr>
+                              <td>Required Length:</td><td>8</td>
+                              </tr>
+                            <tr>
+                              <td>Dependency:</td><td>Required field</td>
+                              </tr>
+                            <tr>
+                              <td>Field Name:</td><td><strong>Credential on File Indicator</strong></td>
+                              </tr>
+                            <tr>
+                              <td>Definition:</td><td>Refers to the indicator character for selected card type.</td>
+                              </tr>
+                            <tr>
+                              <td>Type:</td><td>Dropdown</td>
+                              </tr>
+                            <tr>
+                              <td>Dependency:</td><td>Conditional. If Card types include Visa</td>
+                              </tr>
+                            <tr>
+                              <td>Field Name:</td><td><strong>Available Card Types</strong></td>
+                              </tr>
+                            <tr>
+                              <td>Definition:</td><td>Refers to the type of the cards.</td>
+                              </tr>
+                            <tr>
+                              <td>Type:</td><td>Multi-pick list</td>
+                              </tr>
+                            <tr>
+                              <td>Dependency:</td><td>Required field</td>
+                              </tr>
+                            <tr>
+                              <td>Field Name:</td><td><strong>Credential on File Indicator</strong></td>
+                              </tr>
+                            <tr>
+                              <td>Definition:</td><td>Refers to the indicator which identifies if a card type should have a TID or <i>Not</i>. This is only applicable for Visa.</td>
+                              </tr>
+                            <tr>
+                              <td>Type:</td><td>Dropdown</td>
+                              </tr>
+                            <tr>
+                              <td>Dependency:</td><td>Conditional. If Card types include Visa</td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
+
+            
+            <div>
+              <div style={accordionHeaderStyle(isUnlinkOpen)} onClick={() => setIsUnlinkOpen(!isUnlinkOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Unlink Card Type to a Merchant Number:</span>
+                <span style={chevronStyle(isUnlinkOpen)}>&#8964;</span>
+              </div>
+              {isUnlinkOpen && (
+                <div style={accordionBodyStyle}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Supported Card</b></u> page with the details.
+                    </li>
+                    <li>
+                      Mark the checkbox in the <u><b>Selected Card Types</b></u> and click the &#x276E; deselect it. Click the{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
+                      button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is for approval.</li>
+                  </ol>
+
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={editSupportedCardDetails} alt="Edit Supported Card Details" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Edit Supported Card Details</div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            
+            <div>
+              <div style={accordionHeaderStyle(isDeleteOpen)} onClick={() => setIsDeleteOpen(!isDeleteOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Delete Merchant Supported Card:</span>
+                <span style={chevronStyle(isDeleteOpen)}>&#8964;</span>
+              </div>
+              {isDeleteOpen && (
+                <div style={accordionBodyStyle}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u> page, select on the list of supported cards and click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Merchant</b></u> page with the details of the selected supported card.
+                    </li>
+                    <li>
+                      Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
+                      button to submit the transaction. After clicking button, a confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is for approval.</li>
+                  </ol>
+                  <p><i><b>Note</b>: When the supported card record is deleted, all card types linked to that Merchant ID or Terminal ID will be deleted.</i></p>
+                </div>
+              )}
+            </div>
+
+            
+            <div>
+              <div style={{ ...accordionHeaderStyle(isDeleteMultipleOpen), borderBottom: isDeleteMultipleOpen ? '1px solid #ddd' : 'none' }} onClick={() => setIsDeleteMultipleOpen(!isDeleteMultipleOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Delete Multiple Supported Cards:</span>
+                <span style={chevronStyle(isDeleteMultipleOpen)}>&#8964;</span>
+              </div>
+              {isDeleteMultipleOpen && (
+                <div style={{ ...accordionBodyStyle, borderBottom: 'none' }}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      In <u><b>Manage Supported Card</b></u> page, select supported card on the list by clicking rows.
+                    </li>
+                    <li>
+                      Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
+                      button to submit the transaction. After clicking the button, a confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is for approval.</li>
+                  </ol>
+
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={multipleSupportedCardDeletion} alt="Multiple Supported Card Deletion" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Multiple Supported Card Deletion</div>
+                  </div>
+                </div>
+              )}
+            </div>
+
           </div>
-
-          <h3>How to Delete Merchant Supported Card:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Supported Card</b></u> page, select on the list of supported cards and click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Merchant</b></u> page with the details of the selected supported card.
-            </li>
-            <li>
-              Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. After clicking button, a confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that the transaction is for approval.
-            </li>
-          </ol>
-          <p><i><b>Note</b>: When the supported card record is deleted, all card types linked to that Merchant ID or Terminal ID will be deleted.</i></p>
-
-          <h3>How to Delete Multiple Supported Cards:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              In <u><b>Manage Supported Card</b></u> page, select supported card on the list by clicking rows.
-            </li>
-            <li>
-              Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. After clicking the button, a confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that the transaction is for approval.
-            </li>
-          </ol>
-
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={multipleSupportedCardDeletion} alt="Multiple Supported Card Deletion" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Multiple Supported Card Deletion</div>
-          </div>
-
         </div>
-      </div>
+        </div>
     </div>
   );
 };

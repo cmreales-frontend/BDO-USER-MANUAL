@@ -31,8 +31,41 @@ const popupBoxStyle = {
   minWidth: '300px',
 };
 
+const accordionContainerStyle = {
+  border: '1px solid #ddd',
+  borderRadius: '8px',
+  overflow: 'hidden',
+  marginTop: '16px',
+};
+
+const accordionHeaderStyle = (isOpen) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '14px 18px',
+  cursor: 'pointer',
+  userSelect: 'none',
+  backgroundColor: isOpen ? '#f5f5f5' : '#ffffff',
+  borderBottom: '1px solid #ddd',
+});
+
+const accordionBodyStyle = {
+  backgroundColor: '#f9f9f9',
+  padding: '14px 18px 18px 18px',
+  borderBottom: '1px solid #ddd',
+};
+
+const chevronStyle = (isOpen) => ({
+  fontSize: '13px',
+  color: '#888',
+  display: 'inline-block',
+  transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+  transition: 'transform 0.2s',
+});
+
 const UserTransactionHistory = () => {
   const [isManagePopupVisible, setIsManagePopupVisible] = useState(false);
+  const [isViewOpen, setIsViewOpen] = useState(false);
 
   return (
     <div className="content-section">
@@ -43,12 +76,20 @@ const UserTransactionHistory = () => {
             <i>User Transaction History</i> manages the history of transactions of specific user.
           </p>
 
-          <h3>How to View User Transaction History (Journal):</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              Go to <u><b>History</b></u>&gt;&gt;<u><b>User Transaction</b></u>. This redirects to User Transaction History Page.
-            </li>
-            <li>
+          <div style={accordionContainerStyle}>
+
+            <div>
+              <div style={{ ...accordionHeaderStyle(isViewOpen), borderBottom: isViewOpen ? '1px solid #ddd' : 'none' }} onClick={() => setIsViewOpen(!isViewOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to View User Transaction History (Journal):</span>
+                <span style={chevronStyle(isViewOpen)}>&#8964;</span>
+              </div>
+              {isViewOpen && (
+                <div style={{ ...accordionBodyStyle, borderBottom: 'none' }}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      Go to <u><b>History</b></u>&gt;&gt;<u><b>User Transaction</b></u>. This redirects to User Transaction History Page.
+                    </li>
+                    <li>
               Supply fields. If role type is System Administrator, there's a need to provide the username manually. If the role type is User, there is no username field. After providing the information, click{' '}
               <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
               button to submit search parameters and wait for the result to show in the user transaction history table.
@@ -57,24 +98,20 @@ const UserTransactionHistory = () => {
 
           <br/>
         <div style={{ textAlign: 'center', marginBottom: '5px' }}>
-          <img src={userTransactionHistoryPageView} style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
+          <img alt="User Transaction History Page View as System Administrator" src={userTransactionHistoryPageView} style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
         <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Transaction History Page View as System Administrator</div>
         </div>  
 
         <div style={{ textAlign: 'center', marginBottom: '5px' }}>
-          <img src={userTransactionHistoryPageViewAsUser} style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
+          <img alt="User Transaction History Page View as User or User Administrator" src={userTransactionHistoryPageViewAsUser} style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%', marginBottom: '5px' }}/>
         <div style={{ fontSize: '14px', fontWeight: 'bold' }}>User Transaction History Page View as User/User Administrator</div>
         </div>
   
       <p>
             For more information, click on{' '}
-            <a
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsManagePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
-            >
+            <button type="button" onClick={() => setIsManagePopupVisible(true)} style={{ background: 'none', border: 'none', padding: 0, margin: 0, cursor: 'pointer', color: 'blue', textDecoration: 'underline', font: 'inherit' }}>
               Field Details
-            </a>.
+            </button>.
           </p>
 
     {isManagePopupVisible && (
@@ -174,7 +211,12 @@ const UserTransactionHistory = () => {
        </>
     )}
       </div>
-    </div>
+  )}
+  </div>
+
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

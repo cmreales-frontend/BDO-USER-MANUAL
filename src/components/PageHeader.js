@@ -19,7 +19,7 @@ const PageHeader = () => {
     includeScore: true,
   });
 
-  // Close dropdown when clicking outside
+  
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {

@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
 import PageHeader from './components/PageHeader';
-import AuditTrailPage from './pages/AuditTrailPage';
-import MerchantReportsPage from './pages/MerchantReportsPage';
-import SettlementsPage from './pages/SettlementsPage';
-import SendSettlementsPage from './pages/SendSettlementsPage';
-import GenerateSettlementPage from './pages/GenerateSettlementPage';
-import BillingFileReportsPage from './pages/BillingFileReportsPage';
+import AuditTrail from './pages/AuditTrail';
+import MerchantReports from './pages/MerchantReports';
+import Settlements from './pages/Settlements';
+import SendSettlements from './pages/SendSettlements';
+import GenerateSettlement from './pages/GenerateSettlement';
+import BillingFileReports from './pages/BillingFileReports';
 import Profile from './pages/Profile';
 import BillingFileProcessing from './pages/BillingFileProcessing';
 import NewUploadRawBillingFile from './pages/NewUploadRawBillingFile';
@@ -19,18 +19,16 @@ import PostTransaction from './pages/PostTransaction';
 import PostSingleTransaction from './pages/PostSingleTransaction';
 import ScheduledTransaction from './pages/ScheduledTransaction';
 import Introduction from './pages/Introduction';
-import UserManagementFunc from './pages/UserManagementFunc';
-import UserManagementSub from './pages/UserManagementSub';
+import UserManagement from './pages/UserManagement';
 import SystemScreen from './pages/SystemScreen';
 import Login from './pages/Login';
 import LoadEnvironment from './pages/LoadEnvironment';
-import HomePage from './pages/HomePage';
+import Home from './pages/Home';
 import MyTransactionSubmitted from './pages/MyTransactionSubmitted';
 import TransactionForApproval from './pages/TransactionForApproval';
 import ApprovedTransaction from './pages/ApprovedTransaction';
 import RejectedTransaction from './pages/RejectedTransaction';
 import MerchantManagement from './pages/MerchantManagement';
-import MerchantManagementSub from './pages/MerchantManagementSub';
 import InstitutionManagement from './pages/InstitutionManagement';
 import MerchantSupportedCard from './pages/MerchantSupportedCard';
 import CardTypeManagement from './pages/CardTypeManagement';
@@ -45,7 +43,7 @@ import UserTransactionHistory from './pages/UserTransactionHistory';
 import ErrorMessages from './pages/ErrorMessages';
 import UserRoleTypes from './pages/UserRoleTypes';
 import UserFunctionTypes from './pages/UserFunctionTypes';
-import RevisionHistoryTable from './pages/RevisionHistoryTable';
+import RevisionHistory from './pages/RevisionHistory';
 
 import './styles/App.css';
 import logo from './assets/bdo-logo-removebg-preview.png';
@@ -107,7 +105,7 @@ function App() {
 
 
             {/* Home Page Submenu*/}
-              <Route path="/home-page" element={<HomePage />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/my-transaction-submitted" element={<MyTransactionSubmitted />} />
               <Route path="/transaction-for-approval" element={<TransactionForApproval />} />
               <Route path="/approved-transaction" element={<ApprovedTransaction />} />
@@ -116,14 +114,12 @@ function App() {
 
             {/* Merchant Management Submenu*/}
               <Route path="/merchant-management" element={<MerchantManagement />} />
-              <Route path="/merchant-management-sub" element={<MerchantManagementSub />} />
               <Route path="/institution-management" element={<InstitutionManagement />} />
               <Route path="/merchant-supported-card" element={<MerchantSupportedCard />} />
               <Route path="/card-type-management" element={<CardTypeManagement />} />
 
             {/* User Management Submenu*/}
-              <Route path="/user-management-func" element={<UserManagementFunc />} />
-              <Route path="/user-management-sub" element={<UserManagementSub />} />
+              <Route path="/user-management" element={<UserManagement />} />
               <Route path="/roles-and-privileges" element={<RolesAndPrivileges />} />
               <Route path="/user-assignment" element={<UserAssignment />} />
 
@@ -140,15 +136,15 @@ function App() {
               <Route path="/user-transaction-history" element={<UserTransactionHistory />} />
 
             {/* Reports Navigation and the submenus */}
-              <Route path="/merchant-reports" element={<MerchantReportsPage />} />
-              <Route path="/audit-trail" element={<AuditTrailPage />} />
-              <Route path="/settlements" element={<SettlementsPage />} />
-              <Route path="/send-settlements" element={<SendSettlementsPage />} />
-              <Route path="/generate-settlement" element={<GenerateSettlementPage />} />
-              <Route path="/billing-file-reports" element={<BillingFileReportsPage />} />
+              <Route path="/merchant-reports" element={<MerchantReports />} />
+              <Route path="/audit-trail" element={<AuditTrail />} />
+              <Route path="/settlements" element={<Settlements />} />
+              <Route path="/send-settlements" element={<SendSettlements />} />
+              <Route path="/generate-settlement" element={<GenerateSettlement />} />
+              <Route path="/billing-file-reports" element={<BillingFileReports />} />
               <Route path="/billing-file-processing" element={<BillingFileProcessing />} />
 
-            
+            {/* Profile Navigation */}
               <Route path="/profile" element={<Profile />} />
 
             {/* Billing File Processing submenus */}
@@ -162,13 +158,12 @@ function App() {
               <Route path="/post-single-transaction" element={<PostSingleTransaction />} />
               <Route path="/scheduled-transaction" element={<ScheduledTransaction />} />
 
-
-              {/* Error Messages Navigation and the submenus */}
+            {/* Error Messages Navigation and the submenus */}
               <Route path="/error-messages" element={<ErrorMessages />} />
 
              
             {/* Revision History Table */}
-              <Route path="/revision-history-table" element={<RevisionHistoryTable />} />
+              <Route path="/revision-history" element={<RevisionHistory />} />
 
             </Routes>
 

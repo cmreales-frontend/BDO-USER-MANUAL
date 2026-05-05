@@ -29,6 +29,33 @@ const popupBoxStyle = {
 
 const Login = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [isCreateOpen, setIsCreateOpen] = useState(false);
+
+  const accordionContainerStyle = {
+    border: '1px solid #e0e0e0',
+    borderRadius: '6px',
+    padding: '8px',
+    marginTop: '10px'
+  };
+
+  const accordionHeaderStyle = (open) => ({
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    cursor: 'pointer',
+    padding: '8px',
+    background: open ? '#f7f7f7' : 'transparent',
+    borderRadius: '4px'
+  });
+
+  const chevronStyle = (open) => ({
+    transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
+    transition: 'transform 0.2s ease'
+  });
+
+  const accordionBodyStyle = {
+    padding: '8px 12px'
+  };
 
   return (
     <div className="content-section">
@@ -45,7 +72,16 @@ const Login = () => {
         Access to the BRPS system is allowed only to its authorized users. To avoid an unauthorized user to utilize it, one must first successfully login to the system. This can be done by completely filling-out the fields on the login box with valid information.
       </p>
 
-       <p><strong>How to login:</strong></p>
+      <br />
+      <div style={accordionContainerStyle}>
+        <div>
+          <div style={accordionHeaderStyle(isCreateOpen)} onClick={() => setIsCreateOpen(!isCreateOpen)}>
+            <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Login:</span>
+            <span style={chevronStyle(isCreateOpen)}>&#8964;</span>
+          </div>
+
+          {isCreateOpen && (
+            <div style={accordionBodyStyle}>
       <ol style={{ marginLeft: '20px' }}>
         <li>Input the <strong>Username</strong> in the username field.</li>
         <li>Input the user's <strong>Password</strong> in the password field.</li>
@@ -127,8 +163,13 @@ const Login = () => {
             </table>
           </div>
         </>
+
       )}
 
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

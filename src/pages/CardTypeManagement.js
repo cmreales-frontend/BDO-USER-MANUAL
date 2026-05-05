@@ -30,8 +30,60 @@ const popupBoxStyle = {
   maxWidth: '500px',
 };
 
+const accordionContainerStyle = {
+  border: '1px solid #ddd',
+  borderRadius: '8px',
+  overflow: 'hidden',
+  marginTop: '16px',
+};
+
+const accordionHeaderStyle = (isOpen) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '14px 18px',
+  cursor: 'pointer',
+  userSelect: 'none',
+  backgroundColor: isOpen ? '#f5f5f5' : '#ffffff',
+  borderBottom: '1px solid #ddd',
+});
+
+const accordionBodyStyle = {
+  backgroundColor: '#f9f9f9',
+  padding: '14px 18px 18px 18px',
+  borderBottom: '1px solid #ddd',
+};
+
+const chevronStyle = (isOpen) => ({
+  fontSize: '13px',
+  color: '#888',
+  display: 'inline-block',
+  transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+  transition: 'transform 0.2s',
+});
+
+const binNote = (
+  <>
+    <p>
+      <i><b>Note</b>: In minimum and maximum BINs, number of leading zeroes indicates the card number length. See examples below:</i>
+    </p>
+    <p style={{ marginLeft: '20px', fontStyle: 'italic' }}>
+      000003 - 14 digits<br/>
+      00003 - 15 digits<br/>
+      0003 - 16 digits<br/>
+      003 - 17 digits<br/>
+      03 - 18 digits<br/>
+      3 - 19 digits
+    </p>
+  </>
+);
+
 const CardTypeManagement = () => {
   const [isNewCardTypePopupVisible, setIsNewCardTypePopupVisible] = useState(false);
+  const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [isUpdateOpen, setIsUpdateOpen] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const [isDeleteMultipleOpen, setIsDeleteMultipleOpen] = useState(false);
 
   return (
     <div className="content-section">
@@ -42,255 +94,266 @@ const CardTypeManagement = () => {
 
           <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={manageCardTypePage} alt="Manage Card Type Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Manage Card Type Page</div>
+            <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Manage Card Type Page</div>
           </div>
 
-          <h3>How to Create Card Type:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Card Types</b></u>&gt;&gt;<u><b>New Card Type</b></u>. This redirects to <u><b>New Card Type</b></u> page.
-            </li>
-            <li>
-              Supply the fields and click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit the transaction. After clicking the button, a confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that transaction id for approval.
-            </li>
-          </ol>
-          <p>
-            <i><b>Note</b>: In minimum and maximum BINs, number of leading zeroes indicates the card number length. See examples below:</i>
-          </p>
-          <p style={{ marginLeft: '20px', fontStyle: 'italic' }}>
-            000003 - 14 digits<br/>
-            00003 - 15 digits<br/>
-            0003 - 16 digits<br/>
-            003 - 17 digits<br/>
-            03 - 18 digits<br/>
-            3 - 19 digits
-          </p>
+          <div style={accordionContainerStyle}>
 
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={newCardTypePage} alt="Card Type Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Card Type Page</div>
-          </div>
-          
-
-          <p>
-            For more information, click on{' '}
-            <button
-              type="button"
-              onClick={() => { setIsNewCardTypePopupVisible(true); }}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>
-              Field Details
-            </button>.
-          </p>
-
-          {isNewCardTypePopupVisible && (
-            <>
-              <div style={popupOverlayStyle} onClick={() => setIsNewCardTypePopupVisible(false)} />
-              <div style={popupBoxStyle}>
-                <table className="command-syntax-table" style={{ marginTop: '10px' }}>
-                  <thead>
-                    <tr>
-                      <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Code</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the identifier of card type (first letter of card type).</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Alphanumeric</td>
-                    </tr>
-                    <tr>
-                      <td>Maximum Length:</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Required field</td>
-                    </tr>
-
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Card Type</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the name of card type.</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Alphanumeric</td>
-                    </tr>
-                    <tr>
-                      <td>Maximum Length:</td>
-                      <td>32</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Required field</td>
-                    </tr>
-
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Description</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the description of the card type.</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Alphanumeric</td>
-                    </tr>
-                    <tr>
-                      <td>Maximum Length:</td>
-                      <td>32</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Required field</td>
-                    </tr>
-
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Minimum BIN</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the minimum BIN range of each card type.</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Numeric</td>
-                    </tr>
-                    <tr>
-                      <td>Maximum Length:</td>
-                      <td>9</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Required field</td>
-                    </tr>
-
-                    <tr>
-                      <td>Field Name:</td>
-                      <td><strong>Maximum BIN</strong></td>
-                    </tr>
-                    <tr>
-                      <td>Definition:</td>
-                      <td>Refers to the maximum BIN range of each card type.</td>
-                    </tr>
-                    <tr>
-                      <td>Type:</td>
-                      <td>Numeric</td>
-                    </tr>
-                    <tr>
-                      <td>Maximum Length:</td>
-                      <td>9</td>
-                    </tr>
-                    <tr>
-                      <td>Dependency:</td>
-                      <td>Required field</td>
-                    </tr>
-                  </tbody>
-                </table>
+           
+            <div>
+              <div style={accordionHeaderStyle(isCreateOpen)} onClick={() => setIsCreateOpen(!isCreateOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Create Card Type:</span>
+                <span style={chevronStyle(isCreateOpen)}>&#8964;</span>
               </div>
-            </>
-          )}
+              {isCreateOpen && (
+                <div style={accordionBodyStyle}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      Go to <u><b>Merchant Management</b></u>&gt;&gt;<u><b>Manage Card Types</b></u>&gt;&gt;<u><b>New Card Type</b></u>. This redirects to <u><b>New Card Type</b></u> page.
+                    </li>
+                    <li>
+                      Supply the fields and click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
+                      button to submit the transaction. After clicking the button, a confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that transaction id for approval.</li>
+                  </ol>
 
-          <h3>How to Update Card Type:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              Select a list from the table in <u><b>Manage Card Type</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Card Type</b></u> page with the details of the selected card type.
-            </li>
-            <li>
-              Update the field/s and click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that the transaction is for approval.
-            </li>
-          </ol>
-          <p>
-            <i><b>Note</b>: In minimum and maximum <u>BINs</u>, number of leading zeroes indicates the card number length. See examples below:</i>
-          </p>
-          <p style={{ marginLeft: '20px', fontStyle: 'italic' }}>
-            000003 - 14 digits<br/>
-            00003 - 15 digits<br/>
-            0003 - 16 digits<br/>
-            003 - 17 digits<br/>
-            03 - 18 digits<br/>
-            3 - 19 digits
-          </p>
+                  {binNote}
 
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={editCardTypePage} alt="Edit Card Type Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Edit Card Type Page</div>
-          </div>
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={newCardTypePage} alt="Card Type Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Card Type Page</div>
+                  </div>
 
-          <h3>How to Delete Card Type:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              In <u><b>Manage Card Type</b></u> page, select on the list of card types and click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Card Type</b></u> page with the details of the selected card type.
-            </li>
-            <li>
-              Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that the transaction is for approval.
-            </li>
-          </ol>
+                  <p>
+                    For more information, click on{' '}
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); setIsNewCardTypePopupVisible(true); }}
+                      style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>
+                      Field Details
+                    </button>.
+                  </p>
 
-          <h3>How to Delete Multiple Card Type:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              In <u><b>Manage Card Type</b></u> page, select a card type on the list by clicking a row.
-            </li>
-            <li>
-              Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that the transaction is for approval.
-            </li>
-          </ol>
+                  {isNewCardTypePopupVisible && (
+                    <>
+                      <div style={popupOverlayStyle} onClick={() => setIsNewCardTypePopupVisible(false)} />
+                      <div style={popupBoxStyle}>
+                        <table className="command-syntax-table" style={{ marginTop: '10px' }}>
+                          <thead>
+                            <tr><th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th></tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Code</strong></td>
+                              </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the identifier of card type (first letter of card type).</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Alphanumeric</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum Length:</td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Card Type</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the name of card type.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Alphanumeric</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum Length:</td>
+                              <td>32</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Description</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the description of the card type.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Alphanumeric</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum Length:</td>
+                              <td>32</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Minimum BIN</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the minimum BIN range of each card type.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Numeric</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum Length:</td>
+                              <td>9</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Maximum BIN</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the maximum BIN range of each card type.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Numeric</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum Length:</td>
+                              <td>9</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
 
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={multipleCardTypeDelete} alt="Multiple Card Type Delete" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Multiple Card Type Delete</div>
+
+            <div>
+              <div style={accordionHeaderStyle(isUpdateOpen)} onClick={() => setIsUpdateOpen(!isUpdateOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Update Card Type:</span>
+                <span style={chevronStyle(isUpdateOpen)}>&#8964;</span>
+              </div>
+              {isUpdateOpen && (
+                <div style={accordionBodyStyle}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      Select a list from the table in <u><b>Manage Card Type</b></u> page. Click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button, this redirects to <u><b>Edit Card Type</b></u> page with the details of the selected card type.
+                    </li>
+                    <li>
+                      Update the field/s and click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Update</button>{' '}
+                      button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is for approval.</li>
+                  </ol>
+
+                  {binNote}
+
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={editCardTypePage} alt="Edit Card Type Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Edit Card Type Page</div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+         
+            <div>
+              <div style={accordionHeaderStyle(isDeleteOpen)} onClick={() => setIsDeleteOpen(!isDeleteOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Delete Card Type:</span>
+                <span style={chevronStyle(isDeleteOpen)}>&#8964;</span>
+              </div>
+              {isDeleteOpen && (
+                <div style={accordionBodyStyle}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      In <u><b>Manage Card Type</b></u> page, select on the list of card types and click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Card Type</b></u> page with the details of the selected card type.
+                    </li>
+                    <li>
+                      Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
+                      button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is for approval.</li>
+                  </ol>
+                </div>
+              )}
+            </div>
+
+          
+            <div>
+              <div style={{ ...accordionHeaderStyle(isDeleteMultipleOpen), borderBottom: isDeleteMultipleOpen ? '1px solid #ddd' : 'none' }} onClick={() => setIsDeleteMultipleOpen(!isDeleteMultipleOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Delete Multiple Card Type:</span>
+                <span style={chevronStyle(isDeleteMultipleOpen)}>&#8964;</span>
+              </div>
+              {isDeleteMultipleOpen && (
+                <div style={{ ...accordionBodyStyle, borderBottom: 'none' }}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      In <u><b>Manage Card Type</b></u> page, select a card type on the list by clicking a row.
+                    </li>
+                    <li>
+                      Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
+                      button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is for approval.</li>
+                  </ol>
+
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={multipleCardTypeDelete} alt="Multiple Card Type Delete" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Multiple Card Type Delete</div>
+                  </div>
+                </div>
+              )}
+            </div>
+
           </div>
         </div>
       </div>

@@ -28,8 +28,41 @@ const popupBoxStyle = {
   maxWidth: '500px',
 };
 
-const BillingFileReportsPage = () => {
+const accordionContainerStyle = {
+  border: '1px solid #ddd',
+  borderRadius: '8px',
+  overflow: 'hidden',
+  marginTop: '16px',
+};
+
+const accordionHeaderStyle = (isOpen) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '14px 18px',
+  cursor: 'pointer',
+  userSelect: 'none',
+  backgroundColor: isOpen ? '#f5f5f5' : '#ffffff',
+  borderBottom: '1px solid #ddd',
+});
+
+const accordionBodyStyle = {
+  backgroundColor: '#f9f9f9',
+  padding: '14px 18px 18px 18px',
+  borderBottom: '1px solid #ddd',
+};
+
+const chevronStyle = (isOpen) => ({
+  fontSize: '13px',
+  color: '#888',
+  display: 'inline-block',
+  transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+  transition: 'transform 0.2s',
+});
+
+const BillingFileReports = () => {
   const [isManagePopupVisible, setIsManagePopupVisible] = useState(false);
+  const [isDownloadOpen, setIsDownloadOpen] = useState(false);
 
   return (
     <section className="content-section">
@@ -42,16 +75,12 @@ const BillingFileReportsPage = () => {
 
         <div style={{ textAlign: 'center', marginBottom: '10px' }}>
           <img src={billingFileReportPage} alt="Billing File Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-        <div style={{ fontSize: '14px', fontWeight: 'bold', marginTop: '5px' }}>Billing File Report Page</div>
+          <div style={{ fontSize: '14px', fontWeight: 'bold', marginTop: '5px' }}>Billing File Report Page</div>
         </div>
 
         <p>
           For more information, click on{' '}
-          <button
-            type="button"
-            onClick={() => setIsManagePopupVisible(true)}
-            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'blue', textDecoration: 'underline', font: 'inherit' }}>
-            Field Details
+          <button type="button" onClick={() => setIsManagePopupVisible(true)} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: 'blue', textDecoration: 'underline', font: 'inherit' }}> Field Details
           </button>.
         </p>
 
@@ -61,34 +90,33 @@ const BillingFileReportsPage = () => {
             <div style={popupBoxStyle}>
               <table className="command-syntax-table" style={{ marginTop: '10px' }}>
                 <thead>
-                  <tr>
-                    <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-                  </tr>
+                  <tr><th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th></tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>Field Name:</td>
                     <td><strong>Start Date</strong></td>
-                    </tr>
+                  </tr>
                   <tr>
                     <td>Definition:</td>
-                    <td>Refers to the start date of billing files to retrieve based on specified merchant.</td></tr>
+                    <td>Refers to the start date of billing files to retrieve based on specified merchant.</td>
+                  </tr>
                   <tr>
                     <td>Type:</td>
                     <td>Date</td>
-                    </tr>
+                  </tr>
                   <tr>
                     <td>Dependency:</td>
                     <td>Required field</td>
                   </tr>
-
                   <tr>
                     <td>Field Name:</td>
                     <td><strong>Start Time</strong></td>
-                    </tr>
+                  </tr>
                   <tr>
                     <td>Definition:</td>
-                    <td>Refers to the start time of billing files to retrieve based on specified merchant.</td></tr>
+                    <td>Refers to the start time of billing files to retrieve based on specified merchant.</td>
+                  </tr>
                   <tr>
                     <td>Type:</td>
                     <td>Time</td>
@@ -97,7 +125,6 @@ const BillingFileReportsPage = () => {
                     <td>Dependency:</td>
                     <td>Required field</td>
                   </tr>
-
                   <tr>
                     <td>Field Name:</td>
                     <td><strong>End Date</strong></td>
@@ -114,7 +141,6 @@ const BillingFileReportsPage = () => {
                     <td>Dependency:</td>
                     <td>Required field</td>
                   </tr>
-
                   <tr>
                     <td>Field Name:</td>
                     <td><strong>End Time</strong></td>
@@ -131,7 +157,6 @@ const BillingFileReportsPage = () => {
                     <td>Dependency:</td>
                     <td>Required field</td>
                   </tr>
-
                   <tr>
                     <td>Field Name:</td>
                     <td><strong>Filename</strong></td>
@@ -154,54 +179,37 @@ const BillingFileReportsPage = () => {
           </>
         )}
 
-        <div style={{ marginTop: "20px" }}>
-          <h4>How to Download Billing File Report:</h4>
-          <ol style={{ paddingLeft: "40px" }}>
-            <li style={{ marginBottom: "1px" }}>
-              In <u><strong>Billing File Reports</strong></u> page, click the{' '}
-              <button style={{
-                backgroundColor: "#ffc107",
-                color: "#000",
-                border: "1px solid #ccc",
-                padding: "5px 10px",
-                borderRadius: "4px",
-                cursor: "pointer",
-                fontSize: "14px",
-              }}>Export to Excel</button>{' '}
-<<<<<<< HEAD
-              button.
-=======
-              button <i>.</i>
->>>>>>> 1b23c6f4142b65f263891da4ba243ddcfd60b200
-            </li>
-            <li style={{ marginBottom: "1px" }}>
-              Then, a download dialog box is displayed. Click{' '}
-              <button style={{
-                backgroundColor: "#ccc",
-                color: "#000",
-                border: "1px solid #999",
-                padding: "5px 10px",
-                borderRadius: "4px",
-                cursor: "pointer",
-                fontSize: "14px",
-              }}>OK</button>{' '}
-              to open/save or{' '}
-              <button style={{
-                backgroundColor: "#ccc",
-                color: "#000",
-                border: "1px solid #999",
-                padding: "5px 10px",
-                borderRadius: "4px",
-                cursor: "pointer",
-                fontSize: "14px",
-              }}>Cancel</button>{' '}
-              if otherwise. See <i>Appendix D</i> for a generated Billing File Report sample.
-            </li>
-          </ol>
+        <div style={accordionContainerStyle}>
+
+          <div>
+            <div style={{ ...accordionHeaderStyle(isDownloadOpen), borderBottom: isDownloadOpen ? '1px solid #ddd' : 'none' }} onClick={() => setIsDownloadOpen(!isDownloadOpen)}>
+              <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Download Billing File Report:</span>
+              <span style={chevronStyle(isDownloadOpen)}>&#8964;</span>
+            </div>
+            {isDownloadOpen && (
+              <div style={{ ...accordionBodyStyle, borderBottom: 'none' }}>
+                <ol style={{ paddingLeft: '24px', lineHeight: '1.8' }}>
+                  <li style={{ marginBottom: '1px' }}>
+                    In <u><strong>Billing File Reports</strong></u> page, click the{' '}
+                    <button style={{ backgroundColor: "#ffc107", color: "#000", border: "1px solid #ccc", padding: "2px 6px", borderRadius: "4px", cursor: "pointer" }}>Export to Excel</button>{' '}
+                    button.
+                  </li>
+                  <li style={{ marginBottom: '1px' }}>
+                    Then, a download dialog box is displayed. Click{' '}
+                    <button style={{ backgroundColor: "#ccc", color: "#000", border: "1px solid #999", padding: "2px 6px", borderRadius: "4px", cursor: "pointer" }}>OK</button>{' '}
+                    to open/save or{' '}
+                    <button style={{ backgroundColor: "#ccc", color: "#000", border: "1px solid #999", padding: "2px 6px", borderRadius: "4px", cursor: "pointer" }}>Cancel</button>{' '}
+                    if otherwise. See <i>Appendix D</i> for a generated Billing File Report sample.
+                  </li>
+                </ol>
+              </div>
+            )}
+          </div>
+
         </div>
       </div>
     </section>
   );
 };
 
-export default BillingFileReportsPage;
+export default BillingFileReports;

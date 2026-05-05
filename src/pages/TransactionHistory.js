@@ -3,7 +3,6 @@ import { useState } from 'react';
 import transactionHistoryAdmin from '../assets/transaction_history_page_view_as_system_ad.png';
 import transactionHistoryUser from '../assets/transaction_history_page_view_as_user.png';
 
-
 const popupOverlayStyle = {
   position: 'fixed',
   top: 0,
@@ -32,8 +31,41 @@ const popupBoxStyle = {
   minWidth: '300px',
 };
 
+const accordionContainerStyle = {
+  border: '1px solid #ddd',
+  borderRadius: '8px',
+  overflow: 'hidden',
+  marginTop: '16px',
+};
+
+const accordionHeaderStyle = (isOpen) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '14px 18px',
+  cursor: 'pointer',
+  userSelect: 'none',
+  backgroundColor: isOpen ? '#f5f5f5' : '#ffffff',
+  borderBottom: '1px solid #ddd',
+});
+
+const accordionBodyStyle = {
+  backgroundColor: '#f9f9f9',
+  padding: '14px 18px 18px 18px',
+  borderBottom: '1px solid #ddd',
+};
+
+const chevronStyle = (isOpen) => ({
+  fontSize: '13px',
+  color: '#888',
+  display: 'inline-block',
+  transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+  transition: 'transform 0.2s',
+});
+
 const TransactionHistory = () => {
   const [isManagePopupVisible, setIsManagePopupVisible] = useState(false);
+  const [isViewOpen, setIsViewOpen] = useState(false);
 
   return (
     <div className="content-section">
@@ -44,201 +76,212 @@ const TransactionHistory = () => {
             <i>Transaction History</i> manages the history of each transaction in a billing file and single transaction entries.
           </p>
 
-          <h3>How to View Transaction History:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              Go to <u><b>History</b></u>&gt;&gt;<u><b>Transaction</b></u>. This redirect to Transaction History Page.
-            </li>
-            <li>
-              Supply fields. If the role type is System Administrator, there's a need to provide the merchant number manually. If the role type is User, the merchant number is automatically provided. After providing the information, click the{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit search parameters and wait for the result to show in the billing file history table.
-            </li>
-          </ol>
-
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={transactionHistoryAdmin} alt="Transaction History Page View as System Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Transaction History Page View as System Administrator</div> 
-          </div>
-
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={transactionHistoryUser} alt="Transaction History Page View as User/User Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Transaction History Page View as User/User Administrator</div>
-          </div>
+          <div style={accordionContainerStyle}>
 
         
-        <p>
-          For more information, click on{' '}
-          <button
-            onClick={() => setIsManagePopupVisible(true)}
-            style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 2, font: 'inherit' }}>
-            Field Details
-          </button>.
-        </p>
+            <div>
+              <div style={{ ...accordionHeaderStyle(isViewOpen), borderBottom: isViewOpen ? '1px solid #ddd' : 'none' }} onClick={() => setIsViewOpen(!isViewOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to View Transaction History:</span>
+                <span style={chevronStyle(isViewOpen)}>&#8964;</span>
+              </div>
+              {isViewOpen && (
+                <div style={{ ...accordionBodyStyle, borderBottom: 'none' }}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      Go to <u><b>History</b></u>&gt;&gt;<u><b>Transaction</b></u>. This redirect to Transaction History Page.
+                    </li>
+                    <li>
+                      Supply fields. If the role type is System Administrator, there's a need to provide the merchant number manually. If the role type is User, the merchant number is automatically provided. After providing the information, click the{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
+                      button to submit search parameters and wait for the result to show in the billing file history table.
+                    </li>
+                  </ol>
 
-       {isManagePopupVisible && (
-        <>
-        <div style={popupOverlayStyle} onClick={() => setIsManagePopupVisible(false)} />
-        <div style={popupBoxStyle}>
-          <table className="command-syntax-table" style={{ marginTop: '10px' }}>
-            <thead>
-              <tr>
-                <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Start Date</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the start date of uploaded transactions to retrieve.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Date</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Start Time</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the start time of uploaded transactions to retrieve.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Time</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>End Date</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the end date of uploaded transactions to retrieve.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Date</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>End Time</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the end time of uploaded transactions to retrieve.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Time</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Merchant No</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the merchant number of the transactions.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric/Dropdown</td>
-              </tr>
-              <tr>
-                <td>Required Length:</td>
-                <td>11</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Card No</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the card number specified in the transactions.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>19</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Amount</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the amount stated in the transactions.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>9</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Approval Code</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the approval code of the transactions.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>6</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Billing No</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the billing number.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Alphanumeric</td>
-              </tr>
-              <tr>
-                <td>Maximum Length:</td>
-                <td>7</td>
-              </tr>
-            </tbody>
-          </table>
-         </div>
-       </>
-    )}
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={transactionHistoryAdmin} alt="Transaction History Page View as System Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Transaction History Page View as System Administrator</div>
+                  </div>
 
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={transactionHistoryUser} alt="Transaction History Page View as User/User Administrator" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Transaction History Page View as User/User Administrator</div>
+                  </div>
+
+                  <p>
+                    For more information, click on{' '}
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); setIsManagePopupVisible(true); }}
+                      style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>
+                      Field Details
+                    </button>.
+                  </p>
+
+                  {isManagePopupVisible && (
+                    <>
+                      <div style={popupOverlayStyle} onClick={() => setIsManagePopupVisible(false)} />
+                      <div style={popupBoxStyle}>
+                        <table className="command-syntax-table" style={{ marginTop: '10px' }}>
+                          <thead>
+                            <tr><th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th></tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Start Date</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the start date of uploaded transactions to retrieve.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Date</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Start Time</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the start time of uploaded transactions to retrieve.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Time</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>End Date</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the end date of uploaded transactions to retrieve.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Date</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>End Time</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the end time of uploaded transactions to retrieve.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Time</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Merchant No</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the merchant number of the transactions.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Alphanumeric/Dropdown</td>
+                            </tr>
+                            <tr>
+                              <td>Required Length:</td>
+                              <td>11</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Card No</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the card number specified in the transactions.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Alphanumeric</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum Length:</td>
+                              <td>19</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Amount</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the amount stated in the transactions.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Alphanumeric</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum Length:</td>
+                              <td>9</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Approval Code</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the approval code of the transactions.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Alphanumeric</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum Length:</td>
+                              <td>6</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Billing No</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the billing number.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Alphanumeric</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum Length:</td>
+                              <td>7</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
+
+          </div>
         </div>
       </div>
     </div>

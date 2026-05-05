@@ -23,8 +23,8 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
         { path: "/login",                   label: "Login" },
         { path: "/load-environment",        label: "Load Environment" },
         {
-          path: "/home-page",
-          label: "Home Page",
+          path: "/home",
+          label: "Home",
           submenu: [
             { path: "/my-transaction-submitted",  label: "My Transaction Submitted for Approval" },
             { path: "/transaction-for-approval",  label: "My Transaction for my Approval" },
@@ -33,20 +33,18 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
           ]
         },
         {
-          path: "/merchant-management",
           label: "Merchant Management",
           submenu: [
-            { path: "/merchant-management-sub",   label: "Merchant Management" },
+            { path: "/merchant-management",   label: "Merchant Management" },
             { path: "/institution-management",    label: "Institution Management" },
             { path: "/merchant-supported-card",   label: "Merchant Supported Card Management" },
             { path: "/card-type-management",      label: "Card Type Management" }
           ]
         },
         {
-          path: "/user-management-func",
           label: "User Management",
           submenu: [
-            { path: "/user-management-sub",  label: "User Management" },
+            { path: "/user-management",  label: "User Management" },
             { path: "/roles-and-privileges",     label: "Roles and Privileges" },
             { path: "/user-assignment",      label: "User-Merchant Assignment" }
           ]
@@ -102,8 +100,8 @@ const Navigation = ({ mobileOpen, onMobileClose }) => {
       label: "Error Messages"
     },
     {
-      path: "/revision-history-table",
-      label: "Revision History Table"
+      path: "/revision-history",
+      label: "Revision History"
   },
 ];
 

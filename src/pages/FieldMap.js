@@ -33,7 +33,43 @@ const popupBoxStyle = {
   minWidth: '300px',
 };
 
+const accordionContainerStyle = {
+  border: '1px solid #ddd',
+  borderRadius: '8px',
+  overflow: 'hidden',
+  marginTop: '16px',
+};
+
+const accordionHeaderStyle = (isOpen) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '14px 18px',
+  cursor: 'pointer',
+  userSelect: 'none',
+  backgroundColor: isOpen ? '#f5f5f5' : '#ffffff',
+  borderBottom: '1px solid #ddd',
+});
+
+const accordionBodyStyle = {
+  backgroundColor: '#f9f9f9',
+  padding: '14px 18px 18px 18px',
+  borderBottom: '1px solid #ddd',
+};
+
+const chevronStyle = (isOpen) => ({
+  fontSize: '13px',
+  color: '#888',
+  display: 'inline-block',
+  transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+  transition: 'transform 0.2s',
+});
+
 const FieldMap = () => {
+  const [isCreateOpen, setIsCreateOpen] = useState(false);
+  const [isUpdateOpen, setIsUpdateOpen] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const [isMultipleDeleteOpen, setIsMultipleDeleteOpen] = useState(false);
   const [isManagePopupVisible, setIsManagePopupVisible] = useState(false);
 
   return (
@@ -48,198 +84,230 @@ const FieldMap = () => {
           <br/>
           <div style={{ textAlign: 'center', marginBottom: '10px' }}>
             <img src={fieldMapPage} alt="Field Map Page" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Field Map Page</div>
+            <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Field Map Page</div>
           </div>
 
-          <h3>How to Create New Custom Field Map:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              Go to <u><b>Field Map</b></u>&gt;&gt;<u><b>New Custom Field Map</b></u>. This redirects to Custom Field Map page.
-            </li>
-            <li>Select institution and bill code.</li>
-            <li>Drag each row to arrange the sequence depending on custom field of the merchant.</li>
-            <li>Change field length if necessary.</li>
-            <li>Change field length to zero if field will not be use.</li>
-            <li>
-              Click the{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>A transaction receipt is displayed signifying that the transaction is already posted.</li>
-          </ol>
-          <p><i><b>Note:</b> Field Map approval is not supported. Kindly make sure that all changes are correct before submitting.</i></p>
+          <div style={accordionContainerStyle}>
 
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={customFieldMapForm} alt="Custom Field Map Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} /> 
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Custom Field Map Form</div>
+            {/* How to Create New Custom Field Map */}
+            <div>
+              <div style={accordionHeaderStyle(isCreateOpen)} onClick={() => setIsCreateOpen(!isCreateOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Create New Custom Field Map:</span>
+                <span style={chevronStyle(isCreateOpen)}>&#8964;</span>
+              </div>
+              {isCreateOpen && (
+                <div style={accordionBodyStyle}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>Go to <u><b>Field Map</b></u>&gt;&gt;<u><b>New Custom Field Map</b></u>. This redirects to Custom Field Map page.</li>
+                    <li>Select institution and bill code.</li>
+                    <li>Drag each row to arrange the sequence depending on custom field of the merchant.</li>
+                    <li>Change field length if necessary.</li>
+                    <li>Change field length to zero if field will not be use.</li>
+                    <li>
+                      Click the{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
+                      button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is already posted.</li>
+                  </ol>
+                  <p><i><b>Note:</b> Field Map approval is not supported. Kindly make sure that all changes are correct before submitting.</i></p>
+
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={customFieldMapForm} alt="Custom Field Map Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Custom Field Map Form</div>
+                  </div>
+
+                  <p>
+                    For more information, click on{' '}
+                    <button
+                      type="button"
+                      onClick={(e) => { e.stopPropagation(); setIsManagePopupVisible(true); }}
+                      style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>
+                      Field Details
+                    </button>.
+                  </p>
+
+                  {isManagePopupVisible && (
+                    <>
+                      <div style={popupOverlayStyle} onClick={() => setIsManagePopupVisible(false)} />
+                      <div style={popupBoxStyle}>
+                        <table className="command-syntax-table" style={{ marginTop: '10px' }}>
+                          <thead>
+                            <tr>
+                              <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Institution</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the institution the merchants belong to.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Dropdown</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Merchant</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the merchant with custom field map.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Dropdown</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Field Name</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the field of a billing file.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Draggable</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                            <tr>
+                              <td>Field Name:</td>
+                              <td><strong>Length</strong></td>
+                            </tr>
+                            <tr>
+                              <td>Definition:</td>
+                              <td>Refers to the length of the field of a billing file.</td>
+                            </tr>
+                            <tr>
+                              <td>Type:</td>
+                              <td>Draggable; Numeric</td>
+                            </tr>
+                            <tr>
+                              <td>Dependency:</td>
+                              <td>Required field</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
+
+
+            <div>
+              <div style={accordionHeaderStyle(isUpdateOpen)} onClick={() => setIsUpdateOpen(!isUpdateOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Update Field Map:</span>
+                <span style={chevronStyle(isUpdateOpen)}>&#8964;</span>
+              </div>
+              {isUpdateOpen && (
+                <div style={accordionBodyStyle}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      Select a list from the table in <u><b>Field Map</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to <u><b>Edit Field Map</b></u> page with the details of the selected Institution - Bill code.
+                    </li>
+                    <li>
+                      Update the field/s and click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
+                      button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is successful.</li>
+                  </ol>
+
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={editCustomFieldMapForm} alt="Edit Custom Field Map Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Custom Field Map Form</div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+          
+            <div>
+              <div style={accordionHeaderStyle(isDeleteOpen)} onClick={() => setIsDeleteOpen(!isDeleteOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Delete a Field Map:</span>
+                <span style={chevronStyle(isDeleteOpen)}>&#8964;</span>
+              </div>
+              {isDeleteOpen && (
+                <div style={accordionBodyStyle}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>
+                      In <u><b>Field Map</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to User-Merchant Assignment page with the details.
+                    </li>
+                    <li>
+                      Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
+                      button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is posted.</li>
+                  </ol>
+                </div>
+              )}
+            </div>
+
+
+            <div>
+              <div style={{ ...accordionHeaderStyle(isMultipleDeleteOpen), borderBottom: isMultipleDeleteOpen ? '1px solid #ddd' : 'none' }} onClick={() => setIsMultipleDeleteOpen(!isMultipleDeleteOpen)}>
+                <span style={{ fontSize: '15px', fontWeight: '500' }}>How to Multiple Delete a Field Map:</span>
+                <span style={chevronStyle(isMultipleDeleteOpen)}>&#8964;</span>
+              </div>
+              {isMultipleDeleteOpen && (
+                <div style={{ ...accordionBodyStyle, borderBottom: 'none' }}>
+                  <ol style={{ marginLeft: '20px' }}>
+                    <li>Select from the list by clicking a row.</li>
+                    <li>
+                      Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
+                      button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
+                      to continue and{' '}
+                      <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
+                      if otherwise.
+                    </li>
+                    <li>A transaction receipt is displayed signifying that the transaction is posted.</li>
+                  </ol>
+
+                  <br/>
+                  <div style={{ textAlign: 'center', marginBottom: '10px' }}>
+                    <img src={fieldMapMultipleDelete} alt="Custom Field Map Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
+                    <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Custom Field Map Form</div>
+                  </div>
+                </div>
+              )}
+            </div>
+
           </div>
-
-
-           <p>
-            For more information, click on{' '}
-            <button
-              type="button"
-              onClick={() => setIsManagePopupVisible(true)}
-              style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline', background: 'none', border: 'none', padding: 0, font: 'inherit' }}>
-              Field Details
-            </button>.
-          </p>
-
-          {isManagePopupVisible && (
-            <>
-              <div style={popupOverlayStyle} onClick={() => setIsManagePopupVisible(false)} />
-              <div style={popupBoxStyle}>
-          <table className="command-syntax-table" style={{ marginTop: '10px' }}>
-            <thead>
-              <tr>
-                <th colSpan="2" style={{ textAlign: 'center' }}>Field Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Institution</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the institution the merchants belong to.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Dropdown</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Merchant</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the merchant with custom field map.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Dropdown</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Field Name</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the field of a billing file.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Draggable</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-              <tr>
-                <td>Field Name:</td>
-                <td><strong>Length</strong></td>
-              </tr>
-              <tr>
-                <td>Definition:</td>
-                <td>Refers to the length of the field of a billing file.</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>Draggable; Numeric</td>
-              </tr>
-              <tr>
-                <td>Dependency:</td>
-                <td>Required field</td>
-              </tr>
-            </tbody>
-          </table>
-         </div>
-       </>
-    )}
-
-          <h3>How to Update Field Map:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              Select a list from the table in <u><b>Field Map</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button (see <i>Figure 4.49</i>). This redirects to <u><b>Edit Field Map</b></u> page with the details of the selected Institution – Bill code (see <i>Figure 4.50</i>).
-            </li>
-            <li>
-              Update the field/s and click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Submit</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that the transaction is successful.
-            </li>
-          </ol>
-
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={editCustomFieldMapForm} alt="Edit Custom Field Map Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-           <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Custom Field Map Form</div>  
-          </div>
-
-          <h3>How to Delete a Field Map:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              In <u><b>Field Map</b></u> page, click <i className="fas fa-eye" style={{ fontSize: '16px', color: '#000' }}></i> button. This redirects to User-Merchant Assignment page with the details.
-            </li>
-            <li>
-              Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that the transaction is posted.
-            </li>
-          </ol>
-
-          <h3>How to Multiple Delete a Field Map:</h3>
-          <ol style={{ marginLeft: '20px' }}>
-            <li>
-              Select from the list by clicking a row.
-            </li>
-            <li>
-              Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Delete</button>{' '}
-              button to submit the transaction. A confirmation dialog box is displayed. Click{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>Yes</button>{' '}
-              to continue and{' '}
-              <button style={{ backgroundColor: '#FFD700', border: '1px solid #ccc', padding: '2px 6px', borderRadius: '4px' }}>No</button>{' '}
-              if otherwise.
-            </li>
-            <li>
-              A transaction receipt is displayed signifying that the transaction is posted.
-            </li>
-          </ol>
-
-          <br/>
-          <div style={{ textAlign: 'center', marginBottom: '10px' }}>
-            <img src={fieldMapMultipleDelete} alt="Custom Field Map Form" style={{ border: '1px solid #ccc', padding: '5px', borderRadius: '4px', width: '100%' }} />
-          <div style={{ fontSize: '14px', fontWeight: 'bold' }}>Custom Field Map Form</div>  
-          </div>
-
         </div>
       </div>
     </div>
